@@ -64,7 +64,7 @@ function ExamplesNavbar() {
   });
   return (
     <Navbar
-      className={classnames("fixed-top", navbarColor)}
+      className={classnames("fixed-top", 'white')}
       color-on-scroll="300"
       expand="lg"
     >
@@ -74,12 +74,12 @@ function ExamplesNavbar() {
             data-placement="bottom"
             to="/index"
             target="_blank"
-            title="Coded by Creative Tim"
+            title=""
             tag={Link}
           >
-            Paper Kit 2
+            COVID SUPPLY INDIA
           </NavbarBrand>
-          <button
+          {/* <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
               toggled: navbarCollapse
@@ -89,7 +89,7 @@ function ExamplesNavbar() {
             <span className="navbar-toggler-bar bar1" />
             <span className="navbar-toggler-bar bar2" />
             <span className="navbar-toggler-bar bar3" />
-          </button>
+          </button> */}
         </div>
         <Collapse
           className="justify-content-end"
@@ -97,7 +97,7 @@ function ExamplesNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-            <NavItem>
+            {/* <NavItem>
               <NavLink to="/index" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> Components
               </NavLink>
@@ -153,7 +153,19 @@ function ExamplesNavbar() {
                 <i className="fa fa-github" />
                 <p className="d-lg-none">GitHub</p>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
+                 <NavItem>
+              <NavLink
+                data-placement="bottom"
+                href="/login"
+                target="_blank"
+                title="Star on GitHub"
+              >
+            <p>Log In / Sign Up</p>
+              </NavLink>
+            </NavItem> 
+
+
           </Nav>
         </Collapse>
       </Container>

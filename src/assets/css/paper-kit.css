@@ -4513,7 +4513,7 @@ License - nucleoapp.com/license/
 .landing-alert {
   margin-bottom: 0; }
 
-.page-header {
+/* .page-header {
   background-color: #B2AFAB;
   background-position: center center;
   background-size: cover;
@@ -4525,7 +4525,7 @@ License - nucleoapp.com/license/
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center; } */
   .page-header .filter::after {
     background-color: rgba(0, 0, 0, 0.5);
     content: "";

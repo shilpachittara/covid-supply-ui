@@ -1,0 +1,32 @@
+.register-body{
+ 
+        /* background-color: #B2AFAB; */
+        /* background-position: center center; */
+        /* background-size: cover; */
+        min-height: 100vh;
+        max-height: 999px;
+        /* overflow: hidden; */
+        position: relative;
+        width: 100%;
+        /* z-index: 1; */
+        /* display: flex; */
+        align-items: end;
+        /* justify-content: center; */
+        /* bottom: -135px; */
+        top: 100px;
+        /* padding: 20px; */
+   color:black;
+}
+
+.register-heading{
+    text-align: center;
+    width: 100vw;
+}
+.register-typeVendor-radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.register-typeVendor{
+  margin-top: 20px;
+}

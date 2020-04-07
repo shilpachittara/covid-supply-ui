@@ -16,23 +16,25 @@ import {
 } from "reactstrap";
 
 // core components
+import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 
 function SectionLogin() {
   return (
     <>
+    <ExamplesNavbar />
       <div
         className="section section-image section-login"
         style={{
-          backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")"
+          // backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")"
         }}
       >
         <Container>
           <Row>
             <Col className="mx-auto" lg="4" md="6">
               <Card className="card-register">
-                <h3 className="title mx-auto">Welcome</h3>
+                <h3 className="title mx-auto">Log in</h3>
                 <div className="social-line text-center">
-                  <Button
+                  {/* <Button
                     className="btn-neutral btn-just-icon mt-0"
                     color="facebook"
                     href="#pablo"
@@ -55,7 +57,7 @@ function SectionLogin() {
                     onClick={e => e.preventDefault()}
                   >
                     <i className="fa fa-twitter" />
-                  </Button>
+                  </Button> */}
                 </div>
                 <Form className="register-form">
                   <label>Email</label>
@@ -82,7 +84,7 @@ function SectionLogin() {
                     color="danger"
                     type="button"
                   >
-                    Register
+                    Log In
                   </Button>
                 </Form>
                 <div className="forgot">
@@ -95,19 +97,20 @@ function SectionLogin() {
                     Forgot password?
                   </Button>
                 </div>
-              </Card>
-              <div className="col text-center">
+                <div className="col text-center">
                 <Button
                   className="btn-round"
                   outline
                   color="neutral"
                   href="/register-page"
                   size="lg"
-                  target="_blank"
+                  // target="_blank"
                 >
                   View Register Page
                 </Button>
               </div>
+              </Card>
+           
             </Col>
           </Row>
         </Container>

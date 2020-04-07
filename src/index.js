@@ -24,12 +24,14 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import "assets/css/bootstrap.min.css";
 import "assets/scss/paper-kit.scss";
 import "assets/demo/demo.css";
+import "assets/css/custom.css"
 // pages
 import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
+import Login from "views/examples/login"
 // others
 
 ReactDOM.render(
@@ -52,7 +54,11 @@ ReactDOM.render(
         path="/register-page"
         render={props => <RegisterPage {...props} />}
       />
-      <Redirect to="/index" />
+       <Route
+        path="/login"
+        render={props => <Login {...props} />}
+      />
+      <Redirect to="/landing-page" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
