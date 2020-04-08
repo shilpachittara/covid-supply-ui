@@ -42,4 +42,17 @@
 .m-l-40{
   margin-left: 40px !important;
 }
+.register-submit-btn{
+  width: 300px !important;
+  margin: auto !important;
+  margin-top: 35px!important;
+
+}
+
+.input-field-label{
+  text-align: right !important;
+}
+.m-b-20{
+  margin-bottom: 20px;
+}
 
