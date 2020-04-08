@@ -29,7 +29,8 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container
+  Container,
+  Button
 } from "reactstrap";
 
 function ExamplesNavbar() {
@@ -155,14 +156,18 @@ function ExamplesNavbar() {
               </NavLink>
             </NavItem> */}
                  <NavItem>
-              <NavLink
-                data-placement="bottom"
+         
+              <Button
+                className="btn-round"
+                color="danger"
                 href="/login"
+                // href="#pablo"
                 target="_blank"
-                title="Star on GitHub"
+            
               >
-            <p>Log In / Sign Up</p>
-              </NavLink>
+               Log In / Sign Up
+              </Button>
+       
             </NavItem> 
 
 

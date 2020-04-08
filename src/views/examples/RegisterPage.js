@@ -2,131 +2,134 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
+import {
+  Button,
+  Card,
+  Label,
+  Form,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 
-function RegisterPage() {
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("register-page");
-    return function cleanup() {
-      document.body.classList.remove("register-page");
-    };
-  });
+function SectionLogin() {
   return (
     <>
-      <ExamplesNavbar />
+    <ExamplesNavbar />
       <div
-        className="register-body"
+        className="section section-image section-login"
         style={{
-         
           // backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")"
         }}
       >
-
-<div className="register-heading">
-  <h3>
- Register Here
-  </h3>
-</div>
-<div className="container">
-
-<div className="register-form">
-<form>
-  <ol>
-    <li>
-  <div className="row register-typeVendor">
-    <div className="col-sm-4">
-  <h5>
-  Type of Vendor:
-  </h5>
-  </div>
-  <div className="col-sm-7 register-typeVendor-radio">
-<label class="radio-inline">
-  
-      <input type="radio" name="optradio"/>Manufacturer
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio"/>Raw Material Suppliers
-    </label>
-
-    </div>
-    </div>
-    </li>
-    </ol>
-</form>
-
-</div>
-</div>
-
-        {/* <div className="filter" /> */}
-        {/* <Container>
-          <Row>
-            <Col className="ml-auto mr-auto" lg="4">
-              <Card className="card-register ml-auto mr-auto">
-                <h3 className="title mx-auto">Welcome</h3>
+        {/* <Container> */}
+        <div className="container">
+    
+              <Card className="card-register card-register-custom">
+                <h3 className="title mx-auto">Register Here</h3>
                 <div className="social-line text-center">
-                  <Button
-                    className="btn-neutral btn-just-icon mr-1"
-                    color="facebook"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    <i className="fa fa-facebook-square" />
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-just-icon mr-1"
-                    color="google"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    <i className="fa fa-google-plus" />
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-just-icon"
-                    color="twitter"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    <i className="fa fa-twitter" />
-                  </Button>
+                 
                 </div>
                 <Form className="register-form">
-                  <label>Email</label>
-                  <Input placeholder="Email" type="text" />
+                  <div className="row">
+                    <div className="m-r-20 col-sm-4">
+                      <h5>Who are you::</h5>
+                    </div>
+                    <div className="col-sm-6 row">
+                <div className="form-check-radio ">
+                <Label check style={{marginTop:0}}>
+                 
+                  <Input
+                    defaultValue="option1"
+                    id="exampleRadios1"
+                    name="exampleRadios"
+                    type="radio"
+                  />
+                 Manufacturer
+                  <span className="form-check-sign" />
+                </Label>
+              </div>
+              <div className="form-check-radio m-l-40">
+                <Label check style={{marginTop:0}}>
+                  <Input
+                    defaultValue="option1"
+                    id="exampleRadios1"
+                    name="exampleRadios"
+                    type="radio"
+                  />
+                  Raw Material Suppliers <span className="form-check-sign" />
+                </Label>
+              </div>
+              </div>
+              
+              </div>
+
+
+                  {/* <label>Email</label>
+                  <InputGroup className="form-group-no-border">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="nc-icon nc-email-85" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Email" type="email" />
+                  </InputGroup>
                   <label>Password</label>
-                  <Input placeholder="Password" type="password" />
-                  <Button block className="btn-round" color="danger">
-                    Register
+                  <InputGroup className="form-group-no-border">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="nc-icon nc-key-25" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Password" type="password" />
+                  </InputGroup> */}
+                  <Button
+                    block
+                    className="btn-round"
+                    color="danger"
+                    type="button"
+                  >
+                    Submit
                   </Button>
                 </Form>
                 <div className="forgot">
-                  <Button
+                  {/* <Button
                     className="btn-link"
                     color="danger"
                     href="#pablo"
                     onClick={e => e.preventDefault()}
                   >
                     Forgot password?
-                  </Button>
+                  </Button> */}
                 </div>
+                {/* <div className="col text-center">
+                <Button
+                  className="btn-round"
+                  outline
+                  color="neutral"
+                  // href="/register-page"
+                  size="lg"
+                  // target="_blank"
+                >
+                  View Register Page
+                </Button>
+              </div> */}
               </Card>
-            </Col>
-          </Row>
-        </Container> */}
-
-
-        <div className="footer register-footer text-center">
-          <h6>
-            © {new Date().getFullYear()}, 
-            COVID SUPPLY INDIA
-          </h6>
+           
+            {/* </Col> */}
+          {/* </Row> */}
+        {/* </Container> */}
         </div>
-      </div>
+      </div>{" "}
     </>
   );
 }
 
-export default RegisterPage;
+export default SectionLogin;

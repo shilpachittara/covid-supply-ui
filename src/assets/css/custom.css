@@ -30,3 +30,16 @@
 .register-typeVendor{
   margin-top: 20px;
 }
+
+.card-register-custom{
+  max-width: none !important;
+  min-height: none !important;
+}
+.m-r-20{
+  margin-right: 20px !important;
+}
+
+.m-l-40{
+  margin-left: 40px !important;
+}
+
