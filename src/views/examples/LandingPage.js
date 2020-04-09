@@ -22,6 +22,7 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
+import CategoryDetails from "components/Category/CategoryDetails";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -35,6 +36,7 @@ function LandingPage() {
     <>
       <ExamplesNavbar />
       <LandingPageHeader />
+      <CategoryDetails />
       <div className="main">
         <div className="section text-center">
           <Container>
