@@ -119,10 +119,10 @@ function SectionLogin() {
                       type="text" />
                   </div>
                   <div className="col-sm-4">
-                    <Input placeholder="Upload PDF" type="text" className=""
+                    <Input placeholder="Upload PDF" type="file" className=""
                       defaultValue=""
                       id=""
-                      type="text" />
+                      type="file" />
                   </div>
                 </div>
 
@@ -217,10 +217,10 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Upload PDF" type="text" className=""
+                  <Input placeholder="Upload PDF" type="file" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="file" />
 
 
                 </div>
