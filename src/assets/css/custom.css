@@ -56,3 +56,19 @@
   margin-bottom: 20px;
 }
 
+.page-header-banner{
+  background-color: #B2AFAB;
+    background-position: center center;
+    background-size: cover;
+    min-height: 65vh !important;
+    max-height: 594px !important;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 55px !important;
+}
+
