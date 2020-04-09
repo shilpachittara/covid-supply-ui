@@ -72,3 +72,19 @@
     top: 55px !important;
 }
 
+.m-t-20{
+  margin-top: 20px;
+}
+.m-t-50{
+  margin-top: 50px;
+}
+
+.d-none{
+  display: none;
+}
+
+.show-more-btn-landing{
+  margin: auto;
+  margin-top: 20px;
+}
+

@@ -162,7 +162,7 @@ function ExamplesNavbar() {
                 color="danger"
                 href="/login"
                 // href="#pablo"
-                target="_blank"
+                // target="_blank"
             
               >
                Log In / Sign Up

@@ -32,6 +32,7 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import Login from "views/examples/login"
+import Product from "views/examples/productRegistration"
 // others
 
 ReactDOM.render(
@@ -57,6 +58,10 @@ ReactDOM.render(
        <Route
         path="/login"
         render={props => <Login {...props} />}
+      />
+       <Route
+        path="/productRegistration"
+        render={props => <Product {...props} />}
       />
       <Redirect to="/landing-page" />
     </Switch>
