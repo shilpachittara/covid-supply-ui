@@ -76,6 +76,7 @@ class CategoryDetails extends Component {
                 <div className="main">
                     <div className="section text-center">
                         <Container>
+                        <h2 className="title">Our Products</h2>
                             <div className="m-t-50">
                                 <Row>
                                     {this.state.dataSet.map((i, index) =>
