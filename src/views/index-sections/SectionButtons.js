@@ -152,7 +152,7 @@ function SectionButtons() {
                   outline
                   type="button"
                 >
-                  Info
+                  Info 
                 </Button>
                 <Button
                   className="btn-round mr-1"

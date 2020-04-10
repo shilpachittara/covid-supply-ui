@@ -88,3 +88,16 @@
   margin-top: 20px;
 }
 
+.landing-features-ol{
+  font-size: 12px !important;
+  text-align: left !important;
+  color: white !important;
+}
+.bg-blue{
+  background-color: #1b8dce !important;
+}
+
+.footprint-landing{
+  text-align: center;
+}
+

@@ -158,8 +158,9 @@ function ExamplesNavbar() {
                  <NavItem>
          
               <Button
-                className="btn-round"
-                color="danger"
+                 className="btn-round mr-1"
+                 color="info" 
+                 type="button"
                 href="/login"
                 // href="#pablo"
                 // target="_blank"

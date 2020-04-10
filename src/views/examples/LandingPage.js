@@ -430,49 +430,16 @@ function LandingPage() {
         <div className="section landing-section">
           <Container>
             <Row>
-              <Col className="ml-auto mr-auto" md="8">
-                <h2 className="text-center">Keep in touch?</h2>
-                <Form className="contact-form">
-                  <Row>
-                    <Col md="6">
-                      <label>Name</label>
-                      <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="nc-icon nc-single-02" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input placeholder="Name" type="text" />
-                      </InputGroup>
-                    </Col>
-                    <Col md="6">
-                      <label>Email</label>
-                      <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="nc-icon nc-email-85" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input placeholder="Email" type="text" />
-                      </InputGroup>
-                    </Col>
-                  </Row>
-                  <label>Message</label>
-                  <Input
-                    placeholder="Tell us your thoughts and feelings..."
-                    type="textarea"
-                    rows="4"
-                  />
-                  <Row>
-                    <Col className="ml-auto mr-auto" md="4">
-                      <Button className="btn-fill" color="danger" size="lg">
-                        Send Message
-                      </Button>
-                    </Col>
-                  </Row>
-                </Form>
+              <Col className="ml-auto mr-auto" md="12">
+                <h2 className="text-center">Our Footprint</h2>
+               
               </Col>
             </Row>
+            <div className="footprint-landing">
+            <h3>Turned 4 manufacturing units into PPE kits manufacturing units</h3>
+            <h3>Supplying 1+ lakh PPE units to different state governments </h3>
+            <h3>Provided initial capital of about 3 Crore to manufacturers</h3>
+            </div>
           </Container>
         </div>
       </div>
