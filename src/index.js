@@ -31,8 +31,8 @@ import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
-import Login from "views/examples/login.jsx"
-import Product from "views/examples/productRegistration.jsx"
+import Login from "views/examples/Login.jsx"
+import Product from "views/examples/ProductRegistration.jsx"
 // others
 
 ReactDOM.render(
@@ -60,7 +60,7 @@ ReactDOM.render(
         render={props => <Login {...props} />}
       />
        <Route
-        path="/product-registration"
+        path="/product/:productName"
         render={props => <Product {...props} />}
       />
       <Redirect to="/landing-page" />

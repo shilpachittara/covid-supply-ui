@@ -21,6 +21,7 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 function SectionLogin() {
   return (
     <>
+    
     <ExamplesNavbar />
       <div
         className="section section-image section-login"
