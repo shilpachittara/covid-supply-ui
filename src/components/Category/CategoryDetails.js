@@ -12,69 +12,43 @@ class CategoryDetails extends Component {
             inWishist: 0,
             dataSet: [{
                 id: 1,
-                selected: false,
-                icon: "medical-mask.svg",
                 name: "Mask"
             },
             {
                 id: 2,
-                selected: false,
-                icon: "medical-mask.svg",
                 name: "Gloves"
             },
             {
                 id: 3,
-                selected: false,
-                icon: "medical-mask.svg",
                 name: "PPE"
             },
             {
                 id: 4,
-                selected: false,
-                icon: "medical-mask.svg",
                 name: "Coverall"
             },
             {
                 id: 5,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
+                name: "Bouffant Caps"
             },
             {
                 id: 6,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
+                name: "Eye Goggles"
             },
             {
                 id: 7,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
+                name: "Hand Sanitizer"
             },
             {
                 id: 8,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
+                name: "Infrared Thermometer"
             },
             {
                 id: 9,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
+                name: "Shoe Cover"
             },
             {
-                id: 10,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
-            },
-            {
-                id: 11,
-                selected: false,
-                icon: "medical-mask.svg",
-                name: "Mask"
+                id: 9,
+                name: "Testing kit"
             }
             ]
         }
@@ -110,7 +84,7 @@ class CategoryDetails extends Component {
                                                 <Link to="/product-registration">
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + i.icon)} alt="" style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + i.name + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
@@ -131,7 +105,7 @@ class CategoryDetails extends Component {
                                     color="primary"
                                     outline
                                     type="button"
-                                    //onClick={() => this.state.count = true}
+                                //onClick={() => this.state.count = true}
                                 >
                                     Show More
                                 </Button>
