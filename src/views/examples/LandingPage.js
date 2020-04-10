@@ -6,7 +6,6 @@ import {
   Button,
   Card,
   CardBody,
-  CardFooter,
   CardTitle,
   Form,
   Input,
@@ -38,8 +37,8 @@ function LandingPage() {
       <LandingPageHeader />
       <CategoryDetails />
       <div className="main">
-        <div className="section text-center">
-          <Container>
+        {/* <div className="section text-center"> */}
+          {/* <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="title">Let's talk product</h2>
@@ -133,11 +132,11 @@ function LandingPage() {
                 </div>
               </Col>
             </Row>
-          </Container>
-        </div>
-        <div className="section section-dark text-center">
+          </Container> */}
+        {/* </div> */}
+        <div className="section bg-blue text-center">
           <Container>
-            <h2 className="title">Let's talk about us</h2>
+            <h2 className="title" style={{color:'white'}}>Features</h2>
             <Row>
               <Col md="4">
                 <Card className="card-profile card-plain">
@@ -145,24 +144,32 @@ function LandingPage() {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("assets/img/faces/clem-onojeghuo-3.jpg")}
+                        src={require("assets/icons/investor.svg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Henry Ford</CardTitle>
-                        <h6 className="card-category">Product Manager</h6>
+                        <CardTitle tag="h4" style={{color: 'white',fontWeight: 400,marginBottom: 20}}>For Buyers</CardTitle>
+                        {/* <h6 className="card-category">For Buyers</h6> */}
                       </div>
                     </a>
-                    <p className="card-description text-center">
+                    {/* <p className="card-description text-center">
                       Teamwork is so important that it is virtually impossible
                       for you to reach the heights of your capabilities or make
                       the money that you want without becoming very good at it.
-                    </p>
+                    </p> */}
+                    <div className="">
+                      <ol style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400,lineHeight:1.8  }}>
+                        <li>Access dashboard and check your past orders</li>
+                        <li>Check our supply count and lead time and other live information</li>
+                        <li>Place order with us at one click of a button</li>
+                        <li>If system is integrated in case of hospitals, we can share expected requirement as well</li>
+                      </ol>
+                    </div>
                   </CardBody>
-                  <CardFooter className="text-center">
+                  {/* <CardFooter className="text-center">
                     <Button
                       className="btn-just-icon btn-neutral"
                       color="link"
@@ -187,10 +194,10 @@ function LandingPage() {
                     >
                       <i className="fa fa-linkedin" />
                     </Button>
-                  </CardFooter>
+                  </CardFooter> */}
                 </Card>
               </Col>
-              <Col md="4">
+              {/* <Col md="4">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -292,6 +299,129 @@ function LandingPage() {
                       <i className="fa fa-linkedin" />
                     </Button>
                   </CardFooter>
+                </Card>
+              </Col> */}
+
+
+              {/* for suppliers */}
+
+
+                    <Col md="4">
+                <Card className="card-profile card-plain">
+                  <div className="card-avatar">
+                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                      <img
+                        alt="..."
+                        src={require("assets/icons/investor.svg")}
+                      />
+                    </a>
+                  </div>
+                  <CardBody>
+                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                      <div className="author">
+                        <CardTitle tag="h4" style={{color: 'white',fontWeight: 400,marginBottom: 20}}>For Suppliers</CardTitle>
+                        {/* <h6 className="card-category">For Buyers</h6> */}
+                      </div>
+                    </a>
+                    {/* <p className="card-description text-center">
+                      Teamwork is so important that it is virtually impossible
+                      for you to reach the heights of your capabilities or make
+                      the money that you want without becoming very good at it.
+                    </p> */}
+                    <div className="">
+                    <ol style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400 ,lineHeight:1.8 }}>
+                        <li>Live demand analytics region wise </li>
+                        <li>Place order with 100% advance capital</li>
+                        <li>Technical assistance and rectification of underlying issues </li>
+                        <li>Get product certification from SITRA and DRDE</li>
+                      </ol>
+                    </div>
+                  </CardBody>
+                  {/* <CardFooter className="text-center">
+                    <Button
+                      className="btn-just-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-twitter" />
+                    </Button>
+                    <Button
+                      className="btn-just-icon btn-neutral ml-1"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-google-plus" />
+                    </Button>
+                    <Button
+                      className="btn-just-icon btn-neutral ml-1"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-linkedin" />
+                    </Button>
+                  </CardFooter> */}
+                </Card>
+              </Col>
+              <Col md="4">
+                <Card className="card-profile card-plain">
+                  <div className="card-avatar">
+                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                      <img
+                        alt="..."
+                        src={require("assets/icons/investor.svg")}
+                      />
+                    </a>
+                  </div>
+                  <CardBody>
+                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                      <div className="author">
+                        <CardTitle tag="h4" style={{color: 'white',fontWeight: 400,marginBottom: 20}}>For Certification Bodies</CardTitle>
+                        {/* <h6 className="card-category">For Buyers</h6> */}
+                      </div>
+                    </a>
+                    {/* <p className="card-description text-center">
+                      Teamwork is so important that it is virtually impossible
+                      for you to reach the heights of your capabilities or make
+                      the money that you want without becoming very good at it.
+                    </p> */}
+                    <div className="">
+                    <ol style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400 ,lineHeight:1.8 }}>
+                        <li>Access dashboard and check your past orders</li>
+                        <li>Check our supply count and lead time and other live information</li>
+                        <li>Place order with us at one click of a button</li>
+                        <li>If system is integrated in case of hospitals, we can share expected requirement as well</li>
+                      </ol>
+                    </div>
+                  </CardBody>
+                  {/* <CardFooter className="text-center">
+                    <Button
+                      className="btn-just-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-twitter" />
+                    </Button>
+                    <Button
+                      className="btn-just-icon btn-neutral ml-1"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-google-plus" />
+                    </Button>
+                    <Button
+                      className="btn-just-icon btn-neutral ml-1"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-linkedin" />
+                    </Button>
+                  </CardFooter> */}
                 </Card>
               </Col>
             </Row>
