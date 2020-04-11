@@ -73,8 +73,7 @@ function ExamplesNavbar() {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            to="/index"
-            target="_blank"
+            to="/landing-page"
             title=""
             tag={Link}
           >

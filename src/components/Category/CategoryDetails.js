@@ -9,7 +9,6 @@ class CategoryDetails extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            inWishist: 0,
             dataSet: [{
                 id: 1,
                 name: "Mask"
@@ -39,15 +38,15 @@ class CategoryDetails extends Component {
                 name: "Eye Goggles"
             },
             {
-                id: 8,
-                name: "Infrared Thermometer"
-            },
-            {
                 id: 9,
                 name: "Shoe Cover"
             },
             {
-                id: 9,
+                id: 8,
+                name: "Infrared Thermometer"
+            },
+            {
+                id: 10,
                 name: "Testing kit"
             }
             ]
@@ -58,17 +57,7 @@ class CategoryDetails extends Component {
     componentDidMount() {
         console.log("okokok", this.props)
     }
-    onWishlist = (id) => {
-        let data = this.state.dataSet.map((item) => {
-            if (item.id === id) {
-                item.selected = !item.selected
-            }
-            return item;
-        })
-
-        this.setState({ dataSet: data })
-    }
-
+    
     render() {
 
         return (
