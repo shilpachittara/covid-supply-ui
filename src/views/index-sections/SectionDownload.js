@@ -1,20 +1,5 @@
 /*!
 
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 import React from "react";
 
@@ -50,21 +35,8 @@ function SectionDownload() {
           </Row>
           <Row className="text-center upgrade-pro">
             <Col className="ml-auto mr-auto" md="8">
-              <h2 className="title">Want more?</h2>
-              <p className="description">
-                We're going to launch{" "}
-                <a className="text-danger" href="#pablo" disabled>
-                  Paper Kit PRO React in a few weeks
-                </a>
-                . It will have a huge number of components, sections and example
-                pages.
-              </p>
             </Col>
             <Col className="ml-auto mr-auto" sm="5">
-              <Button className="btn-round" color="info" href="#pablo" disabled>
-                <i aria-hidden={true} className="nc-icon nc-spaceship" />{" "}
-                Upgrade to PRO
-              </Button>
             </Col>
           </Row>
           <Row className="justify-content-md-center sharing-area text-center">

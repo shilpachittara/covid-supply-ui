@@ -111,9 +111,21 @@ class ProductRegistration extends Component {
             }
         })
         console.log("okokok", this.props)
-        
+
     }
 
+    componentWillReceiveProps(nextProps){
+        let product = nextProps.history.location.pathname
+        let productName = product.slice(9)
+        this.state.json.forEach((item) => {
+            if (item.category === productName) {
+                let data = item.productDetail
+                this.setState({ dataSet: data })
+            }
+        })
+        this.setState({productName: productName})
+        console.log("test", productName)
+    }
 
     render() {
 
@@ -144,6 +156,35 @@ class ProductRegistration extends Component {
                                                 </Link>
                                             </Col>
 
+                                        ))}
+                                </Row>
+                            </div>
+
+                        </Container>
+                    </div>
+
+                    <div className="section text-center">
+                    <Container>
+                            <h2 className="title" >Other Products</h2>
+                            <div className="m-t-50">
+                                <Row>
+                                    {this.state.json.map((i, index) =>
+                                        (
+                                            <Col md="3" style={{ marginBottom: 50 }} key={index}>
+                                                <Link to={`/product/${i.category}`}>
+                                                <div className="info">
+                                                        <div className="icon icon-info">
+                                                            <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                        </div>
+                                                        <div className="description">
+                                                            <h4 className="info-title">{i.category}</h4>
+                                                            <p className="description">
+                                                                Select the product
+                                                        </p>
+                                                        </div>
+                                                        </div>
+                                                </Link>
+                                            </Col>
                                         ))}
                                 </Row>
                             </div>

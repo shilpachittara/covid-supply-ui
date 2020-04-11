@@ -5,16 +5,9 @@ import React, { Component } from "react";
 import {
     Button,
     Card,
-    Label,
     Form,
     Input,
-    Container,
-    /* InputGroupAddon,
-     InputGroupText,
-     InputGroup,
-     Container,
-     Row,
-     Col*/
+    Container
 } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar";
 
@@ -24,17 +17,137 @@ class RequestForm extends Component {
         super(props)
         this.state = {
             category: this.props.match.params.category,
-            product: this.props.match.params.product
+            product: this.props.match.params.product,
+            dataSet: [],
+            json: [{
+                id: 1,
+                category: "Mask",
+                productDetail: [{
+                    id: "1a",
+                    name: "3-ply Mask"
+                },
+                {
+                    id: "1b",
+                    name: "N-95"
+                }
+                ]
+            },
+            {
+                id: 4,
+                category: "Coverall",
+                productDetail: [{
+                    id: "4a",
+                    name: "Coverall 1"
+                }]
+            },
+            {
+                id: 7,
+                category: "Hand Sanitizer",
+                productDetail: [{
+                    id: "7a",
+                    name: "Hand Sanitizer 1"
+                }]
+            },
+            {
+                id: 3,
+                category: "PPE",
+                productDetail: [{
+                    id: "3a",
+                    name: "PPE 1"
+                }]
+            },
+            {
+                id: 2,
+                category: "Gloves",
+                productDetail: [{
+                    id: "2a",
+                    name: "Gloves 1"
+                }]
+            },
+            {
+                id: 5,
+                category: "Bouffant Caps",
+                productDetail: [{
+                    id: "5a",
+                    name: "Bouffant Caps 1"
+                }]
+            },
+            {
+                id: 6,
+                category: "Eye Goggles",
+                productDetail: [{
+                    id: "6a",
+                    name: "Eye Goggles 1"
+                }]
+            },
+            {
+                id: 8,
+                category: "Infrared Thermometer",
+                productDetail: [{
+                    id: "8a",
+                    name: "Infrared Thermometer 1"
+                }]
+            },
+            {
+                id: 9,
+                category: "Shoe Cover",
+                productDetail: [{
+                    id: "9a",
+                    name: "Shoe Cover 1"
+                }]
+            },
+            {
+                id: 10,
+                category: "Testing kit",
+                productDetail: [{
+                    id: "10a",
+                    name: "Testing kit 1"
+                }]
+            }
+            ]
         }
 
     }
-
-    componentDidMount() {
+    componentWillMount() {
+        this.state.json.forEach((item) => {
+            if (item.category === this.state.productName) {
+                let data = item.productDetail
+                this.setState({ dataSet: data })
+            }
+        })
+       
         console.log("okokok", this.props)
     }
 
+    changeProduct = (event) => {
+        this.setState({category:"Select Option"});
+        this.setState({product:"Select Option"});
+        let selectedValue = event.target.value;
+
+        this.state.json.forEach((item) => {
+            if (item.category === selectedValue) {
+                let data = item.productDetail
+                this.setState({ dataSet: data })
+            }
+        })
+    }
 
     render() {
+        let categoryOptions = this.state.json.map((data) =>
+            <option
+                key={data.id}
+                value={data.category}>
+                {data.category}
+            </option>
+        );
+
+        let productOptions = this.state.dataSet.map((data) =>
+            <option
+                key={data.id}
+                value={data.name}>
+                {data.name}
+            </option>
+        );
         return (
             <>
                 <ExamplesNavbar />
@@ -55,13 +168,10 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control" id="sel1" name="sellist1">
-                                            <option>Select Option  </option>
-                                            <option>Mask</option>
-                                            <option>PPE KIT</option>
-                                            <option>VENTILATOR</option>
+                                        <select className="form-control" id="sel1" name="sellist1" onChange={this.changeProduct}>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
                                         </select>
-
 
                                     </div>
                                 </div>
@@ -73,10 +183,8 @@ class RequestForm extends Component {
                                     <div className="form-group col-sm-6">
 
                                         <select className="form-control " id="sel1" name="sellist1">
-                                            <option>Select Option  </option>
-                                            <option>P95</option>
-                                            <option>N99</option>
-                                            <option>N95 </option>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
                                         </select>
 
 
