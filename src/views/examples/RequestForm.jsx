@@ -110,7 +110,7 @@ class RequestForm extends Component {
     }
     componentWillMount() {
         this.state.json.forEach((item) => {
-            if (item.category === this.state.productName) {
+            if (item.category === this.state.category) {
                 let data = item.productDetail
                 this.setState({ dataSet: data })
             }
