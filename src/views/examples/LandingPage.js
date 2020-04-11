@@ -141,7 +141,7 @@ function LandingPage() {
             <Row>
               <Col md="4">
                 <Card className="card-profile card-plain">
-                  <div className="card-avatar">
+                  <div className="card-avatar border-radius-none">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
@@ -162,12 +162,12 @@ function LandingPage() {
                       the money that you want without becoming very good at it.
                     </p> */}
                     <div className="">
-                      <ol style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400,lineHeight:1.8  }}>
+                      <ul style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400,lineHeight:1.8  }}>
                         <li>Access dashboard and check your past orders</li>
                         <li>Check our supply count and lead time and other live information</li>
                         <li>Place order with us at one click of a button</li>
                         <li>If system is integrated in case of hospitals, we can share expected requirement as well</li>
-                      </ol>
+                      </ul>
                     </div>
                   </CardBody>
                   {/* <CardFooter className="text-center">
@@ -309,11 +309,11 @@ function LandingPage() {
 
                     <Col md="4">
                 <Card className="card-profile card-plain">
-                  <div className="card-avatar">
+                  <div className="card-avatar border-radius-none">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("assets/icons/investor.svg")}
+                        src={require("assets/icons/supplier.svg")}
                       />
                     </a>
                   </div>
@@ -330,12 +330,12 @@ function LandingPage() {
                       the money that you want without becoming very good at it.
                     </p> */}
                     <div className="">
-                    <ol style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400 ,lineHeight:1.8 }}>
+                    <ul style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400 ,lineHeight:1.8 }}>
                         <li>Live demand analytics region wise </li>
                         <li>Place order with 100% advance capital</li>
                         <li>Technical assistance and rectification of underlying issues </li>
                         <li>Get product certification from SITRA and DRDE</li>
-                      </ol>
+                      </ul>
                     </div>
                   </CardBody>
                   {/* <CardFooter className="text-center">
@@ -368,11 +368,11 @@ function LandingPage() {
               </Col>
               <Col md="4">
                 <Card className="card-profile card-plain">
-                  <div className="card-avatar">
+                  <div className="card-avatar border-radius-none">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("assets/icons/investor.svg")}
+                        src={require("assets/icons/contract.svg")}
                       />
                     </a>
                   </div>
@@ -389,12 +389,12 @@ function LandingPage() {
                       the money that you want without becoming very good at it.
                     </p> */}
                     <div className="">
-                    <ol style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400 ,lineHeight:1.8 }}>
+                    <ul style={{fontSize:13,textAlign:'left',color:'white',fontWeight:400 ,lineHeight:1.8 }}>
                         <li>Access dashboard and check your past orders</li>
                         <li>Check our supply count and lead time and other live information</li>
                         <li>Place order with us at one click of a button</li>
                         <li>If system is integrated in case of hospitals, we can share expected requirement as well</li>
-                      </ol>
+                      </ul>
                     </div>
                   </CardBody>
                   {/* <CardFooter className="text-center">
