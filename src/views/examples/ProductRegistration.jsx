@@ -107,8 +107,6 @@ class ProductRegistration extends Component {
         this.state.json.forEach((item) => {
             if (item.category === this.state.productName) {
                 let data = item.productDetail
-                let type = item.category
-                this.setState({ categoryName: type })
                 this.setState({ dataSet: data })
             }
         })
@@ -131,10 +129,10 @@ class ProductRegistration extends Component {
                                     {this.state.dataSet.map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 50 }} key={index}>
-                                                <Link to="/product/mask">
+                                                <Link to={`/request-form/${this.state.productName}/${i.name}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + this.state.categoryName + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + this.state.productName + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>

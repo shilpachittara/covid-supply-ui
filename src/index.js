@@ -33,6 +33,8 @@ import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import Login from "views/examples/Login.jsx"
 import Product from "views/examples/ProductRegistration.jsx"
+import Request from "views/examples/RequestForm.jsx"
+
 // others
 
 ReactDOM.render(
@@ -62,6 +64,10 @@ ReactDOM.render(
        <Route
         path="/product/:productName"
         render={props => <Product {...props} />}
+      />
+       <Route
+        path="/request-form/:category/:product"
+        render={props => <Request {...props} />}
       />
       <Redirect to="/landing-page" />
     </Switch>
