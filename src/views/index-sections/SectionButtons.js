@@ -300,7 +300,7 @@ function SectionButtons() {
           <Row>
             <Col sm="3">
               <FormGroup>
-                <Input placeholder="Default" type="text"  className=""
+                <Input placeholder="Default" className=""
                   defaultValue=""
                   id=""
                   type="text" />

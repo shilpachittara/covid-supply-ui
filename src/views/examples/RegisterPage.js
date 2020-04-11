@@ -8,12 +8,12 @@ import {
   Label,
   Form,
   Input,
-  InputGroupAddon,
+ /* InputGroupAddon,
   InputGroupText,
   InputGroup,
   Container,
   Row,
-  Col
+  Col*/
 } from "reactstrap";
 
 // core components
@@ -113,13 +113,13 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6 row">
                   <div className="col-sm-8">
-                    <Input placeholder="Product Specification" type="text" className=""
+                    <Input placeholder="Product Specification" className=""
                       defaultValue=""
                       id=""
                       type="text" />
                   </div>
                   <div className="col-sm-4">
-                    <Input placeholder="Upload PDF" type="file" className=""
+                    <Input placeholder="Upload PDF" className=""
                       defaultValue=""
                       id=""
                       type="file" />
@@ -134,7 +134,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Price" type="text" className=""
+                  <Input placeholder="Price" className=""
                     defaultValue=""
                     id=""
                     type="number" />
@@ -149,7 +149,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Production Capacity in 1 Day" type="text" className=""
+                  <Input placeholder="Production Capacity in 1 Day" className=""
                     defaultValue=""
                     id=""
                     type="number" />
@@ -165,7 +165,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Certification Name" type="text" className=""
+                  <Input placeholder="Certification Name" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -200,7 +200,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Certifying Body Name" type="text" className=""
+                  <Input placeholder="Certifying Body Name" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -217,7 +217,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Upload PDF" type="file" className=""
+                  <Input placeholder="Upload PDF" className=""
                     defaultValue=""
                     id=""
                     type="file" />
@@ -234,7 +234,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="GST No" type="text" className=""
+                  <Input placeholder="GST No" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -250,7 +250,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Address Line 1" type="text" className=""
+                  <Input placeholder="Address Line 1" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -264,7 +264,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Address Line 2" type="text" className=""
+                  <Input placeholder="Address Line 2" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -280,7 +280,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="State" type="text" className=""
+                  <Input placeholder="State" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -296,7 +296,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Pincode" type="text" className=""
+                  <Input placeholder="Pincode" className=""
                     defaultValue=""
                     id=""
                     type="number" />
@@ -313,7 +313,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="Name" type="text" className=""
+                  <Input placeholder="Name" className=""
                     defaultValue=""
                     id=""
                     type="text" />
@@ -332,7 +332,7 @@ function SectionLogin() {
                   <Input placeholder="10 Digit Mobile No" type="text" className=""
                     defaultValue=""
                     id=""
-                    type="number" />
+                     />
 
 
                 </div>
@@ -344,7 +344,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="email" type="text" className=""
+                  <Input placeholder="email" className=""
                     defaultValue=""
                     id=""
                     type="email" />
@@ -360,7 +360,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="password" type="text" className=""
+                  <Input placeholder="password" className=""
                     defaultValue=""
                     id=""
                     type="password" />
@@ -376,7 +376,7 @@ function SectionLogin() {
                 </div>
                 <div className="col-sm-6">
 
-                  <Input placeholder="confirm password" type="text" className=""
+                  <Input placeholder="confirm password" className=""
                     defaultValue=""
                     id=""
                     type="password" />

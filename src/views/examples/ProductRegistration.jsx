@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Row, Container, Button } from "reactstrap";
-import { Link, useParams } from 'react-router-dom';
+import { Row, Container } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 // reactstrap components
 import { Col } from "reactstrap";
