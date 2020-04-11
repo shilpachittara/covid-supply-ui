@@ -104,16 +104,15 @@ class ProductRegistration extends Component {
     }
 
     componentDidMount() {
-        this.state.json.map((item) => {
+        this.state.json.forEach((item) => {
             if (item.category === this.state.productName) {
                 let data = item.productDetail
                 let type = item.category
                 this.setState({ categoryName: type })
                 this.setState({ dataSet: data })
             }
-            console.log("okokok", this.props)
         })
-
+        console.log("okokok", this.props)
         
     }
 
