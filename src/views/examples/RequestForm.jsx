@@ -39,7 +39,7 @@ class RequestForm extends Component {
             <>
                 <ExamplesNavbar />
                 <div className="section section-login">
-                    <Container> 
+                    <Container>
 
                         <Card className="card-register card-register-custom">
                             <h3 className="title mx-auto">Register Here</h3>
@@ -82,6 +82,21 @@ class RequestForm extends Component {
 
                                     </div>
                                 </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5>Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id=""
+                                            type="number" />
+
+
+                                    </div>
+                                </div>
                                 {/* technical specification text field + upload pdf field */}
 
                                 <div className="row m-b-20">
@@ -104,10 +119,52 @@ class RequestForm extends Component {
                                     </div>
 
                                 </div>
-                                
+                                <Button
+                                    block
+                                    className="btn-round register-submit-btn"
+                                    color="danger"
+                                    type="button"
+                                >
+                                    +Add more items
+                                </Button>
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5>Organization Name:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Organization Name" className=""
+                                            defaultValue=""
+                                            id=""
+                                            type="text" />
+
+
+                                    </div>
+                                </div> <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5>Organization Type:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <select className="form-control " id="sel1" name="sellist1">
+                                            <option>Select Option  </option>
+                                            <option>Hospital</option>
+                                            <option>Government</option>
+                                            <option>Research bodies</option>
+                                            <option>Other</option>
+                                        </select>
+
+                                        <Input placeholder="For other type here" className=""
+                                            defaultValue=""
+                                            id=""
+                                            type="text" />
+
+
+                                    </div>
+                                </div>
                                 {/* ADDRESSinput type text*/}
 
-                                <div className="row ">
+                                <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
                                         <h5>Address:</h5>
                                     </div>
@@ -225,7 +282,7 @@ class RequestForm extends Component {
                                 </Button>
                             </Form>
                         </Card>
-                    </Container> 
+                    </Container>
                 </div>
             </>
         );
