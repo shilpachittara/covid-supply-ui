@@ -16,7 +16,7 @@ function DemoFooter() {
             <ul>
               <li>
                 <a
-                  href="https://www.creative-tim.com?ref=pkr-footer"
+                  // href="https://www.creative-tim.com?ref=pkr-footer"
                   target="_blank"
                 >
                   covid supply
@@ -24,7 +24,7 @@ function DemoFooter() {
               </li>
               <li>
                 <a
-                  href="http://blog.creative-tim.com/?ref=pkr-footer"
+                  // href="http://blog.creative-tim.com/?ref=pkr-footer"
                   target="_blank"
                 >
                   Blog
@@ -32,7 +32,7 @@ function DemoFooter() {
               </li>
               <li>
                 <a
-                  href="https://www.creative-tim.com/license?ref=pkr-footer"
+                  // href="https://www.creative-tim.com/license?ref=pkr-footer"
                   target="_blank"
                 >
                   Licenses
