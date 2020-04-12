@@ -115,3 +115,7 @@
     text-transform: uppercase !important;
 }
 
+.addmore-prod-btn{
+  position: relative;
+  left: 35px;
+}

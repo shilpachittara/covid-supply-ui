@@ -52,6 +52,7 @@ function SectionLogin() {
                         id="exampleRadios1"
                         name="exampleRadios"
                         type="radio"
+
                       />
                  Manufacturer
                   <span className="form-check-sign" />
@@ -78,7 +79,7 @@ function SectionLogin() {
                 </div>
                 <div className="form-group col-sm-6">
 
-                  <select className="form-control" id="sel1" name="sellist1">
+                  <select className="form-control" id="sel1" name="sellist1" required>
                     <option>Select Option  </option>
                     <option>Mask</option>
                     <option>PPE KIT</option>
@@ -95,7 +96,7 @@ function SectionLogin() {
                 </div>
                 <div className="form-group col-sm-6">
 
-                  <select className="form-control " id="sel1" name="sellist1">
+                  <select className="form-control " id="sel1" name="sellist1" required>
                     <option>Select Option  </option>
                     <option>P95</option>
                     <option>N99</option>
@@ -116,13 +117,15 @@ function SectionLogin() {
                     <Input placeholder="Product Specification" className=""
                       defaultValue=""
                       id=""
-                      type="text" />
+                      type="text"
+                      required />
                   </div>
                   <div className="col-sm-4">
                     <Input placeholder="Upload PDF" className=""
                       defaultValue=""
                       id=""
-                      type="file" />
+                      type="file"
+                      required />
                   </div>
                 </div>
 
@@ -137,7 +140,8 @@ function SectionLogin() {
                   <Input placeholder="Price" className=""
                     defaultValue=""
                     id=""
-                    type="number" />
+                    type="number"
+                    required />
 
 
                 </div>
@@ -152,7 +156,8 @@ function SectionLogin() {
                   <Input placeholder="Production Capacity in 1 Day" className=""
                     defaultValue=""
                     id=""
-                    type="number" />
+                    type="number" 
+                    required/>
 
 
                 </div>
@@ -168,7 +173,8 @@ function SectionLogin() {
                   <Input placeholder="Certification Name" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="text" 
+                    required/>
 
 
                 </div>
@@ -181,7 +187,7 @@ function SectionLogin() {
                 </div>
                 <div className="form-group col-sm-6">
 
-                  <select className="form-control " id="sel1" name="sellist1">
+                  <select className="form-control " id="sel1" name="sellist1" required>
                     <option>Select Option  </option>
                     <option>Factory certification</option>
                     <option>Product/Raw Material certificate</option>
@@ -203,7 +209,8 @@ function SectionLogin() {
                   <Input placeholder="Certifying Body Name" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="text"
+                    required />
 
 
                 </div>
@@ -220,7 +227,8 @@ function SectionLogin() {
                   <Input placeholder="Upload PDF" className=""
                     defaultValue=""
                     id=""
-                    type="file" />
+                    type="file"
+                    required />
 
 
                 </div>
@@ -237,7 +245,8 @@ function SectionLogin() {
                   <Input placeholder="GST No" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="text" 
+                    required/>
 
 
                 </div>
@@ -253,7 +262,8 @@ function SectionLogin() {
                   <Input placeholder="Address Line 1" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="text" 
+                    required/>
 
 
                 </div>
@@ -283,7 +293,8 @@ function SectionLogin() {
                   <Input placeholder="State" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="text"
+                    required />
 
 
                 </div>
@@ -299,7 +310,8 @@ function SectionLogin() {
                   <Input placeholder="Pincode" className=""
                     defaultValue=""
                     id=""
-                    type="number" />
+                    type="number"
+                    required />
 
 
                 </div>
@@ -316,7 +328,8 @@ function SectionLogin() {
                   <Input placeholder="Name" className=""
                     defaultValue=""
                     id=""
-                    type="text" />
+                    type="text"
+                    required />
 
 
                 </div>
@@ -332,6 +345,7 @@ function SectionLogin() {
                   <Input placeholder="10 Digit Mobile No" type="text" className=""
                     defaultValue=""
                     id=""
+                    required
                      />
 
 
@@ -347,7 +361,8 @@ function SectionLogin() {
                   <Input placeholder="email" className=""
                     defaultValue=""
                     id=""
-                    type="email" />
+                    type="email" 
+                    required/>
 
 
                 </div>
@@ -363,7 +378,8 @@ function SectionLogin() {
                   <Input placeholder="password" className=""
                     defaultValue=""
                     id=""
-                    type="password" />
+                    type="password"
+                    required />
 
 
                 </div>
@@ -379,7 +395,8 @@ function SectionLogin() {
                   <Input placeholder="confirm password" className=""
                     defaultValue=""
                     id=""
-                    type="password" />
+                    type="password"
+                    required />
 
 
                 </div>

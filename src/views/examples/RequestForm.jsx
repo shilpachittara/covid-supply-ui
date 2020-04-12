@@ -155,7 +155,7 @@ class RequestForm extends Component {
                     <Container>
 
                         <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto">Register Here</h3>
+                            <h3 className="title mx-auto">Product Registration</h3>
                             <div className="social-line text-center">
 
                             </div>
@@ -168,7 +168,7 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control" id="sel1" name="sellist1" onChange={this.changeProduct}>
+                                        <select className="form-control" id="sel1" name="sellist1" onChange={this.changeProduct} required>
                                             <option>{this.state.category}</option>
                                             {categoryOptions}
                                         </select>
@@ -182,7 +182,7 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control " id="sel1" name="sellist1">
+                                        <select className="form-control " id="sel1" name="sellist1" required>
                                             <option>{this.state.product}</option>
                                             {productOptions}
                                         </select>
@@ -200,7 +200,8 @@ class RequestForm extends Component {
                                         <Input placeholder="Quantity" className=""
                                             defaultValue=""
                                             id=""
-                                            type="number" />
+                                            type="number" 
+                                            required/>
 
 
                                     </div>
@@ -216,24 +217,26 @@ class RequestForm extends Component {
                                             <Input placeholder="Product Specification" className=""
                                                 defaultValue=""
                                                 id=""
-                                                type="text" />
+                                                type="text" 
+                                                required/>
                                         </div>
                                         <div className="col-sm-4">
                                             <Input placeholder="Upload PDF" className=""
                                                 defaultValue=""
                                                 id=""
-                                                type="file" />
+                                                type="file" 
+                                                required/>
                                         </div>
                                     </div>
 
                                 </div>
                                 <Button
                                     block
-                                    className="btn-round register-submit-btn"
+                                    className="btn-round register-submit-btn addmore-prod-btn"
                                     color="danger"
                                     type="button"
                                 >
-                                    +Add more items
+                                    + Add more items
                                 </Button>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
@@ -244,7 +247,8 @@ class RequestForm extends Component {
                                         <Input placeholder="Organization Name" className=""
                                             defaultValue=""
                                             id=""
-                                            type="text" />
+                                            type="text"
+                                            required />
 
 
                                     </div>
@@ -265,7 +269,8 @@ class RequestForm extends Component {
                                         <Input placeholder="For other type here" className=""
                                             defaultValue=""
                                             id=""
-                                            type="text" />
+                                            type="text" 
+                                            required/>
 
 
                                     </div>
@@ -281,7 +286,8 @@ class RequestForm extends Component {
                                         <Input placeholder="Address Line 1" className=""
                                             defaultValue=""
                                             id=""
-                                            type="text" />
+                                            type="text"
+                                            required />
 
 
                                     </div>
@@ -310,7 +316,8 @@ class RequestForm extends Component {
                                         <Input placeholder="State" className=""
                                             defaultValue=""
                                             id=""
-                                            type="text" />
+                                            type="text"
+                                            required />
 
 
                                     </div>
@@ -326,7 +333,8 @@ class RequestForm extends Component {
                                         <Input placeholder="Pincode" className=""
                                             defaultValue=""
                                             id=""
-                                            type="number" />
+                                            type="number"
+                                            required />
 
 
                                     </div>
@@ -343,7 +351,8 @@ class RequestForm extends Component {
                                         <Input placeholder="Name" className=""
                                             defaultValue=""
                                             id=""
-                                            type="text" />
+                                            type="text" 
+                                            required/>
 
 
                                     </div>
@@ -359,6 +368,7 @@ class RequestForm extends Component {
                                         <Input placeholder="10 Digit Mobile No" type="text" className=""
                                             defaultValue=""
                                             id=""
+                                            required
                                         />
 
 
@@ -374,7 +384,8 @@ class RequestForm extends Component {
                                         <Input placeholder="email" className=""
                                             defaultValue=""
                                             id=""
-                                            type="email" />
+                                            type="email" 
+                                            required/>
 
 
                                     </div>
@@ -382,7 +393,7 @@ class RequestForm extends Component {
 
                                 <Button
                                     block
-                                    className="btn-round register-submit-btn"
+                                    className="btn-round register-submit-btn addmore-prod-btn"
                                     color="danger"
                                     type="button"
                                 >
