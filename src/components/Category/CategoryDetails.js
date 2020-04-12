@@ -54,21 +54,17 @@ class CategoryDetails extends Component {
 
     }
 
-    componentDidMount() {
-        console.log("okokok", this.props)
-    }
-    
-    render() {
 
+    render() {
         return (
             <>
                 <div className="main">
                     <div className="section text-center">
                         <Container>
-                        <h2 className="title">Our Products</h2>
+                            <h2 className="title">Our Products</h2>
                             <div className="m-t-50">
                                 <Row>
-                                    {this.state.dataSet.map((i, index) =>
+                                    {this.state.dataSet.slice(0, 4).map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 50 }} key={index}>
                                                 <Link to={`/product/${i.name}`}>
@@ -79,7 +75,7 @@ class CategoryDetails extends Component {
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
                                                             <p className="description">
-                                                                click to place your order
+                                                                select product
                                                         </p>
                                                         </div>
                                                     </div>
@@ -90,16 +86,17 @@ class CategoryDetails extends Component {
                                 </Row>
                             </div>
                             <div className="show-more-btn-landing m-t-20">
-                                <Button
-                                    className="btn-round mr-1"
-                                    color="primary"
-                                    outline
-                                    type="button"
-                                //onClick={() => this.state.count = true}
-                                >
-                                    Show More
-                                </Button>
+                                    <Button
+                                        className="btn-round mr-1"
+                                        color="primary"
+                                        outline
+                                        type="button"
+                                        href="/product"
+                                    >
+                                        More Products
+                                    </Button>
                             </div>
+
 
                         </Container>
                     </div>

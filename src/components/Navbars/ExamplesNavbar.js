@@ -11,21 +11,18 @@ import {
   Collapse,
   NavbarBrand,
   Navbar,
-  NavItem,
-  NavLink,
   Nav,
-  Container,
-  Button
+  Container
 } from "reactstrap";
 
 function ExamplesNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+  const [navbarCollapse ] = React.useState(false);
 
-  const toggleNavbarCollapse = () => {
+  /*const toggleNavbarCollapse = () => {
     setNavbarCollapse(!navbarCollapse);
     document.documentElement.classList.toggle("nav-open");
-  };
+  };*/
 
   React.useEffect(() => {
     const updateNavbarColor = () => {

@@ -114,7 +114,7 @@ class ProductRegistration extends Component {
 
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         let product = nextProps.history.location.pathname
         let productName = product.slice(9)
         this.state.json.forEach((item) => {
@@ -123,7 +123,7 @@ class ProductRegistration extends Component {
                 this.setState({ dataSet: data })
             }
         })
-        this.setState({productName: productName})
+        this.setState({ productName: productName })
         console.log("test", productName)
     }
 
@@ -161,10 +161,8 @@ class ProductRegistration extends Component {
                             </div>
 
                         </Container>
-                    </div>
 
-                    <div className="section text-center">
-                    <Container>
+                        <Container>
                             <h2 className="title" >Other Products</h2>
                             <div className="m-t-50">
                                 <Row>
@@ -172,7 +170,7 @@ class ProductRegistration extends Component {
                                         (
                                             <Col md="3" style={{ marginBottom: 50 }} key={index}>
                                                 <Link to={`/product/${i.category}`}>
-                                                <div className="info">
+                                                    <div className="info">
                                                         <div className="icon icon-info">
                                                             <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
                                                         </div>
@@ -182,7 +180,7 @@ class ProductRegistration extends Component {
                                                                 Select the product
                                                         </p>
                                                         </div>
-                                                        </div>
+                                                    </div>
                                                 </Link>
                                             </Col>
                                         ))}
