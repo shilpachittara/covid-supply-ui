@@ -16,6 +16,7 @@ class RequestForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            item: {},
             category: this.props.match.params.category,
             product: this.props.match.params.product,
             dataSet: [],
@@ -119,6 +120,15 @@ class RequestForm extends Component {
         console.log("okokok", this.props)
     }
 
+    handleInputChange = (event) => {
+        const target = event.target;
+        const value = target.value;
+        const name = target.id;
+        let item = this.state.item;
+        item[name] =value;
+        this.setState({item: item});
+    }
+
     changeProduct = (event) => {
         this.setState({category:"Select Option"});
         this.setState({product:"Select Option"});
@@ -130,6 +140,10 @@ class RequestForm extends Component {
                 this.setState({ dataSet: data })
             }
         })
+    }
+
+    submitOrder(){
+        console.log("object", this.state)
     }
 
     render() {
@@ -155,12 +169,11 @@ class RequestForm extends Component {
                     <Container>
 
                         <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto">Product Registration</h3>
+                            <h3 className="title mx-auto">Product Request Form</h3>
                             <div className="social-line text-center">
 
                             </div>
-                            <Form className="register-form">
-                                {/* who are you radio input section */}
+                            <Form className="register-form" onSubmit={this.submitOrder()}>
                                 {/* category section dropdown type */}
                                 <div className="row">
                                     <div className="m-r-20 col-sm-4 input-field-label">
@@ -168,7 +181,7 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control" id="sel1" name="sellist1" onChange={this.changeProduct} required>
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
                                             <option>{this.state.category}</option>
                                             {categoryOptions}
                                         </select>
@@ -182,7 +195,7 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control " id="sel1" name="sellist1" required>
+                                        <select className="form-control " id="product" name="sellist1" required>
                                             <option>{this.state.product}</option>
                                             {productOptions}
                                         </select>
@@ -199,37 +212,16 @@ class RequestForm extends Component {
 
                                         <Input placeholder="Quantity" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="quantity"
                                             type="number" 
-                                            required/>
+                                            required
+                                            onChange={this.handleInputChange}/>
 
 
                                     </div>
                                 </div>
                                 {/* technical specification text field + upload pdf field */}
 
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Technical Specification:</h5>
-                                    </div>
-                                    <div className="col-sm-6 row">
-                                        <div className="col-sm-8">
-                                            <Input placeholder="Product Specification" className=""
-                                                defaultValue=""
-                                                id=""
-                                                type="text" 
-                                                required/>
-                                        </div>
-                                        <div className="col-sm-4">
-                                            <Input placeholder="Upload PDF" className=""
-                                                defaultValue=""
-                                                id=""
-                                                type="file" 
-                                                required/>
-                                        </div>
-                                    </div>
-
-                                </div>
                                 <Button
                                     block
                                     className="btn-round register-submit-btn addmore-prod-btn"
@@ -240,14 +232,39 @@ class RequestForm extends Component {
                                 </Button>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5>Technical Specification:</h5>
+                                    </div>
+                                    <div className="col-sm-6 row">
+                                        <div className="col-sm-8">
+                                            <Input placeholder="Product Specification" className=""
+                                                defaultValue=""
+                                                id="technicalSpecification"
+                                                type="text" 
+                                                onChange={this.handleInputChange}
+                                                required/>
+                                        </div>
+                                        <div className="col-sm-4">
+                                            <Input placeholder="Upload PDF" className=""
+                                                defaultValue=""
+                                                id="technicalSpecification"
+                                                type="file" 
+                                                onChange={this.handleInputChange}
+                                                required/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
                                         <h5>Organization Name:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
                                         <Input placeholder="Organization Name" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="organizationName"
                                             type="text"
+                                            onChange={this.handleInputChange}
                                             required />
 
 
@@ -268,8 +285,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="For other type here" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="organizationType"
                                             type="text" 
+                                            onChange={this.handleInputChange}
                                             required/>
 
 
@@ -285,8 +303,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="Address Line 1" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="addressLine1"
                                             type="text"
+                                            onChange={this.handleInputChange}
                                             required />
 
 
@@ -300,9 +319,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="Address Line 2" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="addressLine2"
+                                            onChange={this.handleInputChange}
                                             type="text" />
-
 
                                     </div>
                                 </div>
@@ -315,8 +334,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="State" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="state"
                                             type="text"
+                                            onChange={this.handleInputChange}
                                             required />
 
 
@@ -332,8 +352,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="Pincode" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="pincode"
                                             type="number"
+                                            onChange={this.handleInputChange}
                                             required />
 
 
@@ -350,8 +371,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="Name" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="name"
                                             type="text" 
+                                            onChange={this.handleInputChange}
                                             required/>
 
 
@@ -367,7 +389,8 @@ class RequestForm extends Component {
 
                                         <Input placeholder="10 Digit Mobile No" type="text" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="phoneNumber"
+                                            onChange={this.handleInputChange}
                                             required
                                         />
 
@@ -383,8 +406,9 @@ class RequestForm extends Component {
 
                                         <Input placeholder="email" className=""
                                             defaultValue=""
-                                            id=""
+                                            id="email"
                                             type="email" 
+                                            onChange={this.handleInputChange}
                                             required/>
 
 
