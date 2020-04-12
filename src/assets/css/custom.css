@@ -54,7 +54,10 @@
   text-align: right !important;
 }
 .m-b-20{
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
+}
+.m-b-40{
+  margin-bottom: 40px !important;
 }
 
 .page-header-banner{
@@ -117,5 +120,12 @@
 
 .addmore-prod-btn{
   position: relative;
-  left: 35px;
+  left: 7px;
+}
+
+.semi-bold{
+  font-weight: 400;
+}
+.bdr-1{
+  border-top: 1px solid #ffffff6b;
 }

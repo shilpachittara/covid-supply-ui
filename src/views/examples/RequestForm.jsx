@@ -169,7 +169,7 @@ class RequestForm extends Component {
                     <Container>
 
                         <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto">Product Request Form</h3>
+                            <h3 className="title mx-auto semi-bold m-b-40">Product Request Form</h3>
                             <div className="social-line text-center">
 
                             </div>
@@ -177,7 +177,7 @@ class RequestForm extends Component {
                                 {/* category section dropdown type */}
                                 <div className="row">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Category:</h5>
+                                        <h5 className="semi-bold">Category:</h5>
                                     </div>
                                     <div className="form-group col-sm-6">
 
@@ -191,7 +191,7 @@ class RequestForm extends Component {
                                 {/* product section dropdown */}
                                 <div className="row">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Product:</h5>
+                                        <h5 className="semi-bold">Product:</h5>
                                     </div>
                                     <div className="form-group col-sm-6">
 
@@ -206,7 +206,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Quantity:</h5>
+                                        <h5 className="semi-bold">Quantity:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -230,12 +230,13 @@ class RequestForm extends Component {
                                 >
                                     + Add more items
                                 </Button>
+                                <hr className="m-b-40 bdr-1"></hr>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Technical Specification:</h5>
+                                        <h5 className="semi-bold">Technical Specification:</h5>
                                     </div>
                                     <div className="col-sm-6 row">
-                                        <div className="col-sm-8">
+                                        <div className="col-sm-7">
                                             <Input placeholder="Product Specification" className=""
                                                 defaultValue=""
                                                 id="technicalSpecification"
@@ -243,7 +244,7 @@ class RequestForm extends Component {
                                                 onChange={this.handleInputChange}
                                                 required/>
                                         </div>
-                                        <div className="col-sm-4">
+                                        <div className="col-sm-5">
                                             <Input placeholder="Upload PDF" className=""
                                                 defaultValue=""
                                                 id="technicalSpecification"
@@ -256,7 +257,7 @@ class RequestForm extends Component {
                                 </div>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Organization Name:</h5>
+                                        <h5 className="semi-bold">Organization Name:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -271,11 +272,11 @@ class RequestForm extends Component {
                                     </div>
                                 </div> <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Organization Type:</h5>
+                                        <h5 className="semi-bold">Organization Type:</h5>
                                     </div>
-                                    <div className="col-sm-6">
+                                    <div className="col-sm-6 ">
 
-                                        <select className="form-control " id="sel1" name="sellist1">
+                                        <select className="form-control m-b-20 " id="sel1" name="sellist1">
                                             <option>Select Option  </option>
                                             <option>Hospital</option>
                                             <option>Government</option>
@@ -297,7 +298,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Address:</h5>
+                                        <h5 className="semi-bold">Address:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -328,7 +329,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>State:</h5>
+                                        <h5 className="semi-bold">State:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -346,7 +347,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Pincode:</h5>
+                                        <h5 className="semi-bold">Pincode:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -365,7 +366,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Name:</h5>
+                                        <h5 className="semi-bold">Name:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -383,7 +384,7 @@ class RequestForm extends Component {
                                 {/* mobile no input type number */}
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Mobile No:</h5>
+                                        <h5 className="semi-bold">Mobile No:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -400,7 +401,7 @@ class RequestForm extends Component {
                                 {/* EMAIL input type EMAIL */}
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5>Email:</h5>
+                                        <h5 className="semi-bold">Email:</h5>
                                     </div>
                                     <div className="col-sm-6">
 
