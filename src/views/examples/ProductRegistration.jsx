@@ -149,7 +149,7 @@ class ProductRegistration extends Component {
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
                                                             <p className="description">
-                                                                click to place your order
+                                                                select to place your order
                                                         </p>
                                                         </div>
                                                     </div>
