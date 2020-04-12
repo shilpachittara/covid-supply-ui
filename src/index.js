@@ -47,7 +47,7 @@ ReactDOM.render(
         render={props => <Login {...props} />}
       />
        <Route
-        path="/product/:productName"
+        path="/product/:productName?"
         render={props => <Product {...props} />}
       />
        <Route
