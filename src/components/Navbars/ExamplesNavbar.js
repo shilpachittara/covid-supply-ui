@@ -61,6 +61,7 @@ function ExamplesNavbar() {
             to="/landing-page"
             title=""
             tag={Link}
+            className="navbar-header-txt"
           >
             COVID SUPPLY INDIA
           </NavbarBrand>

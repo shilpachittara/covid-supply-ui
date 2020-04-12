@@ -106,3 +106,12 @@
   border-radius: 0px !important;
 }
 
+.navbar-header-txt{
+  font-weight: 600 !important;
+    margin: 5px 0px !important;
+    padding: 10px 10px !important;
+    font-size: 20px !important;
+    color: #66615B !important;
+    text-transform: uppercase !important;
+}
+

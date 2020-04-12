@@ -42,7 +42,7 @@ function DemoFooter() {
           </nav>
           <div className="credits ml-auto">
             <span className="copyright">
-              {new Date().getFullYear()}, made with react
+              {new Date().getFullYear()}  &#169; COVID SUPPLY INDIA
             </span>
           </div>
         </Row>
