@@ -88,7 +88,6 @@ paper-kit-react
 │   └── manifest.json
 └── src
     ├── index.js
-    ├── logo.svg
     ├── assets
     │   ├── css
     │   │   ├── bootstrap.min.css

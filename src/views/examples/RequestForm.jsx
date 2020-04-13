@@ -109,7 +109,7 @@ class RequestForm extends Component {
         }
 
     }
-    componentWillMount() {
+    componentDidMount() {
         this.state.json.forEach((item) => {
             if (item.category === this.state.category) {
                 let data = item.productDetail
@@ -420,7 +420,7 @@ class RequestForm extends Component {
                                     block
                                     className="btn-round register-submit-btn addmore-prod-btn"
                                     color="danger"
-                                    type="button"
+                                    type="submit"
                                 >
                                     Submit
                                 </Button>
