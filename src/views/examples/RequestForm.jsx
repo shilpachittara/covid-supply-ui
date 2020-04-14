@@ -201,6 +201,11 @@ class RequestForm extends Component {
             this.state.productDiv.push(data)
             this.setState({ category: "Select Option" });
             this.setState({ product: "Select Option" });
+            let item = this.state.item;
+            item["productName"] = null;
+            this.setState({ item: item });
+            item["category"] = null;
+            this.setState({ item: item })
         }
     }
 
@@ -208,16 +213,16 @@ class RequestForm extends Component {
     submitOrder = (event) => {
         event.preventDefault() // remove this
         if (this.validate.validateOrder(this.state.item)) {
-            if (this.state.productDiv.length === 0) {
-                let data = []
-                if (this.state.item.category && this.state.item.productName) {
-                    data = {
-                        "category": this.state.item.category,
-                        "productName": this.state.item.productName,
-                        "quantity": this.state.item.quantity
-                    }
-                    this.state.productDiv.push(data)
+            let data = []
+            console.log("main",this.state.item.category, this.state.item.productName, this.state.item.quantity)
+            if (this.state.item.category!== null && this.state.item.productName!== null 
+                            && this.state.item.quantity!==null) {
+                data = {
+                    "category": this.state.item.category,
+                    "productName": this.state.item.productName,
+                    "quantity": this.state.item.quantity
                 }
+                this.state.productDiv.push(data)
             }
             let requestObject = this.object.orderObject(this.state.item, this.state.productDiv)
             console.log("Request Object", requestObject)
@@ -250,7 +255,7 @@ class RequestForm extends Component {
                     <Container>
 
                         <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto semi-bold m-b-40">Product Request Form</h3>
+                            <h3 className="title mx-auto semi-bold m-b-40">Fill below detail to place order</h3>
                             <div className="social-line text-center">
 
                             </div>

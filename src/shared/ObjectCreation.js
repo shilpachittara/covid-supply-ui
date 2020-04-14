@@ -53,7 +53,6 @@ class ObjectCreation {
       order.contactDetail = contactDetail
     }
 
-    console.log("category", category)
     let categoryList = this.categoryObject(category)
     order.category = categoryList
     console.log("requestObject", order)
@@ -62,16 +61,20 @@ class ObjectCreation {
 
   categoryObject(inputData) {
     let categoryList = []
-    let product = {
-      category:'',
-      products: {}
-    }
+    
     inputData.forEach((item) => {
+      console.log("foreach", item)
+    })
+    inputData.forEach((item) => {
+      let product = {
+        category:'',
+        products: []
+      }
       let data =
-      {
+      [{
         "quantity": item.quantity,
         "productId": item.productName
-      }
+      }]
       product.products = data
       product.category = item.category
       categoryList.push(product)
