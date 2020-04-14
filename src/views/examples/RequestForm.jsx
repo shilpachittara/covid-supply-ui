@@ -211,7 +211,7 @@ class RequestForm extends Component {
 
 
     submitOrder = (event) => {
-        event.preventDefault() // remove this
+        //event.preventDefault() // remove this
         if (this.validate.validateOrder(this.state.item)) {
             let data = []
             console.log("main",this.state.item.category, this.state.item.productName, this.state.item.quantity)
