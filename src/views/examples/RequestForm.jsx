@@ -19,7 +19,17 @@ class RequestForm extends Component {
             item: {},
             category: this.props.match.params.category,
             product: this.props.match.params.product,
+            showProd2:false,
+            showProd3:false,
+            showProd4:false,
+            showProd5:false,
+            showProd6:false,
+            showProd7:false,
+            showProd8:false,
+            showProd9:false,
+            showProd10:false,
             dataSet: [],
+            count:0,
             json: [{
                 id: 1,
                 category: "Mask",
@@ -146,6 +156,63 @@ class RequestForm extends Component {
         console.log("object", this.state)
     }
 
+    addProdDiv = () =>{
+        
+        this.state.count++;
+        console.log("click",this.state.count)
+        switch (this.state.count){
+            case 1:this.setState({
+                showProd2:true
+                
+
+            })
+            break;
+            case 2:this.setState({
+                showProd3:true
+
+            })
+            break;
+            case 3:this.setState({
+                showProd4:true
+
+            })
+            break;
+            case 4:this.setState({
+                showPro52:true
+
+            })
+            break;
+            case 5:this.setState({
+                showProd6:true
+
+            })
+            break;
+            case 6:this.setState({
+                showProd7:true
+
+            })
+            break;
+            case 7:this.setState({
+                showProd8:true
+
+            })
+            break;
+            case 8:this.setState({
+                showProd9:true
+
+            })
+            break;
+            case 9:this.setState({
+                showProd10:true
+
+            })
+            break;
+         
+        
+    }
+    
+    }
+
     render() {
         let categoryOptions = this.state.json.map((data) =>
             <option
@@ -220,13 +287,455 @@ class RequestForm extends Component {
 
                                     </div>
                                 </div>
+
+                                {/* items 2 */}
+                                <div className={this.state.showProd2 ? "" :"d-none"}>
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+                                {/* 3 */}
+                                <div className={this.state.showProd3 ? "" :"d-none"}>
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                    </div>
+                                {/* 4 */}
+                                <div className={this.state.showProd4 ? "" :"d-none"}>
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+                                {/* 5 */}
+                                <div className={this.state.showProd5 ? "" :"d-none"}>
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+
+                                {/* 6 */}
+                                <div className={this.state.showProd6 ? "" :"d-none"}>
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+
+                                                              {/* 7 */}
+                                                              <div className={this.state.showProd7 ? "" :"d-none"}>
+                                                              <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+
+                                {/* 8 */}
+                                <div className={this.state.showProd8 ? "" :"d-none"}>
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+                                {/* 9 */}
+                                <div className={this.state.showProd9 ? "" :"d-none"}>
+                                       <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+
+                                                                    {/*  10 */}
+                                                                    <div className={this.state.showProd10 ? "" :"d-none"}>
+                                                                    <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Category:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                            <option>{this.state.category}</option>
+                                            {categoryOptions}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                {/* product section dropdown */}
+                                <div className="row">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Product:</h5>
+                                    </div>
+                                    <div className="form-group col-sm-6">
+
+                                        <select className="form-control " id="product" name="sellist1" required>
+                                            <option>{this.state.product}</option>
+                                            {productOptions}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
+                                <div className="row m-b-20">
+                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                        <h5 className="semi-bold">Quantity:</h5>
+                                    </div>
+                                    <div className="col-sm-6">
+
+                                        <Input placeholder="Quantity" className=""
+                                            defaultValue=""
+                                            id="quantity"
+                                            type="number" 
+                                            required
+                                            onChange={this.handleInputChange}/>
+
+
+                                    </div>
+                                </div>
+                                </div>
+
                                 {/* technical specification text field + upload pdf field */}
+
+                                
+                                
 
                                 <Button
                                     block
                                     className="btn-round register-submit-btn addmore-prod-btn"
                                     color="danger"
                                     type="button"
+                                    onClick={this.addProdDiv}
                                 >
                                     + Add more items
                                 </Button>
