@@ -23,7 +23,7 @@ class SubmitOrderService {
     fetch('http://localhost:8000/addOrderRequest', requestOptions)
         .then(response => 
             console.log(response.json))
-        .then(data => this.setState({ postId: data.id }));
+        .then(data => console.log(data));
 
         console.log()
     }

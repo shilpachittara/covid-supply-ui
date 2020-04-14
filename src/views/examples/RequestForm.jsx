@@ -12,28 +12,23 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar";
 import ObjectCreation from "shared/ObjectCreation";
 import SubmitOrderService from "services/SubmitOrderService";
+import Validator from "shared/Validator";
 
 // core components
 class RequestForm extends Component {
+
     constructor(props) {
         super(props)
         this.object = new ObjectCreation()
         this.service = new SubmitOrderService()
+        this.validate = new Validator()
+        this.moreProduct = this.moreProduct.bind(this)
         this.state = {
+            productDiv: [],
             item: {},
             category: this.props.match.params.category,
             product: this.props.match.params.product,
-            showProd2:false,
-            showProd3:false,
-            showProd4:false,
-            showProd5:false,
-            showProd6:false,
-            showProd7:false,
-            showProd8:false,
-            showProd9:false,
-            showProd10:false,
             dataSet: [],
-            count:0,
             json: [{
                 id: 1,
                 category: "Mask",
@@ -130,13 +125,13 @@ class RequestForm extends Component {
                 this.setState({ dataSet: data })
             }
         })
-       
-        /*let data = {"category": this.state.category}
-        this.setState({item: data})
+
         let item = this.state.item;
-        item["productName"] =this.state.product;
-        this.setState({item: item});*/
-        console.log("okokok", this.props)
+        item["productName"] = this.state.product;
+        this.setState({ item: item });
+        item["category"] = this.state.category;
+        this.setState({item:item})
+        console.log("okokok", this.state.item)
     }
 
     handleInputChange = (event) => {
@@ -144,19 +139,40 @@ class RequestForm extends Component {
         const value = target.value;
         const name = target.id;
         let item = this.state.item;
-        item[name] =value;
-        this.setState({item: item});
+        item[name] = value;
+        this.setState({ item: item });
     }
 
-    changeProduct = (event) => {
+    handleInputChangeForProduct = (event) => {
         const target = event.target;
         const value = target.value;
         const name = target.id;
         let item = this.state.item;
-        item[name] =value;
-        this.setState({item: item});
-        this.setState({category:"Select Option"});
-        this.setState({product:"Select Option"});
+        item[name] = value;
+        this.setState({ item: item });
+        console.log("item", this.state.item)
+        if (name === "category") {
+            this.setState({ category: "Select Option" });
+            this.setState({ product: "Select Option" });
+            let selectedValue = event.target.value;
+            this.state.json.forEach((item) => {
+                if (item.category === selectedValue) {
+                    let data = item.productDetail
+                    this.setState({ dataSet: data })
+                }
+            })
+        }
+    }
+
+    /*changeProduct = (event) => {
+        const target = event.target;
+        const value = target.value;
+        const name = target.id;
+        let item = this.state.item;
+        item[name] = value;
+        this.setState({ item: item });
+        this.setState({ category: "Select Option" });
+        this.setState({ product: "Select Option" });
         let selectedValue = event.target.value;
 
         this.state.json.forEach((item) => {
@@ -165,800 +181,369 @@ class RequestForm extends Component {
                 this.setState({ dataSet: data })
             }
         })
+    }*/
+    moreProduct() {
+        console.log(this.state.item.category, this.state.item.productName)
+        if (this.state.item.category !== "Select Option" 
+                    && this.state.item.productName !== "Select Option" && this.state.item.quantity) {
+                        console.log("second: ",this.state.item.category, this.state.item.productName)
+            let data = []
+            if (this.state.item.category && this.state.item.productName) {
+                data = {
+                    "category": this.state.item.category,
+                    "productName": this.state.item.productName,
+                    "quantity": this.state.item.quantity
+                }
+            }
+            else {
+                data = {
+                    "category": this.state.category,
+                    "productName": this.state.product,
+                    "quantity": this.state.item.quantity
+                }
+            }
+            this.state.productDiv.push(data)
+            this.setState({ category: "Select Option" });
+            this.setState({ product: "Select Option" });
+        }
     }
 
-    submitOrder = (event) => {
-        //let requestObject = this.object.orderObject(this.state.item)
-        //console.log("Request Object", requestObject)
-        event.preventDefault() // remove this
-        this.service.createOrder(this.state.item)
-        
-    }
 
-    addProdDiv = () =>{
-        
-        this.state.count++;
-        console.log("click",this.state.count)
-        switch (this.state.count){
-            case 1:this.setState({
-                showProd2:true
-                
+        submitOrder = (event) => {
+            event.preventDefault() // remove this
+            if (this.validate.validateOrder(this.state.item)) {
+                let requestObject = this.object.orderObject(this.state.item)
+                console.log("Request Object", requestObject)
+                //this.service.createOrder(requestObject)
+            }
 
-            })
-            break;
-            case 2:this.setState({
-                showProd3:true
+        }
 
-            })
-            break;
-            case 3:this.setState({
-                showProd4:true
+        render() {
+            let categoryOptions = this.state.json.map((data) =>
+                <option
+                    key={data.id}
+                    value={data.category}>
+                    {data.category}
+                </option>
+            );
 
-            })
-            break;
-            case 4:this.setState({
-                showPro52:true
+            let productOptions = this.state.dataSet.map((data) =>
+                <option
+                    key={data.id}
+                    value={data.name}>
+                    {data.name}
+                </option>
+            );
+            return (
+                <>
+                    <ExamplesNavbar />
+                    <div className="section section-login">
+                        <Container>
 
-            })
-            break;
-            case 5:this.setState({
-                showProd6:true
+                            <Card className="card-register card-register-custom">
+                                <h3 className="title mx-auto semi-bold m-b-40">Product Request Form</h3>
+                                <div className="social-line text-center">
 
-            })
-            break;
-            case 6:this.setState({
-                showProd7:true
-
-            })
-            break;
-            case 7:this.setState({
-                showProd8:true
-
-            })
-            break;
-            case 8:this.setState({
-                showProd9:true
-
-            })
-            break;
-            case 9:this.setState({
-                showProd10:true
-
-            })
-            break;
-         
-        
-    }
-    
-    }
-
-    render() {
-        let categoryOptions = this.state.json.map((data) =>
-            <option
-                key={data.id}
-                value={data.category}>
-                {data.category}
-            </option>
-        );
-
-        let productOptions = this.state.dataSet.map((data) =>
-            <option
-                key={data.id}
-                value={data.name}>
-                {data.name}
-            </option>
-        );
-        return (
-            <>
-                <ExamplesNavbar />
-                <div className="section section-login">
-                    <Container>
-
-                        <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto semi-bold m-b-40">Product Request Form</h3>
-                            <div className="social-line text-center">
-
-                            </div>
-                            <Form className="register-form" onSubmit={this.submitOrder}>
-                                {/* category section dropdown type */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="category" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
                                 </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
+                                <Form className="register-form" onSubmit={this.submitOrder}>
+                                    {/* category section dropdown type  to copy -this.productDiv*/}
+
+                                    {this.state.productDiv.map((i, index) =>
+                                        (
+                                            <div key={index}>
+                                                <div className="row">
+                                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                                        <p>Category:</p>
+                                                    </div>
+                                                    <div className="form-group col-sm-6">
+                                                        <p>{i.category}</p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                                        <p>Product:</p>
+                                                    </div>
+                                                    <div className="form-group col-sm-6">
+                                                        <p>{i.productName}</p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="m-r-20 col-sm-4 input-field-label">
+                                                        <p>Quantity:</p>
+                                                    </div>
+                                                    <div className="form-group col-sm-6">
+                                                        <p>{i.quantity}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    <div className="row">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Category:</h5>
+                                        </div>
+                                        <div className="form-group col-sm-6">
+
+                                            <select className="form-control" id="category" name="category" onChange={this.handleInputChangeForProduct} >
+                                                <option>{this.state.category}</option>
+                                                {categoryOptions}
+                                            </select>
+
+                                        </div>
                                     </div>
-                                    <div className="form-group col-sm-6">
+                                    {/* product section dropdown  to be change line-233*/}
+                                    <div className="row">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Product:</h5>
+                                        </div>
+                                        <div className="form-group col-sm-6">
 
-                                        <select className="form-control " id="productName" name="productName" 
-                                         
-                                            required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
+                                            <select className="form-control " id="productName" name="productName"
+                                                onChange={this.handleInputChangeForProduct}>
+                                                <option>{this.state.product}</option>
+                                                {productOptions}
+                                            </select>
 
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Quantity:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
 
-                                        <Input placeholder="Quantity" className="quantity"
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-
-                                {/* items 2 */}
-                                <div className={this.state.showProd2 ? "" :"d-none"}>
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-                                {/* 3 */}
-                                <div className={this.state.showProd3 ? "" :"d-none"}>
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                    </div>
-                                {/* 4 */}
-                                <div className={this.state.showProd4 ? "" :"d-none"}>
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-                                {/* 5 */}
-                                <div className={this.state.showProd5 ? "" :"d-none"}>
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-
-                                {/* 6 */}
-                                <div className={this.state.showProd6 ? "" :"d-none"}>
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-
-                                                              {/* 7 */}
-                                                              <div className={this.state.showProd7 ? "" :"d-none"}>
-                                                              <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-
-                                {/* 8 */}
-                                <div className={this.state.showProd8 ? "" :"d-none"}>
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-                                {/* 9 */}
-                                <div className={this.state.showProd9 ? "" :"d-none"}>
-                                       <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-
-                                                                    {/*  10 */}
-                                                                    <div className={this.state.showProd10 ? "" :"d-none"}>
-                                                                    <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
-                                            <option>{this.state.category}</option>
-                                            {categoryOptions}
-                                        </select>
-
-                                    </div>
-                                </div>
-                                {/* product section dropdown */}
-                                <div className="row">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
-                                    </div>
-                                    <div className="form-group col-sm-6">
-
-                                        <select className="form-control " id="product" name="sellist1" required>
-                                            <option>{this.state.product}</option>
-                                            {productOptions}
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Quantity" className=""
-                                            defaultValue=""
-                                            id="quantity"
-                                            type="number" 
-                                            required
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                </div>
-
-                                {/* technical specification text field + upload pdf field */}
-
-                                
-                                
-
-                                <Button
-                                    block
-                                    className="btn-round register-submit-btn addmore-prod-btn"
-                                    color="danger"
-                                    type="button"
-                                    onClick={this.addProdDiv}
-                                >
-                                    + Add more items
-                                </Button>
-                                <hr className="m-b-40 bdr-1"></hr>
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Technical Specification:</h5>
-                                    </div>
-                                    <div className="col-sm-6 row">
-                                        <div className="col-sm-7">
-                                            <Input placeholder="Product Specification" className=""
+                                            <Input placeholder="Quantity" className=""
                                                 defaultValue=""
-                                                id="technicalSpecification"
-                                                type="text" 
+                                                id="quantity"
+                                                type="number"
+                                                onChange={this.handleInputChangeForProduct} />
+
+
+                                        </div>
+                                    </div>
+                                    {/* technical specification text field + upload pdf field */}
+
+                                    <Button
+                                        block
+                                        className="btn-round register-submit-btn addmore-prod-btn"
+                                        color="danger"
+                                        type="button"
+                                        onClick={this.moreProduct}
+                                    >
+                                        + Add more items
+                                </Button>
+                                    <hr className="m-b-40 bdr-1"></hr>
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Technical Specification:</h5>
+                                        </div>
+                                        <div className="col-sm-6 row">
+                                            <div className="col-sm-7">
+                                                <Input placeholder="Product Specification" className=""
+                                                    defaultValue=""
+                                                    id="technicalSpecification"
+                                                    type="text"
+                                                    onChange={this.handleInputChange} />
+                                            </div>
+                                            <div className="col-sm-5">
+                                                <Input placeholder="Upload PDF" className=""
+                                                    defaultValue=""
+                                                    id="technicalSpecification"
+                                                    type="file"
+                                                    onChange={this.handleInputChange} />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Organization Name:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="Organization Name" className=""
+                                                defaultValue=""
+                                                id="organizationName"
+                                                type="text"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
+                                    </div> <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Organization Type:</h5>
+                                        </div>
+                                        <div className="col-sm-6 ">
+
+                                            {
+                                            }
+                                            <select className="form-control m-b-20 " id="organizationType" name="organizationType" onChange={this.handleInputChange}>
+                                                <option>Select Option  </option>
+                                                <option>Hospital</option>
+                                                <option>Government</option>
+                                                <option>Research bodies</option>
+                                                <option>Other</option>
+                                            </select>
+
+                                            <Input placeholder="For other type here" className=""
+                                                defaultValue=""
+                                                id="organizationType"
+                                                type="text"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
+                                    </div>
+                                    {/* ADDRESSinput type text*/}
+
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Address:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="Address Line 1" className=""
+                                                defaultValue=""
+                                                id="addressLine1"
+                                                type="text"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
+                                    </div>
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            {/* <h5>Address:</h5> */}
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="Address Line 2" className=""
+                                                defaultValue=""
+                                                id="addressLine2"
                                                 onChange={this.handleInputChange}
-                                                required/>
+                                                type="text" />
+
                                         </div>
-                                        <div className="col-sm-5">
-                                            <Input placeholder="Upload PDF" className=""
+                                    </div>
+
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">State:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="State" className=""
                                                 defaultValue=""
-                                                id="technicalSpecification"
-                                                type="file" 
-                                                onChange={this.handleInputChange}/>
+                                                id="state"
+                                                type="text"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
+                                    </div>
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">City:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="City" className=""
+                                                defaultValue=""
+                                                id="city"
+                                                type="text"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
+                                    </div>
+                                    {/* pincode input type number*/}
+
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Pincode:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="Pincode" className=""
+                                                defaultValue=""
+                                                id="pinCode"
+                                                type="number"
+                                                onChange={this.handleInputChange} />
+
+
                                         </div>
                                     </div>
 
-                                </div>
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Organization Name:</h5>
+                                    {/* Name input type text*/}
+
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Name:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="Name" className=""
+                                                defaultValue=""
+                                                id="name"
+                                                type="text"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
                                     </div>
-                                    <div className="col-sm-6">
 
-                                        <Input placeholder="Organization Name" className=""
-                                            defaultValue=""
-                                            id="organizationName"
-                                            type="text"
-                                            onChange={this.handleInputChange}
-                                            required />
+                                    {/* mobile no input type number */}
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Mobile No:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="10 Digit Mobile No" type="text" className=""
+                                                defaultValue=""
+                                                id="phoneNumber"
+                                                onChange={this.handleInputChange}
+                                            />
 
 
+                                        </div>
                                     </div>
-                                </div> <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Organization Type:</h5>
+                                    {/* EMAIL input type EMAIL */}
+                                    <div className="row m-b-20">
+                                        <div className="m-r-20 col-sm-4 input-field-label">
+                                            <h5 className="semi-bold">Email:</h5>
+                                        </div>
+                                        <div className="col-sm-6">
+
+                                            <Input placeholder="email" className=""
+                                                defaultValue=""
+                                                id="email"
+                                                type="email"
+                                                onChange={this.handleInputChange} />
+
+
+                                        </div>
                                     </div>
-                                    <div className="col-sm-6 ">
 
-                                        <select className="form-control m-b-20 " id="sel1" name="sellist1">
-                                            <option>Select Option  </option>
-                                            <option>Hospital</option>
-                                            <option>Government</option>
-                                            <option>Research bodies</option>
-                                            <option>Other</option>
-                                        </select>
-
-                                        <Input placeholder="For other type here" className=""
-                                            defaultValue=""
-                                            id="organizationType"
-                                            type="text" 
-                                            onChange={this.handleInputChange}/>
-
-
-                                    </div>
-                                </div>
-                                {/* ADDRESSinput type text*/}
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Address:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Address Line 1" className=""
-                                            defaultValue=""
-                                            id="addressLine1"
-                                            type="text"
-                                            onChange={this.handleInputChange}
-                                            required />
-
-
-                                    </div>
-                                </div>
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        {/* <h5>Address:</h5> */}
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Address Line 2" className=""
-                                            defaultValue=""
-                                            id="addressLine2"
-                                            onChange={this.handleInputChange}
-                                            type="text" />
-
-                                    </div>
-                                </div>
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">State:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="State" className=""
-                                            defaultValue=""
-                                            id="state"
-                                            type="text"
-                                            onChange={this.handleInputChange}
-                                            required />
-
-
-                                    </div>
-                                </div>
-                                {/* pincode input type number*/}
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Pincode:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Pincode" className=""
-                                            defaultValue=""
-                                            id="pincode"
-                                            type="number"
-                                            onChange={this.handleInputChange}
-                                            required />
-
-
-                                    </div>
-                                </div>
-
-                                {/* Name input type text*/}
-
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Name:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="Name" className=""
-                                            defaultValue=""
-                                            id="name"
-                                            type="text" 
-                                            onChange={this.handleInputChange}
-                                            required/>
-
-
-                                    </div>
-                                </div>
-
-                                {/* mobile no input type number */}
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Mobile No:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="10 Digit Mobile No" type="text" className=""
-                                            defaultValue=""
-                                            id="phoneNumber"
-                                            onChange={this.handleInputChange}
-                                            required
-                                        />
-
-
-                                    </div>
-                                </div>
-                                {/* EMAIL input type EMAIL */}
-                                <div className="row m-b-20">
-                                    <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Email:</h5>
-                                    </div>
-                                    <div className="col-sm-6">
-
-                                        <Input placeholder="email" className=""
-                                            defaultValue=""
-                                            id="email"
-                                            type="email" 
-                                            onChange={this.handleInputChange}
-                                            required/>
-
-
-                                    </div>
-                                </div>
-
-                                <Button
-                                    block
-                                    className="btn-round register-submit-btn addmore-prod-btn"
-                                    color="danger"
-                                    type="submit"
-                                >
-                                    Submit
+                                    <Button
+                                        block
+                                        className="btn-round register-submit-btn addmore-prod-btn"
+                                        color="danger"
+                                        type="submit"
+                                    >
+                                        Submit
                                 </Button>
-                            </Form>
-                        </Card>
-                    </Container>
-                </div>
-            </>
-        );
+                                </Form>
+                            </Card>
+                        </Container>
+                    </div>
+                </>
+            );
+        }
     }
-}
 
-export default RequestForm;
+    export default RequestForm;
