@@ -12,7 +12,9 @@ import {
   NavbarBrand,
   Navbar,
   Nav,
-  Container
+  Container,
+  NavItem,
+  Button
 } from "reactstrap";
 
 function ExamplesNavbar() {
@@ -136,7 +138,7 @@ function ExamplesNavbar() {
                 <i className="fa fa-github" />
                 <p className="d-lg-none">GitHub</p>
               </NavLink>
-            </NavItem> 
+            </NavItem> */
                  <NavItem>
          
               <Button
@@ -151,7 +153,7 @@ function ExamplesNavbar() {
                Log In / Sign Up
               </Button>
        
-            </NavItem> */}
+            </NavItem> }
 
 
           </Nav>

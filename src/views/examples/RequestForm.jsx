@@ -10,11 +10,15 @@ import {
     Container
 } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar";
+import ObjectCreation from "shared/ObjectCreation";
+import SubmitOrderService from "services/SubmitOrderService";
 
 // core components
 class RequestForm extends Component {
     constructor(props) {
         super(props)
+        this.object = new ObjectCreation()
+        this.service = new SubmitOrderService()
         this.state = {
             item: {},
             category: this.props.match.params.category,
@@ -119,7 +123,7 @@ class RequestForm extends Component {
         }
 
     }
-    componentWillMount() {
+    componentDidMount() {
         this.state.json.forEach((item) => {
             if (item.category === this.state.category) {
                 let data = item.productDetail
@@ -127,6 +131,11 @@ class RequestForm extends Component {
             }
         })
        
+        /*let data = {"category": this.state.category}
+        this.setState({item: data})
+        let item = this.state.item;
+        item["productName"] =this.state.product;
+        this.setState({item: item});*/
         console.log("okokok", this.props)
     }
 
@@ -140,6 +149,12 @@ class RequestForm extends Component {
     }
 
     changeProduct = (event) => {
+        const target = event.target;
+        const value = target.value;
+        const name = target.id;
+        let item = this.state.item;
+        item[name] =value;
+        this.setState({item: item});
         this.setState({category:"Select Option"});
         this.setState({product:"Select Option"});
         let selectedValue = event.target.value;
@@ -152,8 +167,12 @@ class RequestForm extends Component {
         })
     }
 
-    submitOrder(){
-        console.log("object", this.state)
+    submitOrder = (event) => {
+        //let requestObject = this.object.orderObject(this.state.item)
+        //console.log("Request Object", requestObject)
+        event.preventDefault() // remove this
+        this.service.createOrder(this.state.item)
+        
     }
 
     addProdDiv = () =>{
@@ -240,7 +259,7 @@ class RequestForm extends Component {
                             <div className="social-line text-center">
 
                             </div>
-                            <Form className="register-form" onSubmit={this.submitOrder()}>
+                            <Form className="register-form" onSubmit={this.submitOrder}>
                                 {/* category section dropdown type */}
                                 <div className="row">
                                     <div className="m-r-20 col-sm-4 input-field-label">
@@ -248,7 +267,7 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control" id="category" name="sellist1" onChange={this.changeProduct} required>
+                                        <select className="form-control" id="category" name="category" onChange={this.changeProduct} required>
                                             <option>{this.state.category}</option>
                                             {categoryOptions}
                                         </select>
@@ -262,7 +281,9 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="form-group col-sm-6">
 
-                                        <select className="form-control " id="product" name="sellist1" required>
+                                        <select className="form-control " id="productName" name="productName" 
+                                         
+                                            required>
                                             <option>{this.state.product}</option>
                                             {productOptions}
                                         </select>
@@ -277,7 +298,7 @@ class RequestForm extends Component {
                                     </div>
                                     <div className="col-sm-6">
 
-                                        <Input placeholder="Quantity" className=""
+                                        <Input placeholder="Quantity" className="quantity"
                                             defaultValue=""
                                             id="quantity"
                                             type="number" 
@@ -758,8 +779,7 @@ class RequestForm extends Component {
                                                 defaultValue=""
                                                 id="technicalSpecification"
                                                 type="file" 
-                                                onChange={this.handleInputChange}
-                                                required/>
+                                                onChange={this.handleInputChange}/>
                                         </div>
                                     </div>
 
@@ -797,8 +817,7 @@ class RequestForm extends Component {
                                             defaultValue=""
                                             id="organizationType"
                                             type="text" 
-                                            onChange={this.handleInputChange}
-                                            required/>
+                                            onChange={this.handleInputChange}/>
 
 
                                     </div>
@@ -929,7 +948,7 @@ class RequestForm extends Component {
                                     block
                                     className="btn-round register-submit-btn addmore-prod-btn"
                                     color="danger"
-                                    type="button"
+                                    type="submit"
                                 >
                                     Submit
                                 </Button>
