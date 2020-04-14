@@ -27,10 +27,10 @@ function ProfilePageHeader() {
   return (
     <>
       <div
-        style={{
-          backgroundImage:
-            "url(" + require("assets/img/fabio-mangione.jpg") + ")"
-        }}
+        // style={{
+        //   backgroundImage:
+        //     "url(" + require("assets/img/added/face-mask-on-blue-background-3786153.jpg") + ")",height:400
+        // }}
         className="page-header page-header-xs"
         data-parallax={true}
         ref={pageHeader}

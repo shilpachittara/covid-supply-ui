@@ -14,37 +14,37 @@ function DemoFooter() {
         <Row>
           <nav className="footer-nav">
             <ul>
-              <li>
+              <li style={{cursor:"pointer"}}>
                 <a
-                  // href="https://www.creative-tim.com?ref=pkr-footer"
+                  href="/about-us"
                   target="_blank"
                 >
-                  covid supply
+                  About Us
                 </a>
               </li>
               <li>
                 <a
                   // href="http://blog.creative-tim.com/?ref=pkr-footer"
-                  target="_blank"
+                  // target="_blank"
                 >
-                  Blog
+                 Contact Us:xyz@example.com
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   // href="https://www.creative-tim.com/license?ref=pkr-footer"
                   target="_blank"
                 >
                   Licenses
                 </a>
-              </li>
+              </li> */}
             </ul>
           </nav>
-          <div className="credits ml-auto">
+          {/* <div className="credits ml-auto">
             <span className="copyright">
               {new Date().getFullYear()}  &#169; COVID SUPPLY INDIA
             </span>
-          </div>
+          </div> */}
         </Row>
       </Container>
     </footer>
