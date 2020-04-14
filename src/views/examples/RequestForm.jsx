@@ -219,10 +219,10 @@ class RequestForm extends Component {
                     this.state.productDiv.push(data)
                 }
             }
-                let requestObject = this.object.orderObject(this.state.item, this.state.productDiv)
-                //console.log("Request Object", requestObject)
-                this.service.createOrder(requestObject)
-            
+            let requestObject = this.object.orderObject(this.state.item, this.state.productDiv)
+            console.log("Request Object", requestObject)
+            this.service.createOrder(requestObject)
+
         }
 
     }
