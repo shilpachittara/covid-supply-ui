@@ -1,5 +1,5 @@
 class ObjectCreation {
-  orderObject(inputData) {
+  orderObject(inputData, category) {
     let address = {
       addressLine1:'',
       addressLine2:'',
@@ -18,15 +18,7 @@ class ObjectCreation {
       quantity:'',
       address:{},
       contactDetail:{},
-      category:[{
-        category:'',
-        products: [
-          {
-            productId:'',
-            quantity: ''
-          }
-        ]
-      }]
+      category: []
     }
     console.log(inputData)
 
@@ -59,11 +51,26 @@ class ObjectCreation {
       contactDetail.phoneNumber =inputData.phoneNumber
       order.contactDetail=contactDetail
     }
+
+    console.log("category", category)
+    let categoryList = this.categoryObject(category)
+    
     console.log("requestObject", order)
     return order;
   }
 
-  categoryObject(inputData){}
+  categoryObject(inputData){
+    let category = [{category:'',
+      products: [
+        {
+          productId:'',
+          quantity: ''
+        }
+      ]
+    }]
+    let categoryList =[]
+    return categoryList
+  }
 }
 
 

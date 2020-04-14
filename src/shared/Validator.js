@@ -17,7 +17,7 @@ class Validator {
       if(!inputData.city) {
         errorMsg +="Please enter your city.\n"
       }
-      if(!inputData.pincode) {
+      if(!inputData.pinCode) {
         errorMsg +="Please enter pincode.\n"
       }
       if(!inputData.email) {
