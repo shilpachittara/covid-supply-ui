@@ -2,8 +2,6 @@ class Validator {
 
     validateOrder(inputData, productDiv) {
       let errorMsg = "";
-      console.log(inputData)
-      console.log("div", productDiv)
       if(!inputData.category && productDiv.length === 0) {
         errorMsg +="Please select category.\n"
       }

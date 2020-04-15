@@ -210,7 +210,6 @@ class RequestForm extends Component {
     }
 
     submitOrder = (event) => {
-        event.preventDefault() // remove this
         if (this.validate.validateOrder(this.state.item, this.state.productDiv)) {
             let data = []
             if (this.state.item.category !== null && this.state.item.productName !== null
