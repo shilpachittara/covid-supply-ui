@@ -20,6 +20,7 @@ import Login from "views/examples/Login.jsx"
 import Product from "views/examples/ProductRegistration.jsx"
 import Request from "views/examples/RequestForm.jsx"
 import AboutUs from "views/examples/AboutUs"
+import OrderSuccess from "views/examples/OrderSuccess"
 
 // others
 
@@ -58,6 +59,10 @@ ReactDOM.render(
        <Route
         path="/about-us"
         render={props => <AboutUs {...props} />}
+      />
+      <Route
+        path="/order-confirmation"
+        render={props => <OrderSuccess {...props} />}
       />
       <Redirect to="/home" />
     </Switch>

@@ -19,9 +19,16 @@ class SubmitOrderService {
         body: JSON.stringify(item)
     };
     fetch('http://localhost:8000/addOrderRequest', requestOptions)
-        .then(response => 
-            console.log(response.json))
-        .then(data => console.log(data));
+        .then(this.handleRedirect)
+        .catch(function(err) {
+          console.info(err);
+      });
+    }
+
+    handleRedirect(res){
+      if(res.status === 200){
+        window.location.href = "/order-confirmation"
+      }
     }
 
     /*async deleteItem(itemId) {
