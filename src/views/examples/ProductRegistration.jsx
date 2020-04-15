@@ -135,6 +135,33 @@ class ProductRegistration extends Component {
                 <div className="main">
                     <div className="section text-center">
                         <Container>
+                            <h2 className="title" >Other Products</h2>
+                            <div className="m-t-50">
+                                <Row>
+                                    {this.state.json.map((i, index) =>
+                                        (
+                                            <Col md="3" style={{ marginBottom: 10, maxWidth: '20%'}} key={index}>
+                                                <Link to={`/product/${i.category}`}>
+                                                    <div className="info">
+                                                        <div className="icon icon-info">
+                                                            <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                        </div>
+                                                        <div className="description">
+                                                            <h4 className="info-title">{i.category}</h4>
+                                                            <p className="description">
+                                                                Select the product
+                                                        </p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                        ))}
+                                </Row>
+                            </div>
+
+                        </Container>
+
+                        <Container>
                             <h2 className="title" >{this.state.productName}</h2>
                             <div className="m-t-50">
                                 <Row>
@@ -156,33 +183,6 @@ class ProductRegistration extends Component {
                                                 </Link>
                                             </Col>
 
-                                        ))}
-                                </Row>
-                            </div>
-
-                        </Container>
-
-                        <Container>
-                            <h2 className="title" >Other Products</h2>
-                            <div className="m-t-50">
-                                <Row>
-                                    {this.state.json.map((i, index) =>
-                                        (
-                                            <Col md="3" style={{ marginBottom: 50 }} key={index}>
-                                                <Link to={`/product/${i.category}`}>
-                                                    <div className="info">
-                                                        <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
-                                                        </div>
-                                                        <div className="description">
-                                                            <h4 className="info-title">{i.category}</h4>
-                                                            <p className="description">
-                                                                Select the product
-                                                        </p>
-                                                        </div>
-                                                    </div>
-                                                </Link>
-                                            </Col>
                                         ))}
                                 </Row>
                             </div>

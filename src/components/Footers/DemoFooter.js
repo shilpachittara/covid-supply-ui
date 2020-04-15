@@ -27,7 +27,7 @@ function DemoFooter() {
                   // href="http://blog.creative-tim.com/?ref=pkr-footer"
                   // target="_blank"
                 >
-                 Contact Us:xyz@example.com
+                 Contact Us at support@covidsupply.in
                 </a>
               </li>
               {/* <li>

@@ -5,15 +5,6 @@ import React from "react";
 
 // reactstrap components
 import {
-  Button,
-  Label,
-  FormGroup,
-  Input,
-  NavItem,
-  NavLink,
-  Nav,
-  TabContent,
-  TabPane,
   Container,
   Row,
   Col
@@ -21,17 +12,10 @@ import {
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
 function ProfilePage() {
-  const [activeTab, setActiveTab] = React.useState("1");
 
-  const toggle = tab => {
-    if (activeTab !== tab) {
-      setActiveTab(tab);
-    }
-  };
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
