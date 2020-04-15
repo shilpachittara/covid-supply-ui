@@ -21,7 +21,6 @@ class ObjectCreation {
       contactDetail: {},
       category: []
     }
-    console.log(inputData)
 
     if (inputData.quantity) {
       order.quantity = inputData.quantity
@@ -55,16 +54,12 @@ class ObjectCreation {
 
     let categoryList = this.categoryObject(category)
     order.category = categoryList
-    console.log("requestObject", order)
     return order;
   }
 
   categoryObject(inputData) {
     let categoryList = []
     
-    inputData.forEach((item) => {
-      console.log("foreach", item)
-    })
     inputData.forEach((item) => {
       let product = {
         category:'',
@@ -79,7 +74,6 @@ class ObjectCreation {
       product.category = item.category
       categoryList.push(product)
     })
-    console.log("productList", categoryList)
     return categoryList
   }
 }

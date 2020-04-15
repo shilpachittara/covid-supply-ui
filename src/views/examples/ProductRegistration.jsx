@@ -110,7 +110,6 @@ class ProductRegistration extends Component {
                 this.setState({ dataSet: data })
             }
         })
-        console.log("okokok", this.props)
 
     }
 
@@ -124,7 +123,6 @@ class ProductRegistration extends Component {
             }
         })
         this.setState({ productName: productName })
-        console.log("test", productName)
     }
 
     render() {

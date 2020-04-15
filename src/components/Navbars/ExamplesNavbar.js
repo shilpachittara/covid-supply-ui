@@ -57,7 +57,7 @@ function ExamplesNavbar() {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            to="/landing-page"
+            to="/home"
             title=""
             tag={Link}
             className="navbar-header-txt"
@@ -141,7 +141,7 @@ function ExamplesNavbar() {
             </NavItem> */
                  <NavItem>
          
-              <Button
+             {/* <Button
                  className="btn-round mr-1"
                  color="info" 
                  type="button"
@@ -151,7 +151,7 @@ function ExamplesNavbar() {
             
               >
                Log In / Sign Up
-              </Button>
+             </Button> */}
        
             </NavItem> }
 

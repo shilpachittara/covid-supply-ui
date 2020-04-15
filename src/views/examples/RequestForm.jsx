@@ -211,12 +211,11 @@ class RequestForm extends Component {
 
 
     submitOrder = (event) => {
-        //event.preventDefault() // remove this
+        event.preventDefault() // remove this
         if (this.validate.validateOrder(this.state.item)) {
             let data = []
-            console.log("main",this.state.item.category, this.state.item.productName, this.state.item.quantity)
-            if (this.state.item.category!== null && this.state.item.productName!== null 
-                            && this.state.item.quantity!==null) {
+            if (this.state.item.category !== null && this.state.item.productName !== null
+                && this.state.item.quantity !== null) {
                 data = {
                     "category": this.state.item.category,
                     "productName": this.state.item.productName,
@@ -225,7 +224,6 @@ class RequestForm extends Component {
                 this.state.productDiv.push(data)
             }
             let requestObject = this.object.orderObject(this.state.item, this.state.productDiv)
-            console.log("Request Object", requestObject)
             this.service.createOrder(requestObject)
 
         }
@@ -255,7 +253,7 @@ class RequestForm extends Component {
                     <Container>
 
                         <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto semi-bold m-b-40">Fill below detail to place order</h3>
+                            <h3 className="title mx-auto semi-bold m-b-40">Tell us about your need</h3>
                             <div className="social-line text-center">
 
                             </div>
@@ -265,32 +263,19 @@ class RequestForm extends Component {
                                 {this.state.productDiv.map((i, index) =>
                                     (
                                         <div key={index}>
-                                            <div className="row">
-                                                <div className="m-r-20 col-sm-4 input-field-label">
-                                                    <p>Category:</p>
-                                                </div>
-                                                <div className="form-group col-sm-6">
-                                                    <p>{i.category}</p>
-                                                </div>
-                                            </div>
+                                            <div className="m-r-20 col-sm-4 input-field-label">
+                                                <p>Category:  {i.category}</p>
+                                                <div>
 
-                                            <div className="row">
-                                                <div className="m-r-20 col-sm-4 input-field-label">
-                                                    <p>Product:</p>
-                                                </div>
-                                                <div className="form-group col-sm-6">
-                                                    <p>{i.productName}</p>
                                                 </div>
                                             </div>
-
-                                            <div className="row">
-                                                <div className="m-r-20 col-sm-4 input-field-label">
-                                                    <p>Quantity:</p>
-                                                </div>
-                                                <div className="form-group col-sm-6">
-                                                    <p>{i.quantity}</p>
-                                                </div>
+                                            <div className="m-r-20 col-sm-4 input-field-label">
+                                                <p>Product:  {i.productName}</p>
                                             </div>
+                                            <div className="m-r-20 col-sm-4 input-field-label">
+                                                <p>Quantity:  {i.quantity}</p>
+                                            </div>
+                                            <hr className=""></hr>
                                         </div>
                                     ))}
                                 <div className="row">
@@ -350,12 +335,18 @@ class RequestForm extends Component {
                                     + Add more items
                                 </Button>
                                 <hr className="m-b-40 bdr-1"></hr>
+                                <h3 className="title mx-auto semi-bold m-b-40 text-center">Your Details</h3>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
                                         <h5 className="semi-bold">Technical Specification:</h5>
                                     </div>
-                                    <div className="col-sm-6 row">
-                                        <div className="col-sm-7">
+                                    <div className="col-sm-6 ">
+                                        <Input placeholder="Product Specification" className=""
+                                            defaultValue=""
+                                            id="technicalSpecification"
+                                            type="text"
+                                            onChange={this.handleInputChange} />
+                                        {/*<div className="col-sm-7">
                                             <Input placeholder="Product Specification" className=""
                                                 defaultValue=""
                                                 id="technicalSpecification"
@@ -368,7 +359,7 @@ class RequestForm extends Component {
                                                 id="technicalSpecification"
                                                 type="file"
                                                 onChange={this.handleInputChange} />
-                                        </div>
+                                    </div>*/}
                                     </div>
 
                                 </div>

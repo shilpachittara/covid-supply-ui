@@ -11,8 +11,8 @@ import "assets/scss/paper-kit.scss";
 import "assets/demo/demo.css";
 import "assets/css/custom.css"
 // pages
-import Index from "views/Index.js";
-import NucleoIcons from "views/NucleoIcons.js";
+//import Index from "views/Index.js";
+//import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
@@ -26,13 +26,13 @@ import AboutUs from "views/examples/AboutUs"
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/index" render={props => <Index {...props} />} />
+     {/* <Route path="/index" render={props => <Index {...props} />} />
       <Route
         path="/nucleo-icons"
         render={props => <NucleoIcons {...props} />}
-      />
+/>*/}
       <Route
-        path="/landing-page"
+        path="/home"
         render={props => <LandingPage {...props} />}
       />
       <Route
@@ -59,7 +59,7 @@ ReactDOM.render(
         path="/about-us"
         render={props => <AboutUs {...props} />}
       />
-      <Redirect to="/landing-page" />
+      <Redirect to="/home" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

@@ -12,8 +12,6 @@ class SubmitOrderService {
       return null;
     }*/
     async createOrder(item) {
-      console.log("ItemService.createItem():");
-      console.log(item);
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
@@ -24,8 +22,6 @@ class SubmitOrderService {
         .then(response => 
             console.log(response.json))
         .then(data => console.log(data));
-
-        console.log()
     }
 
     /*async deleteItem(itemId) {
