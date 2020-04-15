@@ -23,6 +23,7 @@ class RequestForm extends Component {
         this.service = new SubmitOrderService()
         this.validate = new Validator()
         this.moreProduct = this.moreProduct.bind(this)
+        this.delete = this.delete.bind(this)
         this.state = {
             productDiv: [],
             item: {},
@@ -209,6 +210,11 @@ class RequestForm extends Component {
         }
     }
 
+    delete(category, product, quantity) {
+        const items = this.state.productDiv.filter(item => (item.productName !== product));
+        this.setState({ productDiv: items });
+
+    }
 
     submitOrder = (event) => {
         event.preventDefault() // remove this
@@ -265,15 +271,16 @@ class RequestForm extends Component {
                                         <div key={index}>
                                             <div className="m-r-20 col-sm-4 input-field-label">
                                                 <p>Category:  {i.category}</p>
-                                                <div>
-
-                                                </div>
                                             </div>
                                             <div className="m-r-20 col-sm-4 input-field-label">
                                                 <p>Product:  {i.productName}</p>
                                             </div>
                                             <div className="m-r-20 col-sm-4 input-field-label">
                                                 <p>Quantity:  {i.quantity}</p>
+                                            </div>
+                                            <div >
+                                                <Button className="btn-round mr-100" onClick={this.delete.bind(this, i.category, i.productName, i.quantity)}>
+                                                    Delete</Button>
                                             </div>
                                             <hr className=""></hr>
                                         </div>
