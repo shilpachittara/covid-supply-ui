@@ -36,9 +36,9 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>COVID SUPPLY INDIA</h1>
-            {/*<h3>Start designing your landing page here.</h3>
-            <br />
+            <h2>For Government, Hospitals and Institutions</h2>
+            <h3>Genuine and Certified Medical Supplies </h3>
+            {/*<br />
             <Button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               className="btn-round mr-1"
