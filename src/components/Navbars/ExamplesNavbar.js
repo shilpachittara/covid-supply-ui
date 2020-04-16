@@ -13,8 +13,7 @@ import {
   Navbar,
   Nav,
   Container,
-  NavItem,
-  Button
+  NavItem
 } from "reactstrap";
 
 function ExamplesNavbar() {

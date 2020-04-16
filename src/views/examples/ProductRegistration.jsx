@@ -32,7 +32,15 @@ class ProductRegistration extends Component {
                 category: "Coverall",
                 productDetail: [{
                     id: "4a",
-                    name: "Coverall 1"
+                    name: "Coverall SS"
+                },
+                {
+                    id: "4b",
+                    name: "Coverall SMS"
+                },
+                {
+                    id: "4c",
+                    name: "Coverall SSMMS"
                 }]
             },
             {
@@ -40,15 +48,31 @@ class ProductRegistration extends Component {
                 category: "Hand Sanitizer",
                 productDetail: [{
                     id: "7a",
-                    name: "Hand Sanitizer 1"
+                    name: "Above 60 percentage Alcohol"
+                },
+                {
+                    id: "7b",
+                    name: "Above 70 percentage Alcohol"
+                },
+                {
+                    id: "7c",
+                    name: "Above 80 percentage Alcohol"
                 }]
             },
             {
                 id: 3,
-                category: "PPE",
+                category: "PPE-Kit",
                 productDetail: [{
                     id: "3a",
-                    name: "PPE 1"
+                    name: "PPE SS"
+                },
+                {
+                    id: "3b",
+                    name: "PPE SMS"
+                },
+                {
+                    id: "3c",
+                    name: "PPE SSMMS"
                 }]
             },
             {
@@ -56,7 +80,7 @@ class ProductRegistration extends Component {
                 category: "Gloves",
                 productDetail: [{
                     id: "2a",
-                    name: "Gloves 1"
+                    name: "Nitrile"
                 }]
             },
             {
@@ -64,7 +88,7 @@ class ProductRegistration extends Component {
                 category: "Bouffant Caps",
                 productDetail: [{
                     id: "5a",
-                    name: "Bouffant Caps 1"
+                    name: "Bouffant Cap"
                 }]
             },
             {
@@ -72,15 +96,15 @@ class ProductRegistration extends Component {
                 category: "Eye Goggles",
                 productDetail: [{
                     id: "6a",
-                    name: "Eye Goggles 1"
+                    name: "Eye Goggle"
                 }]
             },
             {
                 id: 8,
-                category: "Infrared Thermometer",
+                category: "Thermometer",
                 productDetail: [{
                     id: "8a",
-                    name: "Infrared Thermometer 1"
+                    name: "Infrared Thermometer"
                 }]
             },
             {
@@ -88,7 +112,7 @@ class ProductRegistration extends Component {
                 category: "Shoe Cover",
                 productDetail: [{
                     id: "9a",
-                    name: "Shoe Cover 1"
+                    name: "Shoe Cover"
                 }]
             },
             {
@@ -96,7 +120,7 @@ class ProductRegistration extends Component {
                 category: "Testing kit",
                 productDetail: [{
                     id: "10a",
-                    name: "Testing kit 1"
+                    name: "Testing kit"
                 }]
             }
             ]
@@ -183,9 +207,6 @@ class ProductRegistration extends Component {
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.category}</h4>
-                                                            <p className="description">
-                                                                Select product
-                                                        </p>
                                                         </div>
                                                     </div>
                                                 </Link>
@@ -211,7 +232,7 @@ class ProductRegistration extends Component {
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
                                                             <p className="description">
-                                                                select to place your order
+                                                                Select Product to place your order
                                                         </p>
                                                         </div>
                                                     </div>

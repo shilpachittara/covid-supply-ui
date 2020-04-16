@@ -23,7 +23,7 @@ class CategoryDetails extends Component {
             },
             {
                 id: 3,
-                name: "PPE"
+                name: "PPE-Kit"
             },
             {
                 id: 2,
@@ -43,7 +43,7 @@ class CategoryDetails extends Component {
             },
             {
                 id: 8,
-                name: "Infrared Thermometer"
+                name: "Thermometer"
             },
             {
                 id: 10,
