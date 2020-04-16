@@ -4442,7 +4442,7 @@ License - nucleoapp.com/license/
     border-radius: 12px; }
 
 .card-register {
-  background-color: #51bcda;
+  background-color: #CAE7EF !important;
   border-radius: 8px;
   color: #fff;
   max-width: 350px;

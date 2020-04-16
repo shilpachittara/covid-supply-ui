@@ -250,8 +250,8 @@ class RequestForm extends Component {
                 <div className="section section-login">
                     <Container>
 
-                        <Card className="card-register card-register-custom">
-                            <h3 className="title mx-auto semi-bold m-b-40">Tell us about your need</h3>
+                        <Card className="card-register card-register-custom request-form-containt bg-lt-blue">
+                            <h3 className="title mx-auto semi-bold m-b-40" style={{color:'white'}}>Tell us about your need</h3>
                             <div className="social-line text-center">
 
                             </div>
@@ -260,21 +260,29 @@ class RequestForm extends Component {
 
                                 {this.state.productDiv.map((i, index) =>
                                     (
-                                        <div key={index}>
-                                            <div className="m-r-20 col-sm-4 input-field-label">
-                                                <p>Category:  {i.category}</p>
+                                        <div key={index} className="added-prod">
+                                           <div className="row">
+                                            <div className="col-sm-7">
+
+                                            <div className="m-r-20 ">
+                                                <h5>Category:  {i.category}</h5>
                                             </div>
-                                            <div className="m-r-20 col-sm-4 input-field-label">
-                                                <p>Product:  {i.productName}</p>
+                                            <div className="m-r-20 ">
+                                                <h5>Product:  {i.productName}</h5>
                                             </div>
-                                            <div className="m-r-20 col-sm-4 input-field-label">
-                                                <p>Quantity:  {i.quantity}</p>
+                                            <div className="m-r-20 ">
+                                                <h5>Quantity:  {i.quantity}</h5>
                                             </div>
-                                            <div >
-                                                <Button className="btn-round mr-100" onClick={this.delete.bind(this, i.category, i.productName, i.quantity)}>
-                                                    Delete</Button>
                                             </div>
-                                            <hr className=""></hr>
+                                            <div className="col-sm-3">
+                                                <Button className="btn-round mr-100" color="danger" onClick={this.delete.bind(this, i.category, i.productName, i.quantity)}>
+                                                    Remove</Button>
+                                            </div>
+                                            </div>
+                                            
+                                            <div>
+                                            <hr className="m-b-40 bdr-1"></hr>
+                                            </div>
                                         </div>
                                     ))}
                                 <div className="row">
@@ -327,14 +335,14 @@ class RequestForm extends Component {
                                 <Button
                                     block
                                     className="btn-round register-submit-btn addmore-prod-btn"
-                                    color="danger"
+                                    color="success"
                                     type="button"
                                     onClick={this.moreProduct}
                                 >
                                     + Add more items
                                 </Button>
                                 <hr className="m-b-40 bdr-1"></hr>
-                                <h3 className="title mx-auto semi-bold m-b-40 text-center">Your Details</h3>
+                                <h3 className="title mx-auto semi-bold m-b-40 text-center" style={{color:'white'}}>Your Details</h3>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
                                         <h5 className="semi-bold">Technical Specification:</h5>
@@ -535,7 +543,7 @@ class RequestForm extends Component {
                                 <Button
                                     block
                                     className="btn-round register-submit-btn addmore-prod-btn"
-                                    color="danger"
+                                    color="info"
                                     type="submit"
                                 >
                                     Submit

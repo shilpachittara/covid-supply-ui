@@ -122,8 +122,9 @@
 }
 
 .addmore-prod-btn{
-  position: relative;
-  left: 7px;
+  position: relative !important;
+  left: 53px !important;
+  
 }
 
 .semi-bold{
@@ -150,4 +151,27 @@
 
 .m-b-30{
   margin-bottom: 30px;
+}
+
+.request-form-containt{
+  border-radius: 5px !important;
+  color: #fff;
+
+  margin: auto;
+  padding: 30px;
+  width: 60vw;
+  margin-top: 20px;
+}
+
+.bg-lt-blue{
+ background-color: #ADD8E6 !important;
+}
+
+.added-prod{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  right: 100px;
+  text-align: center;
 }
