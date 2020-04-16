@@ -18,7 +18,7 @@ class SubmitOrderService {
     'Access-Control-Allow-Origin': '*' },
         body: JSON.stringify(item)
     };
-    fetch('http://localhost:8000/addOrderRequest', requestOptions)
+    fetch('http://34.93.254.23:8000/addOrderRequest', requestOptions)
         .then(this.handleRedirect)
         .catch(function(err) {
           console.info(err);
