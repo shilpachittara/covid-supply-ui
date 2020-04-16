@@ -13,6 +13,7 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar";
 import ObjectCreation from "shared/ObjectCreation";
 import SubmitOrderService from "services/SubmitOrderService";
 import Validator from "shared/Validator";
+import {Helmet} from "react-helmet";
 
 // core components
 class RequestForm extends Component {
@@ -182,7 +183,7 @@ class RequestForm extends Component {
         })
     }*/
     moreProduct() {
-        if ((this.state.item.category !== "Select Option" || !this.state.item.category) 
+        if ((this.state.item.category !== "Select Option" || !this.state.item.category)
             && (this.state.item.productName !== "Select Option" || !this.state.item.productName) && this.state.item.quantity) {
             let data = []
             if (this.state.item.category && this.state.item.productName) {
@@ -244,14 +245,47 @@ class RequestForm extends Component {
                 {data.name}
             </option>
         );
+
+        let pagetitle = "Buy Original " + this.state.category + " "+ this.state.product + " SITRA Certified product | Covid Supply"
+        let pageUrl = "http://covidsupply.in/request-form/" +this.state.category + "/"+ this.state.product
+        
         return (
             <>
+
+                <Helmet
+                    title={pagetitle}
+                    link={[{ href: `${pageUrl}`, rel: "canonical" }]}
+                    meta={[
+                        { "name": "description", "content": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices. Post your requirement and get quotation in 12 hours and product delivery in 48 hours from confirmation " },
+                        { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall" },
+                        { property: "og:type", content: `${pagetitle}` },
+                        { property: "og:title", content: `${pagetitle}` },
+                        { property: "og:description", content: "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices. Post your requirement and get quotation in 12 hours and product delivery in 48 hours from confirmation." },
+                        { property: "og:url", content: `${pageUrl}` }
+                    ]}
+                    script={[
+                        {
+                            type: "application/ld+json", innerHTML:
+                                `{ "@context": "http://schema.org" ,
+                                   "@type": "Organization",
+                                   "name": “CovidSupply",
+                                   "url": "http://www.covidsupply.in/"
+                                   "contactPoint": [
+                                       {
+                                           "@type": "ContactPoint",
+                                           "email": "support@covidsupply.in",
+                                           "contactType": "customer service"
+                                        }
+                                    ]
+                                }`
+                        }
+                    ]} />
                 <ExamplesNavbar />
                 <div className="section section-login">
                     <Container>
 
                         <Card className="card-register card-register-custom request-form-containt bg-lt-blue">
-                            <h3 className="title mx-auto semi-bold m-b-40" style={{color:'white'}}>Tell us about your need</h3>
+                            <h3 className="title mx-auto semi-bold m-b-40" style={{ color: 'white' }}>Tell us about your need</h3>
                             <div className="social-line text-center">
 
                             </div>
@@ -261,27 +295,27 @@ class RequestForm extends Component {
                                 {this.state.productDiv.map((i, index) =>
                                     (
                                         <div key={index} className="added-prod">
-                                           <div className="row">
-                                            <div className="col-sm-7">
+                                            <div className="row">
+                                                <div className="col-sm-7">
 
-                                            <div className="m-r-20 ">
-                                                <h5>Category:  {i.category}</h5>
+                                                    <div className="m-r-20 ">
+                                                        <h5>Category:  {i.category}</h5>
+                                                    </div>
+                                                    <div className="m-r-20 ">
+                                                        <h5>Product:  {i.productName}</h5>
+                                                    </div>
+                                                    <div className="m-r-20 ">
+                                                        <h5>Quantity:  {i.quantity}</h5>
+                                                    </div>
+                                                </div>
+                                                <div className="col-sm-3">
+                                                    <Button className="btn-round mr-100" color="danger" onClick={this.delete.bind(this, i.category, i.productName, i.quantity)}>
+                                                        Remove</Button>
+                                                </div>
                                             </div>
-                                            <div className="m-r-20 ">
-                                                <h5>Product:  {i.productName}</h5>
-                                            </div>
-                                            <div className="m-r-20 ">
-                                                <h5>Quantity:  {i.quantity}</h5>
-                                            </div>
-                                            </div>
-                                            <div className="col-sm-3">
-                                                <Button className="btn-round mr-100" color="danger" onClick={this.delete.bind(this, i.category, i.productName, i.quantity)}>
-                                                    Remove</Button>
-                                            </div>
-                                            </div>
-                                            
+
                                             <div>
-                                            <hr className="m-b-40 bdr-1"></hr>
+                                                <hr className="m-b-40 bdr-1"></hr>
                                             </div>
                                         </div>
                                     ))}
@@ -342,7 +376,7 @@ class RequestForm extends Component {
                                     + Add more items
                                 </Button>
                                 <hr className="m-b-40 bdr-1"></hr>
-                                <h3 className="title mx-auto semi-bold m-b-40 text-center" style={{color:'white'}}>Your Details</h3>
+                                <h3 className="title mx-auto semi-bold m-b-40 text-center" style={{ color: 'white' }}>Your Details</h3>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
                                         <h5 className="semi-bold">Technical Specification:</h5>

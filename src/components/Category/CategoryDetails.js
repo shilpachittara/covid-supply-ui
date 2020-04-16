@@ -74,9 +74,6 @@ class CategoryDetails extends Component {
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
-                                                            <p className="description">
-                                                                select product
-                                                        </p>
                                                         </div>
                                                     </div>
                                                 </Link>
