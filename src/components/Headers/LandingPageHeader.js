@@ -35,7 +35,7 @@ function LandingPageHeader() {
       >
         <div className="filter" />
         <Container>
-          <div className="motto text-center">
+          <div className="motto text-center" style={{marginTop: -85}}>
             <h2>For Government, Hospitals and Institutions</h2>
             <h3>Genuine and Certified Medical Supplies </h3>
             {/*<br />

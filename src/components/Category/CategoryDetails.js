@@ -59,14 +59,14 @@ class CategoryDetails extends Component {
         return (
             <>
                 <div className="main">
-                    <div className="section text-center">
+                    <div className="section text-center" style={{paddingTop:5,paddingBottom:30}}>
                         <Container>
                             <h2 className="title">Our Products</h2>
-                            <div className="m-t-50">
+                            <div className="m-t-35">
                                 <Row>
                                     {this.state.dataSet.slice(0, 4).map((i, index) =>
                                         (
-                                            <Col md="3" style={{ marginBottom: 50 }} key={index}>
+                                            <Col md="3" style={{ marginBottom: 30 }} key={index}>
                                                 <Link to={`/product/${i.name}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
@@ -82,7 +82,7 @@ class CategoryDetails extends Component {
                                         ))}
                                 </Row>
                             </div>
-                            <div className="show-more-btn-landing m-t-20">
+                            <div className="show-more-btn-landing m-t-10">
                                     <Button
                                         className="btn-round mr-1"
                                         color="primary"

@@ -9,7 +9,7 @@ import { Row, Container } from "reactstrap";
 
 function DemoFooter() {
   return (
-    <footer className="footer footer-black footer-white">
+    <footer className="footer" style={{background:'#000'}}>
       <Container>
         <Row>
           <nav className="footer-nav">
@@ -27,7 +27,7 @@ function DemoFooter() {
                   // href="http://blog.creative-tim.com/?ref=pkr-footer"
                   // target="_blank"
                 >
-                 Contact Us at support@covidsupply.in
+                 support@covidsupply.in
                 </a>
               </li>
               {/* <li>

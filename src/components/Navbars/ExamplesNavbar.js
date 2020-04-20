@@ -5,6 +5,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
+import Covidicon from "../../logo.svg"
 
 // reactstrap components
 import {
@@ -13,7 +14,8 @@ import {
   Navbar,
   Nav,
   Container,
-  NavItem
+  NavItem,
+  NavLink
 } from "reactstrap";
 
 function ExamplesNavbar() {
@@ -54,6 +56,7 @@ function ExamplesNavbar() {
     >
       <Container>
         <div className="navbar-translate">
+        <img src={Covidicon} width={18} height={18} style={{marginTop:-7}}></img>
           <NavbarBrand
             data-placement="bottom"
             to="/home"
@@ -63,6 +66,7 @@ function ExamplesNavbar() {
           >
             COVID SUPPLY INDIA
           </NavbarBrand>
+         
           {/* <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
@@ -116,28 +120,28 @@ function ExamplesNavbar() {
                 <p className="d-lg-none">Facebook</p>
               </NavLink>
             </NavItem>
+            */}
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                target="_blank"
-                title="Follow us on Instagram"
+                href="/home"
+                // target="_blank"
+                
               >
-                <i className="fa fa-instagram" />
-                <p className="d-lg-none">Instagram</p>
+                
+                Home
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial?ref=creativetim"
-                target="_blank"
-                title="Star on GitHub"
+                href="/about-us"
+              
               >
-                <i className="fa fa-github" />
-                <p className="d-lg-none">GitHub</p>
+                
+                About Us
               </NavLink>
-            </NavItem> */
+            </NavItem> 
                  <NavItem>
          
              {/* <Button
@@ -152,7 +156,7 @@ function ExamplesNavbar() {
                Log In / Sign Up
              </Button> */}
        
-            </NavItem> }
+            </NavItem>
 
 
           </Nav>

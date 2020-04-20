@@ -13,7 +13,7 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar";
 import ObjectCreation from "shared/ObjectCreation";
 import SubmitOrderService from "services/SubmitOrderService";
 import Validator from "shared/Validator";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 // core components
 class RequestForm extends Component {
@@ -271,9 +271,9 @@ class RequestForm extends Component {
             </option>
         );
 
-        let pagetitle = "Buy Original " + this.state.category + " "+ this.state.product + " SITRA Certified product | Covid Supply"
-        let pageUrl = "http://covidsupply.in/request-form/" +this.state.category + "/"+ this.state.product
-        
+        let pagetitle = "Buy Original " + this.state.category + " " + this.state.product + " SITRA Certified product | Covid Supply"
+        let pageUrl = "http://covidsupply.in/request-form/" + this.state.category + "/" + this.state.product
+
         return (
             <>
 

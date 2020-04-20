@@ -62,10 +62,10 @@ function LandingPage() {
         <ExamplesNavbar />
         <LandingPageHeader />
         <CategoryDetails />
-        <div className="main">
-          <div className="section bg-blue text-center">
+        <div className="main" height={500}>
+          <div className="section bg-blue text-center" style={{paddingTop:15,height:'75vh'}}>
             <Container>
-              <h2 className="title" style={{ color: 'white' }}>Features</h2>
+              <h2 className="title" style={{ color: 'white',marginBottom:-10 }}>Features</h2>
               <Row>
                 <Col md="4">
                   <Card className="card-profile card-plain">
@@ -155,7 +155,7 @@ function LandingPage() {
               </Row>
             </Container>
           </div>
-          <div className="section landing-section">
+          <div className="section landing-section"  style={{paddingTop:15}}>
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto" md="12">
@@ -164,9 +164,10 @@ function LandingPage() {
                 </Col>
               </Row>
               <div className="footprint-landing">
-                <h3>Turned 4 manufacturing units into PPE kits manufacturing units</h3>
-                <h3>Supplying 1+ lakh PPE units to different state governments </h3>
-                <h3>Provided initial capital of about 3 Crore to manufacturers</h3>
+                <hr/>
+                <h4>Turned 4 manufacturing units into PPE kits manufacturing units</h4>
+                <h4>Supplying 1+ lakh PPE units to different state governments </h4>
+                <h4>Provided initial capital of about 3 Crore to manufacturers</h4>
               </div>
             </Container>
           </div>

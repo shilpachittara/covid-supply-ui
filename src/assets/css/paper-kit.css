@@ -3999,7 +3999,7 @@ License - nucleoapp.com/license/
   color: #EB5E28; }
 
 .footer {
-  background-color: #FFFFFF;
+  background-color: #000 !important;
   line-height: 36px; }
   .footer.footer-black h4 {
     color: #FFFFFF; }

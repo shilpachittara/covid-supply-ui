@@ -67,8 +67,7 @@
   background-color: #B2AFAB;
     background-position: center center;
     background-size: cover;
-    min-height: 65vh !important;
-    max-height: 594px !important;
+    min-height: 50vh !important;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -116,7 +115,7 @@
   font-weight: 600 !important;
     margin: 5px 0px !important;
     padding: 10px 10px !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     color: #66615B !important;
     text-transform: uppercase !important;
 }
@@ -174,4 +173,11 @@
   position: relative;
   right: 100px;
   text-align: center;
+}
+
+.m-t-35{
+  margin-top: 35px !important;
+}
+.m-t-10{
+  margin-top: 10px !important;
 }
