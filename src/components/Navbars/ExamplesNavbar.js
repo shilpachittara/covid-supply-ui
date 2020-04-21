@@ -142,6 +142,16 @@ function ExamplesNavbar() {
                 About Us
               </NavLink>
             </NavItem> 
+            <NavItem>
+            <NavLink
+                data-placement="bottom"
+                href="/product"
+              
+              >
+                
+                Products
+              </NavLink>
+            </NavItem>
                  <NavItem>
          
              {/* <Button

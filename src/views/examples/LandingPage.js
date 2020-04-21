@@ -67,7 +67,7 @@ function LandingPage() {
             <Container>
               <h2 className="title" style={{ color: 'white',marginBottom:-10 }}>Features</h2>
               <Row>
-                <Col md="4">
+                <Col md="6">
                   <Card className="card-profile card-plain">
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -95,7 +95,7 @@ function LandingPage() {
                     </CardBody>
                   </Card>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                   <Card className="card-profile card-plain">
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -123,7 +123,7 @@ function LandingPage() {
                    
                   </Card>
                 </Col>
-                <Col md="4">
+                {/*<Col md="4">
                   <Card className="card-profile card-plain">
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -150,8 +150,8 @@ function LandingPage() {
                       </div>
                     </CardBody>
                     
-                  </Card>
-                </Col>
+                   </Card>
+      </Col>*/}
               </Row>
             </Container>
           </div>
