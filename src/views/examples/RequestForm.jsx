@@ -272,7 +272,7 @@ class RequestForm extends Component {
         );
 
         let pagetitle = "Buy Original " + this.state.category + " " + this.state.product + " SITRA Certified product | Covid Supply"
-        let pageUrl = "http://covidsupply.in/request-form/" + this.state.category + "/" + this.state.product
+        let pageUrl = "http://covidsupply.in/request-form/" + this.state.category.replace(/\s/g, '-') + "/" + this.state.product.replace(/\s/g, '-')
 
         return (
             <>
