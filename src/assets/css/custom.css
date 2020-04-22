@@ -181,3 +181,24 @@
 .m-t-10{
   margin-top: 10px !important;
 }
+
+.covid-icon{
+  position: relative;
+    height: 30px;
+    width: 29px;
+    top: 23px;
+    right: 5px;
+}
+
+.outer-div-odr-cnfrm{
+  margin-top: 140px !important;
+  width: 50vw;
+  margin: auto;
+  border-radius: 4px;
+  color:white !important;
+  
+}
+.tick-icon{
+  width:70px;
+  height:70px;
+}

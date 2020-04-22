@@ -13,6 +13,10 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import {Helmet} from "react-helmet";
+import Covidicon from "../../logo.svg"
+import TickIcon from "../../assets/icons/confirmation.svg"
+import EmailIcon from "../../assets/icons/email.svg"
+
 
 function OrderSuccess() {
 
@@ -53,32 +57,52 @@ function OrderSuccess() {
               ]}`}
         ]} />
       <ExamplesNavbar />
-      <div className="m-t-80"><div className="txt-center">
-        <h1>Covid Supply India</h1>
+      <Container>
+      <div className="bg-blue outer-div-odr-cnfrm">
+      <div className="m-t-80">
+        <div className="txt-center" style={{display:'flex',flexDirection:'row',justifyContent:'center',marginLeft:'-20px'}}>
+        <img src={Covidicon} className="covid-icon"></img>
+        <h3>Covid Supply India</h3>
       </div>
       </div>
-      <div className="section profile-content" >
+      <div className=" profile-content" >
 
-        <Container>
+       
           <div className="txt-center m-b-30">
-            <h2>Thank you for placing your order</h2>
+            <h3>Thank you for placing your order</h3>
           </div>
+          <Row>
+            <img src={TickIcon} className="tick-icon" style={{margin:'auto'}}></img>
+          </Row>
 
 
           <Row>
-            <Col className="ml-auto mr-auto text-center" md="6">
-              <h3>
-                Your order have been received successfully. we will get back to you in 12 hours
-             </h3>
+            <Col className="ml-auto mr-auto text-center m-t-20" md="8">
+              <h5>
+                Your order has been received successfully. We will contact you in 12 hours.
+
+             </h5>
+             
               <br />
 
             </Col>
+
           </Row>
+          <Col >
+          <div style={{textAlign:'center'}}>
+          <h5 style={{margin:'auto'}}>Incase you need any help </h5>
+          <img src={EmailIcon} style={{width:'25px',height:'25px',margin:'auto'}}></img>
+          <div style={{margin:'auto'}}>Connect via Email</div>
+          <h4 style={{margin:'auto'}}>support@covidsupply.in</h4>
+          </div>
+          </Col>
           <br />
+          </div>
+      </div>
 
         </Container>
 
-      </div>
+    
     </>
   );
 }
