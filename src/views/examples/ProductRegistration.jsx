@@ -19,7 +19,7 @@ class ProductRegistration extends Component {
                 category: "Mask",
                 productDetail: [{
                     id: "1a",
-                    name: "3-ply Mask"
+                    name: "3 ply Mask"
                 },
                 {
                     id: "1b",
@@ -61,7 +61,7 @@ class ProductRegistration extends Component {
             },
             {
                 id: 3,
-                category: "PPE-Kit",
+                category: "PPE Kit",
                 productDetail: [{
                     id: "3a",
                     name: "PPE SS"

@@ -36,7 +36,7 @@ class RequestForm extends Component {
                 category: "Mask",
                 productDetail: [{
                     id: "1a",
-                    name: "3-ply Mask"
+                    name: "3 ply Mask"
                 },
                 {
                     id: "1b",
@@ -78,7 +78,7 @@ class RequestForm extends Component {
             },
             {
                 id: 3,
-                category: "PPE-kit",
+                category: "PPE kit",
                 productDetail: [{
                     id: "3a",
                     name: "PPE SS"

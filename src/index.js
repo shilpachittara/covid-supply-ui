@@ -33,7 +33,7 @@ ReactDOM.render(
         render={props => <NucleoIcons {...props} />}
 />*/}
       <Route
-         exact path="/"
+        exact path="/"
         render={props => <LandingPage {...props} />}
       />
       <Route

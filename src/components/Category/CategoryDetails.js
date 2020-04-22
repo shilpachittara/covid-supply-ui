@@ -23,7 +23,7 @@ class CategoryDetails extends Component {
             },
             {
                 id: 3,
-                name: "PPE-Kit"
+                name: "PPE Kit"
             },
             {
                 id: 2,
