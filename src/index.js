@@ -33,7 +33,7 @@ ReactDOM.render(
         render={props => <NucleoIcons {...props} />}
 />*/}
       <Route
-        path="/home"
+         exact path="/"
         render={props => <LandingPage {...props} />}
       />
       <Route
@@ -64,7 +64,7 @@ ReactDOM.render(
         path="/order-confirmation"
         render={props => <OrderSuccess {...props} />}
       />
-      <Redirect to="/home" />
+      <Redirect to="/" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

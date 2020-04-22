@@ -70,7 +70,7 @@ class CategoryDetails extends Component {
                                                 <Link to={`/product/${i.name.replace(' ', '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + i.name + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + i.name + ".svg")} alt={i.name} style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>

@@ -72,7 +72,7 @@ function LandingPage() {
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         <img
-                          alt="..."
+                          alt="manufacture"
                           src={require("assets/icons/investor.svg")}
                         />
                       </a>
@@ -100,7 +100,7 @@ function LandingPage() {
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         <img
-                          alt="..."
+                          alt="supplier"
                           src={require("assets/icons/supplier.svg")}
                         />
                       </a>
@@ -128,7 +128,7 @@ function LandingPage() {
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         <img
-                          alt="..."
+                          alt="certification bodies"
                           src={require("assets/icons/contract.svg")}
                         />
                       </a>

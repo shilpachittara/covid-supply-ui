@@ -13,7 +13,7 @@ class ProductRegistration extends Component {
         this.state = {
             categoryName: null,
             dataSet: [],
-            productName: this.props.match.params.productName,
+            productName: this.props.match.params.productName.replace('-', ' '),
             json: [{
                 id: 1,
                 category: "Mask",
@@ -130,7 +130,7 @@ class ProductRegistration extends Component {
 
     componentDidMount() {
         this.state.json.forEach((item) => {
-            if (item.category === this.state.productName.replace('-', ' ')) {
+            if (item.category === this.state.productName) {
                 let data = item.productDetail
                 this.setState({ dataSet: data })
             }
@@ -141,6 +141,7 @@ class ProductRegistration extends Component {
     componentWillReceiveProps(nextProps) {
         let product = nextProps.history.location.pathname
         let productName = product.slice(9)
+        productName = productName.replace('-',' ')
         this.state.json.forEach((item) => {
             if (item.category === productName) {
                 let data = item.productDetail
@@ -154,7 +155,7 @@ class ProductRegistration extends Component {
 
         let pagetitle
         if (this.state.productName) {
-            pagetitle = "Buy Original " + this.state.productName.replace('-', ' ') + " SITRA Certified product | Covid Supply"
+            pagetitle = "Buy Original " + this.state.productName + " SITRA Certified product | Covid Supply"
         }
         else {
             pagetitle = "Buy Original SITRA Certified product | Covid Supply"
@@ -203,7 +204,7 @@ class ProductRegistration extends Component {
                                                 <Link to={`/product/${i.category.replace(' ', '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt={i.category} style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.category}</h4>
@@ -218,16 +219,16 @@ class ProductRegistration extends Component {
                         </Container>
 
                         <Container>
-                            <h2 className="title" >{this.state.productName.replace('-', ' ')}</h2>
+                            <h2 className="title" >{this.state.productName}</h2>
                             <div className="m-t-50">
                                 <Row>
                                     {this.state.dataSet.map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 50 }} key={index}>
-                                                <Link to={`/request-form/${this.state.productName}/${i.name.replace(/\s/g, '-')}`}>
+                                                <Link to={`/request-form/${this.state.productName.replace(/\s/g, '-')}/${i.name.replace(/\s/g, '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + this.state.productName.replace('-', ' ') + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + this.state.productName.replace('-', ' ') + ".svg")} alt={this.state.productName} style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
