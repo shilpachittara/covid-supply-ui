@@ -96,7 +96,7 @@ function LandingPage() {
                   </Card>
                 </Col>
                 <Col md="6">
-                  <Card className="card-profile card-plain">
+                  <Card className="card-profile card-plain m-l-50">
                     <div className="card-avatar border-radius-none">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         <img
@@ -111,7 +111,7 @@ function LandingPage() {
                           <CardTitle tag="h4" style={{ color: 'white', fontWeight: 400, marginBottom: 20 }}>For Suppliers</CardTitle>
                         </div>
                       </a>
-                      <div className="">
+                      <div className="m-l-50">
                         <ul style={{ fontSize: 13, textAlign: 'left', color: 'white', fontWeight: 400, lineHeight: 1.8 }}>
                           <li>Live demand analytics region wise </li>
                           <li>Place order with 100% advance capital</li>
