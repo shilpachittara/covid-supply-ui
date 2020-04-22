@@ -28,8 +28,8 @@ class RequestForm extends Component {
         this.state = {
             productDiv: [],
             item: {},
-            category: this.props.match.params.category,
-            product: this.props.match.params.product,
+            category: this.props.match.params.category.split('-').join(' '),
+            product: this.props.match.params.product.split('-').join(' '),
             dataSet: [],
             json: [{
                 id: 1,
@@ -65,15 +65,15 @@ class RequestForm extends Component {
                 category: "Hand Sanitizer",
                 productDetail: [{
                     id: "7a",
-                    name: "Above 60 percentage Alcohol"
+                    name: "60 percent Alcohol"
                 },
                 {
                     id: "7b",
-                    name: "Above 70 percentage Alcohol"
+                    name: "70 percent Alcohol"
                 },
                 {
                     id: "7c",
-                    name: "Above 80 percentage Alcohol"
+                    name: "80 percent Alcohol"
                 }]
             },
             {

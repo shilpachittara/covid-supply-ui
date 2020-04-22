@@ -48,15 +48,15 @@ class ProductRegistration extends Component {
                 category: "Hand Sanitizer",
                 productDetail: [{
                     id: "7a",
-                    name: "Above 60 percentage Alcohol"
+                    name: "60 percent Alcohol"
                 },
                 {
                     id: "7b",
-                    name: "Above 70 percentage Alcohol"
+                    name: "70 percent Alcohol"
                 },
                 {
                     id: "7c",
-                    name: "Above 80 percentage Alcohol"
+                    name: "80 percent Alcohol"
                 }]
             },
             {
@@ -130,7 +130,7 @@ class ProductRegistration extends Component {
 
     componentDidMount() {
         this.state.json.forEach((item) => {
-            if (item.category === this.state.productName) {
+            if (item.category === this.state.productName.replace('-', ' ')) {
                 let data = item.productDetail
                 this.setState({ dataSet: data })
             }
@@ -154,7 +154,7 @@ class ProductRegistration extends Component {
 
         let pagetitle
         if (this.state.productName) {
-            pagetitle = "Buy Original " + this.state.productName + " SITRA Certified product | Covid Supply"
+            pagetitle = "Buy Original " + this.state.productName.replace('-', ' ') + " SITRA Certified product | Covid Supply"
         }
         else {
             pagetitle = "Buy Original SITRA Certified product | Covid Supply"
@@ -200,7 +200,7 @@ class ProductRegistration extends Component {
                                     {this.state.json.map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 10, maxWidth: '20%' }} key={index}>
-                                                <Link to={`/product/${i.category}`}>
+                                                <Link to={`/product/${i.category.replace(' ', '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
                                                             <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
@@ -218,16 +218,16 @@ class ProductRegistration extends Component {
                         </Container>
 
                         <Container>
-                            <h2 className="title" >{this.state.productName}</h2>
+                            <h2 className="title" >{this.state.productName.replace('-', ' ')}</h2>
                             <div className="m-t-50">
                                 <Row>
                                     {this.state.dataSet.map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 50 }} key={index}>
-                                                <Link to={`/request-form/${this.state.productName}/${i.name}`}>
+                                                <Link to={`/request-form/${this.state.productName}/${i.name.replace(/\s/g, '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + this.state.productName + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + this.state.productName.replace('-', ' ') + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
                                                             <h4 className="info-title">{i.name}</h4>
