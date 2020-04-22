@@ -67,7 +67,7 @@ class CategoryDetails extends Component {
                                     {this.state.dataSet.slice(0, 4).map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 30 }} key={index}>
-                                                <Link to={`/product/${i.name}`}>
+                                                <Link to={`/product/${i.name.replace(' ', '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
                                                             <img className="" src={require("../../assets/icons/" + i.name + ".svg")} alt="" style={{ width: 80, height: 80 }}></img>

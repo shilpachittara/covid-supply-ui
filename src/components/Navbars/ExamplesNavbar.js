@@ -56,7 +56,7 @@ function ExamplesNavbar() {
     >
       <Container>
         <div className="navbar-translate">
-        <img src={Covidicon} width={18} height={18} style={{marginTop:-7}}></img>
+        <img src={Covidicon} width={18} height={18} style={{marginTop:-7}} alt="logo"></img>
           <NavbarBrand
             data-placement="bottom"
             to="/home"
