@@ -61,7 +61,7 @@ function OrderSuccess() {
       <div className="bg-blue outer-div-odr-cnfrm">
       <div className="m-t-80">
         <div className="txt-center" style={{display:'flex',flexDirection:'row',justifyContent:'center',marginLeft:'-20px'}}>
-        <img src={Covidicon} className="covid-icon"></img>
+        <img src={Covidicon} alt="logo" className="covid-icon"></img>
         <h3>Covid Supply India</h3>
       </div>
       </div>
@@ -72,7 +72,7 @@ function OrderSuccess() {
             <h3>Thank you for placing your order</h3>
           </div>
           <Row>
-            <img src={TickIcon} className="tick-icon" style={{margin:'auto'}}></img>
+            <img src={TickIcon} className="tick-icon" style={{margin:'auto'}} alt="confirmation"></img>
           </Row>
 
 
@@ -91,7 +91,7 @@ function OrderSuccess() {
           <Col >
           <div style={{textAlign:'center'}}>
           <h5 style={{margin:'auto'}}>Incase you need any help </h5>
-          <img src={EmailIcon} style={{width:'25px',height:'25px',margin:'auto'}}></img>
+          <img src={EmailIcon} style={{width:'25px',height:'25px',margin:'auto'}} alt="email"></img>
           <div style={{margin:'auto'}}>Connect via Email</div>
           <h4 style={{margin:'auto'}}>support@covidsupply.in</h4>
           </div>

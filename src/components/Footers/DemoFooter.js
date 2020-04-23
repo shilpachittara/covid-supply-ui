@@ -7,6 +7,8 @@ import React from "react";
 // reactstrap components
 import { Row, Container } from "reactstrap";
 
+import EmailIcon from "../../assets/icons/email.svg"
+
 function DemoFooter() {
   return (
     <footer className="footer" style={{background:'#000'}}>
@@ -22,7 +24,10 @@ function DemoFooter() {
                   About Us
                 </a>
               </li>
-              <li>
+              <li >
+              <img src={EmailIcon} style={{width:'25px',margin:'auto'}} alt="email"></img>
+              </li>
+              <li style={{marginLeft: '-25px'}}>
                 <a
                   // href="http://blog.creative-tim.com/?ref=pkr-footer"
                   // target="_blank"

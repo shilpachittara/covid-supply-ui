@@ -59,7 +59,7 @@ function ExamplesNavbar() {
         <img src={Covidicon} width={18} height={18} style={{marginTop:-7}} alt="logo"></img>
           <NavbarBrand
             data-placement="bottom"
-            to="/home"
+            to="/"
             title=""
             tag={Link}
             className="navbar-header-txt"
@@ -124,7 +124,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="/home"
+                href="/"
                 // target="_blank"
                 
               >

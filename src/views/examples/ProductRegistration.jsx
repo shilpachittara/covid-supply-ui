@@ -13,7 +13,7 @@ class ProductRegistration extends Component {
         this.state = {
             categoryName: null,
             dataSet: [],
-            productName: this.props.match.params.productName.replace('-', ' '),
+            productName: this.props.match.params.productName,
             json: [{
                 id: 1,
                 category: "Mask",
@@ -129,6 +129,9 @@ class ProductRegistration extends Component {
     }
 
     componentDidMount() {
+        if(this.state.productName){
+            this.setState({productName: this.state.productName.replace('-', ' ')})
+        }
         this.state.json.forEach((item) => {
             if (item.category === this.state.productName) {
                 let data = item.productDetail
