@@ -1,3 +1,3 @@
 Sitemap: http://covidsupply.in/sitemap.xml
 User-agent:*
-Disallow:
+Disallow: http://covidsupply.in/not-found

@@ -271,7 +271,7 @@ class RequestForm extends Component {
             </option>
         );
 
-        let pagetitle = "Buy Original " + this.state.category + " " + this.state.product + " SITRA Certified product | Covid Supply"
+        let pagetitle = "Buy SITRA Certified " + this.state.category + " " + this.state.product + " | Covid Supply"
         let pageUrl = "http://covidsupply.in/request-form/" + this.state.category.replace(/\s/g, '-') + "/" + this.state.product.replace(/\s/g, '-')
 
         return (
@@ -281,12 +281,19 @@ class RequestForm extends Component {
                     title={pagetitle}
                     link={[{ href: `${pageUrl}`, rel: "canonical" }]}
                     meta={[
-                        { "name": "description", "content": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices. Post your requirement and get quotation in 12 hours and product delivery in 48 hours from confirmation " },
-                        { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall" },
-                        { property: "og:type", content: `${pagetitle}` },
+                        { "name": "description", "content": "Buy certified PPE kits, N95 masks, Nitrile gloves, Face shields in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices." },
+                        { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall"},
+                        { "name": "twitter:card", "content": "summary_large_image"},
+                        { "name": "twitter:site", "content": "@supplycovid"},
+                        { "name": "twitter:creator", "content": "@supplycovid"},
+                        { "name": "twitter_title", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply"},
+                        { "name": "twitter_description", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply"},
+                        { property: "og:description", content: "Buy certified PPE kits, N95 masks, Nitrile gloves, Face shields in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices." },
+                        { property: "og:type", content: "product" },
                         { property: "og:title", content: `${pagetitle}` },
                         { property: "og:description", content: "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices. Post your requirement and get quotation in 12 hours and product delivery in 48 hours from confirmation." },
-                        { property: "og:url", content: `${pageUrl}` }
+                        { property: "og:url", content: `${pageUrl}` },
+                        { property: "og:image", content: "http://covidsupply.in/coronavirus.png" }
                     ]}
                     script={[
                         {

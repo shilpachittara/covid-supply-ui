@@ -21,6 +21,7 @@ import Product from "views/examples/ProductRegistration.jsx"
 import Request from "views/examples/RequestForm.jsx"
 import AboutUs from "views/examples/AboutUs"
 import OrderSuccess from "views/examples/OrderSuccess"
+import NotFound from "views/examples/NotFound"
 
 
 // others
@@ -65,7 +66,11 @@ ReactDOM.render(
         path="/order-confirmation"
         render={props => <OrderSuccess {...props} />}
       />
-      <Redirect to="/" />
+       <Route
+        path="/not-found"
+        render={props => <NotFound {...props} />}
+      />
+      <Redirect to="/not-found" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
