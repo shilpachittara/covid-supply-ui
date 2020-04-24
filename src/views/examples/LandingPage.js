@@ -89,10 +89,10 @@ function LandingPage() {
 
                       <div className="">
                         <ul style={{ fontSize: 13, textAlign: 'left', color: 'white', fontWeight: 400, lineHeight: 1.8 }}>
-                          <li>Access dashboard and check your past orders</li>
-                          <li>Check our supply count and lead time and other live information</li>
-                          <li>Place order with us at one click of a button</li>
-                          <li>If system is integrated in case of hospitals, we can share expected requirement as well</li>
+                          <li><h5>Access dashboard and check your past orders</h5></li>
+                          <li><h5>Check our supply count and lead time and other live information</h5></li>
+                          <li><h5>Place order with us at one click of a button</h5></li>
+                          <li><h5>If system is integrated in case of hospitals, we can share expected requirement as well</h5></li>
                         </ul>
                       </div>
                     </CardBody>
@@ -116,10 +116,10 @@ function LandingPage() {
                       </a>
                       <div className="m-l-50">
                         <ul style={{ fontSize: 13, textAlign: 'left', color: 'white', fontWeight: 400, lineHeight: 1.8 }}>
-                          <li>Live demand analytics region wise </li>
-                          <li>Place order with 100% advance capital</li>
-                          <li>Technical assistance and rectification of underlying issues </li>
-                          <li>Get product certification from SITRA and DRDE</li>
+                          <li><h5>Live demand analytics region wise</h5></li>
+                          <li><h5>Place order with 100% advance capital</h5></li>
+                          <li><h5>Technical assistance and rectification of underlying issues</h5></li>
+                          <li><h5>Get product certification from SITRA and DRDE</h5></li>
                         </ul>
                       </div>
                     </CardBody>

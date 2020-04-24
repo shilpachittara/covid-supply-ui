@@ -73,7 +73,7 @@ class CategoryDetails extends Component {
                                                             <img className="" src={require("../../assets/icons/" + i.name + ".svg")} alt={i.name} style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
-                                                            <h4 className="info-title">{i.name}</h4>
+                                                            <h3 className="info-title">{i.name}</h3>
                                                         </div>
                                                     </div>
                                                 </Link>

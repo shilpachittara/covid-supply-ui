@@ -199,7 +199,7 @@ class ProductRegistration extends Component {
                 <div className="main">
                     <div className="section text-center">
                         <Container>
-                            <h2 className="title" >Our Products</h2>
+                            <h1 className="title" >Our Products</h1>
                             <div className="m-t-50">
                                 <Row>
                                     {this.state.json.map((i, index) =>
@@ -211,7 +211,7 @@ class ProductRegistration extends Component {
                                                             <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt={i.category} style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
-                                                            <h4 className="info-title">{i.category}</h4>
+                                                            <h3 className="info-title">{i.category}</h3>
                                                         </div>
                                                     </div>
                                                 </Link>

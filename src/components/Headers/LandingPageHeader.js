@@ -36,8 +36,8 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center" style={{marginTop: -85}}>
-            <h2>For Government, Hospitals and Institutions</h2>
-            <h3>Genuine and Certified Medical Supplies </h3>
+            <h1>For Government, Hospitals and Institutions</h1>
+            <h2>Genuine and Certified Medical Supplies </h2>
             {/*<br />
             <Button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"

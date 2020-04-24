@@ -16,13 +16,14 @@ function DemoFooter() {
         <Row>
           <nav className="footer-nav">
             <ul>
-              <li style={{cursor:"pointer"}}>
+              <li style={{cursor:"pointer"}}><h6>
                 <a
                   href="/about-us"
                   target="_blank"
                 >
                   About Us
                 </a>
+                </h6>
               </li>
               <li >
               <img src={EmailIcon} style={{width:'25px',margin:'auto'}} alt="email"></img>
