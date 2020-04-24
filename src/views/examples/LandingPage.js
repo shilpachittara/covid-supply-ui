@@ -66,7 +66,7 @@ function LandingPage() {
         <LandingPageHeader />
         <CategoryDetails />
         <div className="main" height={500}>
-          <div className="section bg-blue text-center" style={{paddingTop:15,height:'75vh'}}>
+          <div className="section bg-blue text-center detail-container" >
             <Container>
               <h2 className="title" style={{ color: 'white',marginBottom:-10 }}>Features</h2>
               <Row>

@@ -204,7 +204,7 @@ class ProductRegistration extends Component {
                                 <Row>
                                     {this.state.json.map((i, index) =>
                                         (
-                                            <Col md="3" style={{ marginBottom: 10, maxWidth: '20%' }} key={index}>
+                                            <Col className="product-view" md="3" key={index}>
                                                 <Link to={`/product/${i.category.replace(' ', '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">

@@ -205,3 +205,59 @@
 .m-l-50{
   margin-left:50px ;
 }
+
+.detail-container{
+  padding-top: 15;
+  height: 75vh;
+}
+
+.product-view{
+  margin-bottom: 10px;
+  max-width: 20%;
+}
+
+@media (max-width: 767px) {
+  .page-header-banner {
+    min-height: 60vh !important;
+  }
+  .detail-container{
+    height: 180vh;
+  }
+  .m-l-50{
+    margin-left:0px ;
+  }
+  .product-view{
+    margin-bottom: 50px;
+    max-width: initial;
+  }
+  .navbar .container {
+    width: initial;
+    padding-right: 15px;
+    padding-left: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 570px) {
+  .page-header-banner {
+    min-height: 75vh !important;
+  }
+  .detail-container{
+    height: 220vh;
+  }
+  .m-l-50{
+    margin-left:0px ;
+  }
+  .product-view{
+    margin-bottom: 50px;
+    max-width: initial;
+  }
+  .navbar .container {
+    width: auto;
+    padding-right: 15px;
+    padding-left: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
