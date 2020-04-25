@@ -30,10 +30,10 @@ function LandingPage() {
     <>
       <div className="application">
         <Helmet
-        title= "Buy SITRA certified PPE kits, n95 masks| Covid Supply"
+        title= "Buy SITRA certified products PPE kits, n95 masks| Covid Supply"
         link = {[{href: "http://covidsupply.in/" , rel: "canonical"}]}
           meta={[
-            { "name": "description", "content": "Buy certified PPE kits, N95 masks, Nitrile gloves, Face shields in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices." },
+            { "name": "description", "content": "Buy certified products PPE kits, N95 masks, Nitrile gloves, Face shields in manufacturing units Delhi, Mumbai, Bangalore, Indore, Hyderabad for hospitals place order now." },
             { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall"},
             { "name": "twitter:card", "content": "summary_large_image"},
             { "name": "twitter:site", "content": "@supplycovid"},
