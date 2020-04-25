@@ -300,7 +300,7 @@ class RequestForm extends Component {
                             type: "application/ld+json", innerHTML:
                                 `{ "@context": "http://schema.org" ,
                                    "@type": "Organization",
-                                   "name": “CovidSupply",
+                                   "name": "CovidSupply",
                                    "url": "http://www.covidsupply.in/"
                                    "contactPoint": [
                                        {

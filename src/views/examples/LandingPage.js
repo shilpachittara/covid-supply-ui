@@ -50,7 +50,7 @@ function LandingPage() {
             {type: "application/ld+json", innerHTML: 
             `{ "@context": "http://schema.org",
                "@type": "Organization",
-               "name": “CovidSupply",
+               "name": "CovidSupply",
                "url": "http://covidsupply.in/",
                "logo": "http://covidsupply.in/coronavirus.png",
                "description": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies",

@@ -188,7 +188,7 @@ class ProductRegistration extends Component {
                             type: "application/ld+json", innerHTML:
                                 `{ "@context": "http://schema.org",
                                    "@type": "Product",
-                                   "name": “Buy Medical supplies for covid-19",
+                                   "name": "Buy Medical supplies for covid-19",
                                    "url": "http://www.covidsupply.in/",
                                    "logo": "http://covidsupply.in/coronavirus.png",
                                    "description": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies",
