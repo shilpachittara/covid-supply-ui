@@ -53,8 +53,8 @@ function LandingPage() {
                "name": "CovidSupply",
                "url": "http://covidsupply.in/",
                "logo": "http://covidsupply.in/coronavirus.png",
-               "description": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies",
-            ]}`}
+               "description": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies"
+            }`}
         ]}/>
         <ExamplesNavbar />
         <LandingPageHeader />
