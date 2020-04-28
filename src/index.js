@@ -23,6 +23,7 @@ import AboutUs from "views/examples/AboutUs"
 import OrderSuccess from "views/examples/OrderSuccess"
 import NotFound from "views/examples/NotFound"
 import ProductDetail from "views/examples/ProductDetail"
+import Dashboard from 'views/examples/Dashboard'
 
 
 // others
@@ -74,6 +75,10 @@ ReactDOM.render(
        <Route
         path="/not-found"
         render={props => <NotFound {...props} />}
+      />
+        <Route
+        path="/dashboard"
+        render={props => <Dashboard {...props} />}
       />
       <Redirect to="/not-found" />
     </Switch>
