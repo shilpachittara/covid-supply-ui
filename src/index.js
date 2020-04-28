@@ -22,6 +22,7 @@ import Request from "views/examples/RequestForm.jsx"
 import AboutUs from "views/examples/AboutUs"
 import OrderSuccess from "views/examples/OrderSuccess"
 import NotFound from "views/examples/NotFound"
+import ProductDetail from "views/examples/ProductDetail"
 
 
 // others
@@ -51,8 +52,12 @@ ReactDOM.render(
         render={props => <Login {...props} />}
       />
        <Route
-        path="/product/:productName?"
+        path="/all-product"
         render={props => <Product {...props} />}
+      />
+      <Route
+        path="/product/:productName"
+        render={props => <ProductDetail {...props} />}
       />
        <Route
         path="/request-form/:category/:product"

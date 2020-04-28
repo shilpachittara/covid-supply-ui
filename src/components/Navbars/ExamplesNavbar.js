@@ -145,7 +145,7 @@ function ExamplesNavbar() {
             <NavItem>
             <NavLink
                 data-placement="bottom"
-                href="/product"
+                href="/all-product"
               
               >
                 

@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import { Row, Container } from "reactstrap";
-import { Link } from 'react-router-dom';
+import { Container } from "reactstrap";
 
 // reactstrap components
-import { Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar";
 import { Helmet } from "react-helmet";
 
-class ProductRegistration extends Component {
+class ProductDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
             categoryName: null,
             dataSet: [],
-            productName: this.props.match.params.productName,
+            productName: this.props.match.params.productName.replace('-', ' '),
             json: [{
                 id: 1,
                 category: "Mask",
@@ -129,9 +127,6 @@ class ProductRegistration extends Component {
     }
 
     componentDidMount() {
-        if(this.state.productName){
-            this.setState({productName: this.state.productName.replace('-', ' ')})
-        }
         this.state.json.forEach((item) => {
             if (item.category === this.state.productName) {
                 let data = item.productDetail
@@ -141,7 +136,7 @@ class ProductRegistration extends Component {
 
     }
 
-    componentWillReceiveProps(nextProps) {
+    /*componentWillReceiveProps(nextProps) {
         let product = nextProps.history.location.pathname
         let productName = product.slice(9)
         productName = productName.replace('-',' ')
@@ -152,28 +147,30 @@ class ProductRegistration extends Component {
             }
         })
         this.setState({ productName: productName })
-    }
+    }*/
 
     render() {
+
+        let pagetitle = "Buy SITRA Certified " + this.state.productName + " | Covid Supply"
+        let pageUrl = "http://covidsupply.in/product/" + this.state.productName
 
         return (
             <>
                 <Helmet
-                    title= "Buy SITRA Certified product | Covid Supply"
-
-                    link={[{ href: "http://covidsupply.in/all-product", rel: "canonical" }]}
+                    title={pagetitle}
+                    link={[{ href: `${pageUrl}`, rel: "canonical" }]}
                     meta={[
                         { "name": "description", "content": "Buy certified PPE kits, N95 masks, Nitrile gloves, Face shields in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices." },
-                        { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall"},
-                        { "name": "twitter:card", "content": "summary_large_image"},
-                        { "name": "twitter:site", "content": "@supplycovid"},
-                        { "name": "twitter:creator", "content": "@supplycovid"},
-                        { "name": "twitter_title", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply"},
-                        { "name": "twitter_description", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply"},
+                        { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall" },
+                        { "name": "twitter:card", "content": "summary_large_image" },
+                        { "name": "twitter:site", "content": "@supplycovid" },
+                        { "name": "twitter:creator", "content": "@supplycovid" },
+                        { "name": "twitter_title", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply" },
+                        { "name": "twitter_description", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply" },
                         { property: "og:type", content: "product" },
-                        { property: "og:title", content: "Buy SITRA Certified product | Covid Supply" },
+                        { property: "og:title", content: `${pagetitle}` },
                         { property: "og:description", content: "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices. Post your requirement and get quotation in 12 hours and product delivery in 48 hours from confirmation." },
-                        { property: "og:url", content: "http://covidsupply.in/all-product" },
+                        { property: "og:url", content: `${pageUrl}` },
                         { property: "og:image", content: "http://covidsupply.in/coronavirus.png" }
                     ]}
                     script={[
@@ -182,7 +179,7 @@ class ProductRegistration extends Component {
                                 `{ "@context": "http://schema.org",
                                    "@type": "Product",
                                    "name": "Buy Medical supplies for covid-19",
-                                   "url": "http://www.covidsupply.in/",
+                                   "url": "http://www.covidsupply.in/product",
                                    "logo": "http://covidsupply.in/coronavirus.png",
                                    "description": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies",
                                 }`
@@ -191,28 +188,52 @@ class ProductRegistration extends Component {
                 <ExamplesNavbar />
                 <div className="main">
                     <div className="section text-center">
-                        <Container>
-                            <h1 className="title" >Our Products</h1>
-                            <div className="m-t-50">
+
+                       <Container>
+                            <h1 className="title text-center" >{this.state.productName}</h1>
+                            {/* <div className="m-t-50">
                                 <Row>
-                                    {this.state.json.map((i, index) =>
+                                    {this.state.dataSet.map((i, index) =>
                                         (
-                                            <Col className="product-view" md="3" key={index}>
-                                                <Link to={`/product/${i.category.replace(' ', '-')}`}>
+                                            <Col md="3" style={{ marginBottom: 50 }} key={index}>
+                                                <Link to={`/request-form/${this.state.productName.replace(/\s/g, '-')}/${i.name.replace(/\s/g, '-')}`}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + i.category + ".svg")} alt={i.category} style={{ width: 80, height: 80 }}></img>
+                                                            <img className="" src={require("../../assets/icons/" + this.state.productName.replace('-', ' ') + ".svg")} alt={this.state.productName} style={{ width: 80, height: 80 }}></img>
                                                         </div>
                                                         <div className="description">
-                                                            <h3 className="info-title">{i.category}</h3>
+                                                            <h4 className="info-title">{i.name}</h4>
+                                                            <p className="description">
+                                                                Select Product to place your order
+                                                        </p>
                                                         </div>
                                                     </div>
                                                 </Link>
                                             </Col>
+
                                         ))}
                                 </Row>
-                            </div>
+                                        </div>*/}
 
+                            
+                                {this.state.dataSet.map((i, index) =>
+                                    (
+                                        <div class="product-container"  key={index}>
+                                        <div class="left-column">
+                                            <img src={require("../../assets/icons/" + this.state.productName + ".svg")} alt="" />
+                                        </div>
+                                        <div class="right-column">
+                                            <div class="product-description">
+                                                <h2>{i.name}</h2>
+                                                {/*<p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>*/}
+                                            </div>
+
+                                            <div class="product-price">
+                                               <a href={`/request-form/${this.state.productName.replace(/\s/g, '-')}/${i.name.replace(/\s/g, '-')}`} class="cart-btn">Place Order</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        ))}
                         </Container>
                     </div>
                 </div>
@@ -221,4 +242,4 @@ class ProductRegistration extends Component {
     }
 }
 
-export default ProductRegistration;
+export default ProductDetail;

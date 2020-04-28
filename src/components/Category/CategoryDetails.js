@@ -88,7 +88,7 @@ class CategoryDetails extends Component {
                                         color="primary"
                                         outline
                                         type="button"
-                                        href="/product"
+                                        href="/all-product"
                                     >
                                         More Products
                                     </Button>
