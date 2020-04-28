@@ -14,6 +14,8 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import {Helmet} from "react-helmet";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 function ProfilePage() {
 
@@ -48,10 +50,32 @@ function ProfilePage() {
 
       <ExamplesNavbar />
       {/* <ProfilePageHeader /> */}
-      <div className="m-t-80"><div className="txt-center">
-        <h1>Dashboard</h1>
-        <hr ></hr>
-      </div>
+      <div className="m-t-80">
+      <Tabs>
+    <TabList>
+      <Tab>All</Tab>
+      <Tab>Quote Related</Tab>
+      <Tab>Payment Related</Tab>
+      <Tab>Drawing related</Tab>
+      <Tab>Packing Lists</Tab>
+    </TabList>
+ 
+    <TabPanel>
+      <h2>Any content 1</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>no content</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>no content</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>no content</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>no content</h2>
+    </TabPanel>
+  </Tabs>
       </div>
       
     
