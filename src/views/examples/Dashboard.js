@@ -16,7 +16,8 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 import {Helmet} from "react-helmet";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-
+import RupeeIcon from 'assets/icons/business.svg'
+import RightIcon from 'assets/icons/multimedia-option.svg'
 function ProfilePage() {
 
 
@@ -50,7 +51,10 @@ function ProfilePage() {
 
       <ExamplesNavbar />
       {/* <ProfilePageHeader /> */}
-      <div className="m-t-80">
+      <div className="m-t-100">
+      </div>
+        <div className="row" style={{margin:'auto',marginLeft:'20px'}}>
+          <div className="col-sm-8">
       <Tabs>
     <TabList>
       <Tab>All</Tab>
@@ -77,9 +81,73 @@ function ProfilePage() {
     </TabPanel>
   </Tabs>
       </div>
-      
+      {/* right section  */}
+      <div className="col-sm-3 m-t-35 m-l-50">
+        {/* rectangle 1 */}
+
+      <div className="rectangle">
+        <div style={{margin:'16px'}}>
+          <img src={RupeeIcon} className="rect-icon" style={{width:'20px'}} alt="rupee-icon"></img>
+        </div>
+        <div className="rect-body">
+          Payment Summary
+        </div>
+        <div style={{margin:'16px'}}>
+          <img src={RightIcon} style={{width:'15px'}} alt="right-icon"></img>
+        </div>
+
+      </div>
+      {/* rectangle 2 */}
+      <div className="rectangle">
+        <div style={{margin:'16px'}}>
+          <img src={RupeeIcon} className="rect-icon" style={{width:'20px'}} alt="rupee-icon"></img>
+        </div>
+        <div className="rect-body">
+          Payment Summary
+        </div>
+        <div style={{margin:'16px'}}>
+          <img src={RightIcon} style={{width:'15px'}} alt="right-icon"></img>
+        </div>
+
+      </div>
+
+      {/* rectangle 3 */}
+
+      <div className="rectangle">
+        <div style={{margin:'16px'}}>
+          <img src={RupeeIcon} className="rect-icon" style={{width:'20px'}} alt="rupee-icon"></img>
+        </div>
+        <div className="rect-body">
+          Payment Summary
+        </div>
+        <div style={{margin:'16px'}}>
+          <img src={RightIcon} style={{width:'15px'}} alt="right-icon"></img>
+        </div>
+
+      </div>
+
+      {/* rectangle 4 */}
+      <div className="rectangle">
+        <div style={{margin:'16px'}}>
+          <img src={RupeeIcon} className="rect-icon" style={{width:'20px'}} alt="rupee-icon"></img>
+        </div>
+        <div className="rect-body">
+          Payment Summary
+        </div>
+        <div style={{margin:'16px'}}>
+          <img src={RightIcon} style={{width:'15px'}} alt="right-icon"></img>
+        </div>
+
+      </div>
+
+      </div>
+      </div>
     
+      
+    <div style={{position:'relative' ,top:}}>
+      
       <DemoFooter />
+      </div>
     </>
   );
 }
