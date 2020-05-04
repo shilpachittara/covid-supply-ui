@@ -12,6 +12,7 @@ import {
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import { Link } from "react-router-dom";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import {Helmet} from "react-helmet";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -65,19 +66,29 @@ function ProfilePage() {
     </TabList>
  
     <TabPanel>
+      <div className="tab-body">
       <h2>Any content 1</h2>
+      </div>
     </TabPanel>
     <TabPanel>
-      <h2>no content</h2>
+    <div className="tab-body">
+      <h2>Any content 2</h2>
+      </div>
     </TabPanel>
     <TabPanel>
-      <h2>no content</h2>
+    <div className="tab-body">
+      <h2>Any content 3</h2>
+      </div>
     </TabPanel>
     <TabPanel>
-      <h2>no content</h2>
+    <div className="tab-body">
+      <h2>Any content 4</h2>
+      </div>
     </TabPanel>
     <TabPanel>
-      <h2>no content</h2>
+    <div className="tab-body">
+      <h2>Any content 5</h2>
+      </div>
     </TabPanel>
   </Tabs>
       </div>
@@ -98,18 +109,23 @@ function ProfilePage() {
 
       </div>
       {/* rectangle 2 */}
+      <Link to="/dashboard-tab">
       <div className="rectangle">
         <div style={{margin:'16px'}}>
           <img src={RupeeIcon} className="rect-icon" style={{width:'20px'}} alt="rupee-icon"></img>
         </div>
+        
         <div className="rect-body">
+          
           Payment Summary
         </div>
+       
         <div style={{margin:'16px'}}>
           <img src={RightIcon} style={{width:'15px'}} alt="right-icon"></img>
         </div>
 
       </div>
+      </Link>
 
       {/* rectangle 3 */}
 
@@ -144,10 +160,10 @@ function ProfilePage() {
       </div>
     
       
-    <div style={{position:'relative' ,top:}}>
+  
       
       <DemoFooter />
-      </div>
+      
     </>
   );
 }
