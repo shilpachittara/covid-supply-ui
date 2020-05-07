@@ -14,7 +14,7 @@ const paramsConfig = {
 		{ productName: 'Safety-Goggles' }
 	],
 	'/request-form/:category/:product': [
-		{ category: 'Mask' , product: ['KN95 Mask']},
+		{ category: 'Mask' , product: ['KN95-Mask']},
 		{ category: 'Coverall' , product: ['Coverall']},
 		{ category: 'PPE-Kit' , product: ['PPE-Kit']},
 		{ category: 'Gloves'  , product: ['Gloves']},
