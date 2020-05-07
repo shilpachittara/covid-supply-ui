@@ -10,19 +10,20 @@ class ProductDetail extends Component {
         super(props)
         this.state = {
             categoryName: null,
-            dataSet: [],
+            name: null,
+            description: null,
+            specification: null,
             productName: this.props.match.params.productName.replace('-', ' '),
             json: [{
                 id: 1,
                 category: "Mask",
-                productDetail: [{
-                    id: "1a",
-                    name: "3 ply Mask"
-                },
-                {
-                    id: "1b",
-                    name: "N-95"
-                }
+                productDetail: [
+                    {
+                        id: "1b",
+                        name: "KN95 Mask",
+                        description: "Covidsupply mask has filtration system to fight bacteria and viruses. \nIt is made up of Non-Woven PP, Spunbonded and meltblown fabric. \nIt has bacteria filtration efficiency ≥ 96% for above 3μm & Particle Filtration Efficiency ≥ 95% for above 3μm. \nIt comes with nose pin for shapely fit, comfort and enhanced protection; its elastic ear loop makes it easy to wear and exert no pressure on the ears. \nPerfect for medical professionals, policeman, industrial workers, social worker who are fighting COVID19 or any other areas where protection might be required, such as hospital, airport, etc.",
+                        specification: "Ear loop & tie-on"
+                    }
                 ]
             },
             {
@@ -30,31 +31,19 @@ class ProductDetail extends Component {
                 category: "Coverall",
                 productDetail: [{
                     id: "4a",
-                    name: "Coverall SS"
-                },
-                {
-                    id: "4b",
-                    name: "Coverall SMS"
-                },
-                {
-                    id: "4c",
-                    name: "Coverall SSMMS"
+                    name: "Coverall",
+                    description: "Covidsupply coverall/bodysuit is made up of SITRA Certified SMS(Spunbonded meltblown spunbondedn)/SSMMS(3 beams of Spunbond and 2 beams of Meltblown)/SS(2 beams of Spunond)/Non-Woven PP Fabric ranging from 50 to 90 GSM laminated fabric. \nIt is used to block the spread of the bacterial virus, and prevent the body from getting infected with bacteria, viruses,etc. \nIt has elastic cuff closure on sleeves and zipper on front. \nIt is seam sealed from corners, edges and alongside zipper which makes it impermeable. \nPerfect for healthcare workers, social and lab workers who are fighting COVID 19. \nWe use light colour fabric to detect possible contamination. \nIt is ergonomically designed which makes it comfortable and breathable. \nMoreover, it is wear-resistant and waterproof",
+                    specification: "Protection With A Comfortable, Soft & Flexible Fabric.\nCoverall With Elasticated Hood, Inset Sleeves, Waist, Cuffs & Ankles. Styled & Sized For Generous Fit & Superior Freedom Of Movement. \nColour - White, Blue, Pink"
                 }]
             },
             {
-                id: 7,
-                category: "Hand Sanitizer",
+                id: 6,
+                category: "Safety Googles",
                 productDetail: [{
-                    id: "7a",
-                    name: "60 percent Alcohol"
-                },
-                {
-                    id: "7b",
-                    name: "70 percent Alcohol"
-                },
-                {
-                    id: "7c",
-                    name: "80 percent Alcohol"
+                    id: "6a",
+                    name: "Safety Googles",
+                    description: "Lens material of Covidsupply googles are made up of Polycarbonate and coating on lens surface makes it fog and scratch resistant. \nIt has transparent glasses with zero power, well fitting and covered with elastic band/adjustable holder from all sides",
+                    specification: "Flexible frame to easily fit all face contours without too much pressure; Adjustable band to secure firmly so as not to become loose during clinical activity"
                 }]
             },
             {
@@ -62,15 +51,9 @@ class ProductDetail extends Component {
                 category: "PPE Kit",
                 productDetail: [{
                     id: "3a",
-                    name: "PPE SS"
-                },
-                {
-                    id: "3b",
-                    name: "PPE SMS"
-                },
-                {
-                    id: "3c",
-                    name: "PPE SSMMS"
+                    name: "PPE Kit",
+                    description: "Covidsupply PPE Kit comprises of 1 qty of Coverall suit, 1 qty of 3 Ply mask, 1 qty of eye glass, 1 pair of shoe cover, 1 pair of Nitrile gloves in sterilized packing. \nThis kit can be customized as per customer's need. This anti-virus kit is designed to combat pandemic COVID 19 or coronavirus. \nIt is ideal for healthcare professionals, lab researchers, hospitals, etc.",
+                    specification: "Protection With A Comfortable, Soft & Flexible Fabric.\nCoverall With Elasticated Hood, Inset Sleeves, Waist, Cuffs & Ankles. Styled & Sized For Generous Fit & Superior Freedom Of Movement. \nColour - White, Blue, Pink"
                 }]
             },
             {
@@ -78,76 +61,31 @@ class ProductDetail extends Component {
                 category: "Gloves",
                 productDetail: [{
                     id: "2a",
-                    name: "Nitrile"
+                    name: "Gloves",
+                    description: "Nitrile Examination Gloves Box is a premium quality Safety Gloves which are sourced from the most reliable and official Safety Gloves vendors, chosen after performing detailed market surveys. \nIt is made up of powder free nitrile which features extraordinary strength and puncture resistance while maintaining tactile sensitivity. \nThis latex free gloves helps you protect from Bacteria, Viruses & Chemicals, and security Against Cross Contamination.",
+                    specification: "Powderfree, 100% Latexfree"
                 }]
             },
-            {
-                id: 5,
-                category: "Bouffant Caps",
-                productDetail: [{
-                    id: "5a",
-                    name: "Bouffant Cap"
-                }]
-            },
-            {
-                id: 6,
-                category: "Eye Goggles",
-                productDetail: [{
-                    id: "6a",
-                    name: "Eye Goggle"
-                }]
-            },
-            {
-                id: 8,
-                category: "Thermometer",
-                productDetail: [{
-                    id: "8a",
-                    name: "Infrared Thermometer"
-                }]
-            },
-            {
-                id: 9,
-                category: "Shoe Cover",
-                productDetail: [{
-                    id: "9a",
-                    name: "Shoe Cover"
-                }]
-            },
-            {
-                id: 10,
-                category: "Testing kit",
-                productDetail: [{
-                    id: "10a",
-                    name: "Testing kit"
-                }]
-            }
+
             ]
         }
 
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.state.json.forEach((item) => {
-            if (item.category === this.state.productName) {
-                let data = item.productDetail
-                this.setState({ dataSet: data })
-            }
+            let data = item.productDetail
+            data.forEach((product) => {
+                if (product.name === this.state.productName) {
+                    this.setState({ name: product.name })
+                    this.setState({ description: product.description })
+                    this.setState({ specification: product.specification })
+                    this.setState({ categoryName: item.category })
+                }
+            })
         })
-
     }
 
-    /*componentWillReceiveProps(nextProps) {
-        let product = nextProps.history.location.pathname
-        let productName = product.slice(9)
-        productName = productName.replace('-',' ')
-        this.state.json.forEach((item) => {
-            if (item.category === productName) {
-                let data = item.productDetail
-                this.setState({ dataSet: data })
-            }
-        })
-        this.setState({ productName: productName })
-    }*/
 
     render() {
 
@@ -187,53 +125,35 @@ class ProductDetail extends Component {
                     ]} />
                 <ExamplesNavbar />
                 <div className="main">
-                    <div className="section text-center">
+                    <div className="section">
 
-                       <Container>
-                            <h1 className="title text-center" >{this.state.productName}</h1>
-                            {/* <div className="m-t-50">
-                                <Row>
-                                    {this.state.dataSet.map((i, index) =>
-                                        (
-                                            <Col md="3" style={{ marginBottom: 50 }} key={index}>
-                                                <Link to={`/request-form/${this.state.productName.replace(/\s/g, '-')}/${i.name.replace(/\s/g, '-')}`}>
-                                                    <div className="info">
-                                                        <div className="icon icon-info">
-                                                            <img className="" src={require("../../assets/icons/" + this.state.productName.replace('-', ' ') + ".svg")} alt={this.state.productName} style={{ width: 80, height: 80 }}></img>
-                                                        </div>
-                                                        <div className="description">
-                                                            <h4 className="info-title">{i.name}</h4>
-                                                            <p className="description">
-                                                                Select Product to place your order
-                                                        </p>
-                                                        </div>
-                                                    </div>
-                                                </Link>
-                                            </Col>
-
-                                        ))}
-                                </Row>
-                                        </div>*/}
-
-                            
-                                {this.state.dataSet.map((i, index) =>
-                                    (
-                                        <div class="product-container"  key={index}>
-                                        <div class="left-column">
-                                            <img src={require("../../assets/icons/" + this.state.productName + ".svg")} alt="" />
+                        <Container>
+                            <h2 className="text-center" >{this.state.categoryName}</h2>
+                            <div className="product-container">
+                                <div className="left-column">
+                                    <img src={require("../../assets/img/products/" + this.state.productName + ".jpeg")} alt={this.state.productName} />
+                                </div>
+                                <div className="right-column">
+                                    <div className="product-description">
+                                        <h5>{this.state.name}</h5>
+                                        <h6>Product description</h6>
+                                        {this.state.description.split("\n").map((i, key) => {
+                                            return <p key={key}>{i}</p>;
+                                        })}
                                         </div>
-                                        <div class="right-column">
-                                            <div class="product-description">
-                                                <h2>{i.name}</h2>
-                                                {/*<p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>*/}
-                                            </div>
+                                    <div className="product-description">
+                                        <h6>Product Specification</h6>
+                                        {this.state.specification.split("\n").map((i, key) => {
+                                            return <p key={key}>{i}</p>;
+                                        })}
+                                    </div>
 
-                                            <div class="product-price">
-                                               <a href={`/request-form/${this.state.productName.replace(/\s/g, '-')}/${i.name.replace(/\s/g, '-')}`} class="cart-btn">Place Order</a>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        ))}
+                                    <div className="product-price">
+                                        <a href={`/request-form/${this.state.categoryName.replace(/\s/g, '-')}/${this.state.productName.replace(/\s/g, '-')}`} className="cart-btn">Place Order</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </Container>
                     </div>
                 </div>

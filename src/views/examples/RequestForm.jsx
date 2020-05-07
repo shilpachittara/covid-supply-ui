@@ -34,14 +34,11 @@ class RequestForm extends Component {
             json: [{
                 id: 1,
                 category: "Mask",
-                productDetail: [{
-                    id: "1a",
-                    name: "3 ply Mask"
-                },
-                {
-                    id: "1b",
-                    name: "N-95"
-                }
+                productDetail: [
+                    {
+                        id: "1b",
+                        name: "KN95 Mask"
+                    }
                 ]
             },
             {
@@ -49,47 +46,23 @@ class RequestForm extends Component {
                 category: "Coverall",
                 productDetail: [{
                     id: "4a",
-                    name: "Coverall SS"
-                },
-                {
-                    id: "4b",
-                    name: "Coverall SMS"
-                },
-                {
-                    id: "4c",
-                    name: "Coverall SSMMS"
+                    name: "Coverall"
                 }]
             },
             {
-                id: 7,
-                category: "Hand Sanitizer",
+                id: 6,
+                category: "Safety Googles",
                 productDetail: [{
-                    id: "7a",
-                    name: "60 percent Alcohol"
-                },
-                {
-                    id: "7b",
-                    name: "70 percent Alcohol"
-                },
-                {
-                    id: "7c",
-                    name: "80 percent Alcohol"
+                    id: "6a",
+                    name: "Safety Googles"
                 }]
             },
             {
                 id: 3,
-                category: "PPE kit",
+                category: "PPE Kit",
                 productDetail: [{
                     id: "3a",
-                    name: "PPE SS"
-                },
-                {
-                    id: "3b",
-                    name: "PPE SMS"
-                },
-                {
-                    id: "3c",
-                    name: "PPE SSMMS"
+                    name: "PPE Kit"
                 }]
             },
             {
@@ -97,49 +70,10 @@ class RequestForm extends Component {
                 category: "Gloves",
                 productDetail: [{
                     id: "2a",
-                    name: "Nitrile"
+                    name: "Gloves"
                 }]
             },
-            {
-                id: 5,
-                category: "Bouffant Caps",
-                productDetail: [{
-                    id: "5a",
-                    name: "Bouffant Cap"
-                }]
-            },
-            {
-                id: 6,
-                category: "Eye Goggles",
-                productDetail: [{
-                    id: "6a",
-                    name: "Eye Goggle"
-                }]
-            },
-            {
-                id: 8,
-                category: "Thermometer",
-                productDetail: [{
-                    id: "8a",
-                    name: "Infrared Thermometer"
-                }]
-            },
-            {
-                id: 9,
-                category: "Shoe Cover",
-                productDetail: [{
-                    id: "9a",
-                    name: "Shoe Cover"
-                }]
-            },
-            {
-                id: 10,
-                category: "Testing kit",
-                productDetail: [{
-                    id: "10a",
-                    name: "Testing kit"
-                }]
-            }
+
             ]
         }
 

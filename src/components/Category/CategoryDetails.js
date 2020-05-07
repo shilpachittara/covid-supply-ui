@@ -18,10 +18,6 @@ class CategoryDetails extends Component {
                 name: "Coverall"
             },
             {
-                id: 7,
-                name: "Hand Sanitizer"
-            },
-            {
                 id: 3,
                 name: "PPE Kit"
             },
@@ -30,12 +26,17 @@ class CategoryDetails extends Component {
                 name: "Gloves"
             },
             {
+                id: 7,
+                name: "Hand Sanitizer"
+            },
+            
+            {
                 id: 5,
                 name: "Bouffant Caps"
             },
             {
                 id: 6,
-                name: "Eye Goggles"
+                name: "Safety Googles"
             },
             {
                 id: 9,
@@ -67,7 +68,7 @@ class CategoryDetails extends Component {
                                     {this.state.dataSet.slice(0, 4).map((i, index) =>
                                         (
                                             <Col md="3" style={{ marginBottom: 30 }} key={index}>
-                                                <Link to={`/product/${i.name.replace(' ', '-')}`}>
+                                                <Link to={{pathname: "/all-product", data: `${i.name}`}}>
                                                     <div className="info">
                                                         <div className="icon icon-info">
                                                             <img className="" src={require("../../assets/icons/" + i.name + ".svg")} alt={i.name} style={{ width: 80, height: 80 }}></img>

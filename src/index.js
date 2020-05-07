@@ -12,7 +12,7 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import Login from "views/examples/Login.jsx"
-import Product from "views/examples/ProductRegistration.jsx"
+import Product from "views/examples/ProductPage.js"
 import Request from "views/examples/RequestForm.jsx"
 import AboutUs from "views/examples/AboutUs"
 import OrderSuccess from "views/examples/OrderSuccess"
