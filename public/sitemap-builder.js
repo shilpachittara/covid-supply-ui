@@ -9,26 +9,16 @@ const paramsConfig = {
 	'/product/:productName': [
 		{ productName: 'Mask' },
 		{ productName: 'Coverall' },
-		{ productName: 'Hand-Sanitizer' },
 		{ productName: 'PPE-kit' },
 		{ productName: 'Gloves' },
-		{ productName: 'Bouffant-Caps' },
-		{ productName: 'Eye-Goggles' },
-		{ productName: 'Thermometer' },
-		{ productName: 'Shoe-Cover' },
-		{ productName: 'Testing-kit' }
+		{ productName: 'Safety-Goggles' }
 	],
 	'/request-form/:category/:product': [
-		{ category: 'Mask' , product: ['3-ply-Mask', 'N-95']},
-		{ category: 'Coverall' , product: ['Coverall-SS', 'Coverall-SMS', 'Coverall-SSMMS']},
-		{ category: 'Hand-Sanitizer' , product: ['60-percent-Alcohol', '70-percent-Alcohol', '80-percent-Alcohol']},
-		{ category: 'PPE-kit' , product: ['PPE-SS', 'PPE-SMS', 'PPE-SSMMS']},
-		{ category: 'Gloves'  , product: ['Nitrile']},
-		{ category: 'Bouffant-Caps' , product:['Bouffant-Cap']},
-		{ category: 'Eye-Goggles'  , product:['Eye-Goggle']},
-		{ category: 'Thermometer'  , product:['Infrared-Thermometer']},
-		{ category: 'Shoe-Cover'  , product:['Shoe-Cover']},
-		{ category: 'Testing-kit'  , product:['Testing-kit']}
+		{ category: 'Mask' , product: ['KN95 Mask']},
+		{ category: 'Coverall' , product: ['Coverall']},
+		{ category: 'PPE-Kit' , product: ['PPE-Kit']},
+		{ category: 'Gloves'  , product: ['Gloves']},
+		{ category: 'Safety-Goggles'  , product:['Safety-Goggles']}
 	]
 };
 
