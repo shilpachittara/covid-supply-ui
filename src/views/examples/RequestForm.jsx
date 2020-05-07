@@ -394,9 +394,11 @@ class RequestForm extends Component {
                                         }
                                         <select className="form-control m-b-20 " id="organizationType" name="organizationType" onChange={this.handleInputChange}>
                                             <option>Select Option  </option>
-                                            <option>Hospital</option>
                                             <option>Government</option>
+                                            <option>Hospital</option>
                                             <option>Research bodies</option>
+                                            <option>etailer</option>
+                                            <option>Wholesale</option>
                                             <option>Other</option>
                                         </select>
 
