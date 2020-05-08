@@ -17,3 +17,5 @@ components - all the reusable component on the page can be created in this or th
 service - backend call
 shared - can have common function like validation, object creation
 views - all the pages which will be route in index.js
+
+# HTTPS - "start": "export HTTPS=true&&react-scripts start",
