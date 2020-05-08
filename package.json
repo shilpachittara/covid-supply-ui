@@ -21,7 +21,7 @@
     "reactstrap": "8.0.0"
   },
   "scripts": {
-    "start": "export HTTPS=true&&npm start",
+    "start": "export HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
