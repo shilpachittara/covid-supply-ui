@@ -265,13 +265,13 @@ class RequestForm extends Component {
                                                 <div className="col-sm-7">
 
                                                     <div className="m-r-20 ">
-                                                        <h5>Category:  {i.category}</h5>
+                                                        <h5>Category :  {i.category}</h5>
                                                     </div>
                                                     <div className="m-r-20 ">
-                                                        <h5>Product:  {i.productName}</h5>
+                                                        <h5>Product :  {i.productName}</h5>
                                                     </div>
                                                     <div className="m-r-20 ">
-                                                        <h5>Quantity:  {i.quantity}</h5>
+                                                        <h5>Quantity :  {i.quantity}</h5>
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-3">
@@ -287,7 +287,7 @@ class RequestForm extends Component {
                                     ))}
                                 <div className="row">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Category:</h5>
+                                        <h5 className="semi-bold">Category: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="form-group col-sm-6">
 
@@ -301,7 +301,7 @@ class RequestForm extends Component {
                                 {/* product section dropdown  to be change line-233*/}
                                 <div className="row">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Product:</h5>
+                                        <h5 className="semi-bold">Product: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="form-group col-sm-6">
 
@@ -317,7 +317,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Quantity:</h5>
+                                        <h5 className="semi-bold">Quantity: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -345,7 +345,7 @@ class RequestForm extends Component {
                                 <h3 className="title mx-auto semi-bold m-b-40 text-center" style={{ color: 'white' }}>Your Details</h3>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Technical Specification:</h5>
+                                        <h5 className="semi-bold">Technical Specification: </h5>
                                     </div>
                                     <div className="col-sm-6 ">
                                         <Input placeholder="Product Specification" className=""
@@ -372,7 +372,7 @@ class RequestForm extends Component {
                                 </div>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Organization Name:</h5>
+                                        <h5 className="semi-bold">Organization Name: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -386,7 +386,7 @@ class RequestForm extends Component {
                                     </div>
                                 </div> <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Organization Type:</h5>
+                                        <h5 className="semi-bold">Organization Type: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6 ">
 
@@ -415,7 +415,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Address:</h5>
+                                        <h5 className="semi-bold">Address: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -445,7 +445,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">State:</h5>
+                                        <h5 className="semi-bold">State: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -460,7 +460,7 @@ class RequestForm extends Component {
                                 </div>
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">City:</h5>
+                                        <h5 className="semi-bold">City: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -477,7 +477,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Pincode:</h5>
+                                        <h5 className="semi-bold">Pincode: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -495,7 +495,7 @@ class RequestForm extends Component {
 
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Name:</h5>
+                                        <h5 className="semi-bold">Name: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -512,7 +512,7 @@ class RequestForm extends Component {
                                 {/* mobile no input type number */}
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Mobile No:</h5>
+                                        <h5 className="semi-bold">Mobile No: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
@@ -528,7 +528,7 @@ class RequestForm extends Component {
                                 {/* EMAIL input type EMAIL */}
                                 <div className="row m-b-20">
                                     <div className="m-r-20 col-sm-4 input-field-label">
-                                        <h5 className="semi-bold">Email:</h5>
+                                        <h5 className="semi-bold">Email: <span style={{color:"red"}}>* </span> </h5>
                                     </div>
                                     <div className="col-sm-6">
 
