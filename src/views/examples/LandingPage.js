@@ -17,6 +17,7 @@ import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import CategoryDetails from "components/Category/CategoryDetails";
 import { Helmet } from "react-helmet";
+import ContactUs from "components/Category/ContactUs";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -169,6 +170,7 @@ function LandingPage() {
             </Container>
           </div>
         </div>
+        <ContactUs />
         <DemoFooter />
       </div>
     </>
