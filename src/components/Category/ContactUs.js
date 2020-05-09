@@ -40,15 +40,15 @@ class ContactUs extends Component {
                                     <Row>
                                         <Col md="6">
                                             <label>Name</label>
-                                            <Input id="name" name="name" placeholder="Name" type="text" />
+                                            <Input id="name" name="name" placeholder="Name" type="text" required/>
                                         </Col>
                                         <Col md="6">
                                             <label>Email</label>
-                                            <Input id="email" name="email" placeholder="Email" type="text" />
+                                            <Input id="email" name="email" placeholder="Email" type="text" required/>
                                         </Col>
                                         <Col md="6">
                                             <label>Contact Number</label>
-                                            <Input id="number" name="mobile" placeholder="Mobile number" type="text" />
+                                            <Input id="number" name="mobile" placeholder="Mobile number" type="text" required/>
                                         </Col>
                                     </Row>
                                     <label>Message</label>
@@ -57,6 +57,7 @@ class ContactUs extends Component {
                                         placeholder="Tell us your queries..."
                                         type="textarea"
                                         rows="4"
+                                        required
                                     />
                                     <Row>
                                         <Col className="ml-auto mr-auto" md="4">
