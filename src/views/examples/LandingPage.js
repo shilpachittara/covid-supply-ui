@@ -18,6 +18,9 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 import CategoryDetails from "components/Category/CategoryDetails";
 import { Helmet } from "react-helmet";
 import ContactUs from "components/Category/ContactUs";
+import supportImg1 from "../../assets/img/added/medium.jpg"
+import supportImg2 from "../../assets/img/added/corothonindia.jpg"
+import supportImg3 from "../../assets/img/added/covidtaskforce.jpg"
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -171,6 +174,22 @@ function LandingPage() {
           </div>
         </div>
         <ContactUs />
+        <Container>
+        <div className="in-the-news"style={{margin:'auto'}}>
+          <div>
+          <h2 className="text-center">In the News</h2>
+          </div>
+          <div className="row" style={{width:'100%',marginTop:"50px",marginBottom:'50px'}}>
+            <div className="col-sm-4" style={{marginLeft:"",marginRight:""}}>
+              <img style={{width:"auto",height:"100px"}} src={ supportImg1}></img>
+            </div>
+          <div className="col-sm-5"> <img style={{width:"auto",height:"100px"}} src={ supportImg2}></img></div>
+          <div className="col-sm-3">
+          <img style={{width:"auto",height:"100px"}} src={ supportImg3}></img>
+          </div>
+          </div>
+        </div>
+        </Container>
         <DemoFooter />
       </div>
     </>
