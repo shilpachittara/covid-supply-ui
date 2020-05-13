@@ -21,6 +21,7 @@ import ContactUs from "components/Category/ContactUs";
 import supportImg1 from "../../assets/img/added/medium.jpg"
 import supportImg2 from "../../assets/img/added/corothonindia.jpg"
 import supportImg3 from "../../assets/img/added/covidtaskforce.jpg"
+import { Link } from "react-router-dom";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -156,7 +157,29 @@ function LandingPage() {
               </Row>
             </Container>
           </div>
-          <div className="section landing-section"  style={{paddingTop:15}}>
+          <Container>
+        <div className="in-the-news"style={{margin:'auto'}}>
+          <div>
+          <h2 className="text-center">In the News</h2>
+          </div>
+          <hr/>
+          <div className="row" style={{width:'100%',marginTop:"50px",marginBottom:'50px'}}>
+            <div className="col-sm-4" style={{marginLeft:"",marginRight:""}}>
+            <a href="https://medium.com/coronathon-in/here-are-the-14-projects-from-demo-day-2-of-coronathon-india-532f137b9ce5">
+              <img style={{width:"auto",height:"100px"}} src={ supportImg1}></img>
+              </a>
+            </div>
+          <div className="col-sm-5"><a href="https://coronathon.in/"> <img style={{width:"auto",height:"100px"}} src={ supportImg2}></img></a></div>
+          <div className="col-sm-3">
+          <a href="https://covidindiataskforce.org/">
+          <img style={{width:"auto",height:"100px"}} src={ supportImg3}></img>
+          </a>
+          </div>
+          </div>
+        </div>
+        </Container>
+        
+          <div className="section landing-section"  style={{paddingTop:30}}>
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto" md="12">
@@ -174,22 +197,7 @@ function LandingPage() {
           </div>
         </div>
         <ContactUs />
-        <Container>
-        <div className="in-the-news"style={{margin:'auto'}}>
-          <div>
-          <h2 className="text-center">In the News</h2>
-          </div>
-          <div className="row" style={{width:'100%',marginTop:"50px",marginBottom:'50px'}}>
-            <div className="col-sm-4" style={{marginLeft:"",marginRight:""}}>
-              <img style={{width:"auto",height:"100px"}} src={ supportImg1}></img>
-            </div>
-          <div className="col-sm-5"> <img style={{width:"auto",height:"100px"}} src={ supportImg2}></img></div>
-          <div className="col-sm-3">
-          <img style={{width:"auto",height:"100px"}} src={ supportImg3}></img>
-          </div>
-          </div>
-        </div>
-        </Container>
+      
         <DemoFooter />
       </div>
     </>
