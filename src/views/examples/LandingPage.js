@@ -21,7 +21,6 @@ import ContactUs from "components/Category/ContactUs";
 import supportImg1 from "../../assets/img/added/medium.jpg"
 import supportImg2 from "../../assets/img/added/corothonindia.jpg"
 import supportImg3 from "../../assets/img/added/covidtaskforce.jpg"
-import { Link } from "react-router-dom";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -35,39 +34,40 @@ function LandingPage() {
     <>
       <div className="application">
         <Helmet
-        title= "Buy SITRA certified products PPE kits, n95 masks| Covid Supply"
-        link = {[{href: "http://covidsupply.in/" , rel: "canonical"}]}
+          title="Buy SITRA certified products PPE kits, n95 masks| Covid Supply"
+          link={[{ href: "http://covidsupply.in/", rel: "canonical" }]}
           meta={[
             { "name": "description", "content": "Buy certified products PPE kits, N95 masks, Nitrile gloves, Face shields in manufacturing units Delhi, Mumbai, Bangalore, Indore, Hyderabad for hospitals place order now." },
-            { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall"},
-            { "name": "twitter:card", "content": "summary_large_image"},
-            { "name": "twitter:site", "content": "@supplycovid"},
-            { "name": "twitter:creator", "content": "@supplycovid"},
-            { "name": "twitter_title", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply"},
-            { "name": "twitter_description", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply"},
+            { "name": "keywords", "content": "Covid PPE-KIT Mask Coverall" },
+            { "name": "twitter:card", "content": "summary_large_image" },
+            { "name": "twitter:site", "content": "@supplycovid" },
+            { "name": "twitter:creator", "content": "@supplycovid" },
+            { "name": "twitter_title", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply" },
+            { "name": "twitter_description", "content": "Buy Original PPE kits, n95 masks, nitrile gloves from SITRA certified Manufacturers | Covid Supply" },
             { property: "og:type", content: "organization" },
             { property: "og:title", content: "Buy SITRA certified PPE kits, n95 masks| Covid Supply" },
             { property: "og:description", content: "Buy certified PPE kits, N95 masks, Nitrile gloves, Face shields in Delhi, Mumbai, Bangalore, Indore, Hyderabad at best prices." },
             { property: "og:url", content: "http://covidsupply.in/" },
             { property: "og:image", content: "http://covidsupply.in/coronavirus.png" }
-          ]} 
+          ]}
           script={[
-            {type: "application/ld+json", innerHTML: 
-            `{ "@context": "http://schema.org",
+            {
+              type: "application/ld+json", innerHTML:
+                `{ "@context": "http://schema.org",
                "@type": "Organization",
                "name": "CovidSupply",
                "url": "http://covidsupply.in/",
                "logo": "http://covidsupply.in/coronavirus.png",
                "description": "Buy original & quality checked personal protective equipment (PPE kits), N95 masks, Nitrile gloves, Face shields and other essential supplies"
             }`}
-        ]}/>
+          ]} />
         <ExamplesNavbar />
         <LandingPageHeader />
         <CategoryDetails />
         <div className="main" height={500}>
           <div className="section bg-blue text-center detail-container" >
             <Container>
-              <h2 className="title" style={{ color: 'white',marginBottom:-10 }}>Features</h2>
+              <h2 className="title" style={{ color: 'white', marginBottom: -10 }}>Features</h2>
               <Row>
                 <Col md="6">
                   <Card className="card-profile card-plain">
@@ -122,7 +122,7 @@ function LandingPage() {
                         </ul>
                       </div>
                     </CardBody>
-                   
+
                   </Card>
                 </Col>
                 {/*<Col md="4">
@@ -158,28 +158,32 @@ function LandingPage() {
             </Container>
           </div>
           <Container>
-        <div className="in-the-news"style={{margin:'auto'}}>
-          <div>
-          <h2 className="text-center">In the News</h2>
-          </div>
-          <hr/>
-          <div className="row" style={{width:'100%',marginTop:"50px",marginBottom:'50px'}}>
-            <div className="col-sm-4" style={{marginLeft:"",marginRight:""}}>
-            <a href="https://medium.com/coronathon-in/here-are-the-14-projects-from-demo-day-2-of-coronathon-india-532f137b9ce5">
-              <img style={{width:"auto",height:"100px"}} src={ supportImg1}></img>
-              </a>
+            <div className="in-the-news" style={{ margin: 'auto' }}>
+              <div>
+                <h2 className="text-center">In the News</h2>
+              </div>
+              <hr />
+              <div className="row" style={{ width: '100%', marginTop: "50px", marginBottom: '50px' }}>
+                <div className="col-sm-4" style={{ marginLeft: "", marginRight: "" }}>
+                  <a href="https://medium.com/coronathon-in/here-are-the-14-projects-from-demo-day-2-of-coronathon-india-532f137b9ce5" target="_blank" rel="noopener noreferrer">
+                    <img style={{ width: "auto", height: "100px" }} src={supportImg1} alt="meduim article"></img>
+                  </a>
+                </div>
+                <div className="col-sm-5">
+                  <a href="https://coronathon.in/" target="_blank" rel="noopener noreferrer">
+                    <img style={{ width: "auto", height: "100px" }} src={supportImg2} alt="coronathon"></img>
+                    </a>
+                    </div>
+                <div className="col-sm-3">
+                  <a href="https://covidindiataskforce.org/" target="_blank" rel="noopener noreferrer">
+                    <img style={{ width: "auto", height: "100px" }} src={supportImg3} alt="covid inda task force"></img>
+                  </a>
+                </div>
+              </div>
             </div>
-          <div className="col-sm-5"><a href="https://coronathon.in/"> <img style={{width:"auto",height:"100px"}} src={ supportImg2}></img></a></div>
-          <div className="col-sm-3">
-          <a href="https://covidindiataskforce.org/">
-          <img style={{width:"auto",height:"100px"}} src={ supportImg3}></img>
-          </a>
-          </div>
-          </div>
-        </div>
-        </Container>
-        
-          <div className="section landing-section"  style={{paddingTop:30}}>
+          </Container>
+
+          <div className="section landing-section" style={{ paddingTop: 30 }}>
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto" md="12">
@@ -188,7 +192,7 @@ function LandingPage() {
                 </Col>
               </Row>
               <div className="footprint-landing">
-                <hr/>
+                <hr />
                 <h4>Turned 4 manufacturing units into PPE kits manufacturing units</h4>
                 <h4>Supplying 1+ lakh PPE units to different state governments </h4>
                 <h4>Provided initial capital of about 3 Crore to manufacturers</h4>
@@ -197,7 +201,7 @@ function LandingPage() {
           </div>
         </div>
         <ContactUs />
-      
+
         <DemoFooter />
       </div>
     </>
